@@ -1,1 +1,2 @@
 Test text file - to provide some content for initial clone.
+since we'll not have code to submit, should we post our discussion note here as well as on elearning?
