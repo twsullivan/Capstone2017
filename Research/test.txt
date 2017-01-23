@@ -1,2 +1,6 @@
 Test text file - to provide some content for initial clone.
 since we'll not have code to submit, should we post our discussion note here as well as on elearning?
+Note by Norman - we need to work out a strategy for what goes into eLearning
+and what into the repository. It is usually an error to put things in
+two places - one of them inevitably gets out of date.
+
