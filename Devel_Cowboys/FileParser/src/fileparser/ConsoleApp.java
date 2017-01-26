@@ -12,14 +12,15 @@ public class ConsoleApp
     
     public void parseInput(String input)
     {
-        //Handle the users input
-
+         //Handle the users input
     }
     
     public void printUsageDump()
     {
         // Print usage dump here
-        System.out.println("Usage Dump");
+        System.out.println("Usage:");
+        System.out.println("java -jar domainparser.jar <input file> <output file> <max results (int)> <filetype [csv | json | other]>");
+        
     }
    
     /**
