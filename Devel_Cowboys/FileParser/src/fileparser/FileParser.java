@@ -11,5 +11,11 @@ public class FileParser {
        consoleApp.startConsole();
  
         
+<<<<<<< HEAD
     }  
+=======
+       
+    }
+    
+>>>>>>> origin/master
 }
