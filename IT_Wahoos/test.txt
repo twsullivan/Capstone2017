@@ -1,4 +1,8 @@
 Test text file - to provide some content for initial clone.
+<<<<<<< HEAD
 
 
 Richard - putting in his test!
+=======
+Isaac was here
+>>>>>>> Added Isaac was here text
