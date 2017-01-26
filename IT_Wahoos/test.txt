@@ -7,6 +7,12 @@ Richard - putting in his test!
 =======
 Isaac was here
 >>>>>>> Added Isaac was here text
+<<<<<<< HEAD
 =======
 Jeremiah - mic check. is this thing on?
 >>>>>>> I updated the .txt file
+=======
+
+
+The Nut was here!
+>>>>>>> c7295fc91e4514dbedcead8c3214c7610c91dbc0
