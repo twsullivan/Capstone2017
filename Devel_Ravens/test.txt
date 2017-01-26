@@ -1,3 +1,18 @@
 Test text file - to provide some content for initial clone.
 
 Cody Mahaffey - push test!
+
+Help for git
+#do this always first
+git pull --rebase
+
+#edit your files
+
+#add your file
+git add <filename>
+
+#commit your changes to the repository
+git commit -m "<please add a description to what you changed>"
+
+#push your update to  the repository
+git push
