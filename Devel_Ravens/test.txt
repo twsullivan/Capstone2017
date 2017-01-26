@@ -16,3 +16,6 @@ git commit -m "<please add a description to what you changed>"
 
 #push your update to  the repository
 git push
+
+
+Ryan Aguado - git stuff
