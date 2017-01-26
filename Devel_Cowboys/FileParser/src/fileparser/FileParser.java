@@ -15,6 +15,8 @@ public class FileParser {
         
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+        
+        System.out.println("Added a line of something.");
     }
     
 }
