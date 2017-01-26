@@ -2,7 +2,8 @@ package fileparser;
 
 import java.util.Scanner;
 
-public class FileParser {
+public class FileParser 
+{
 
   
     public static void main(String[] args) 
@@ -10,12 +11,5 @@ public class FileParser {
        ConsoleApp consoleApp = new ConsoleApp();
        consoleApp.startConsole();
  
-        
-<<<<<<< HEAD
-    }  
-=======
-       
-    }
-    
->>>>>>> origin/master
+    }      
 }
