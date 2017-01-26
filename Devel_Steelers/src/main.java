@@ -14,6 +14,13 @@ public class main {
 	public static void main(String[] args) {
 		System.out.println("TEST");
 
+		usageMessage();
+
 	}
 
+	private static void usageMessage() {
+
+		System.out.print("USAGE:  \n");
+
+	}
 }
