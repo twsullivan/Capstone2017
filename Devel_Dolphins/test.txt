@@ -1,1 +1,2 @@
 Test text file - to provide some content for initial clone.
+Changes have been made! - Alberto Medeiros
