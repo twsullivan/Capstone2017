@@ -1,2 +1,2 @@
 Test text file - to provide some content for initial clone.
-This is Thomas Kreuser here's my test
+my test
