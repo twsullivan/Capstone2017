@@ -15,7 +15,7 @@ import java.net.*;
 
 public class JGet {
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
   {
 
     if ( (args.length != 1) )
@@ -25,7 +25,11 @@ public class JGet {
     }
 
     String url = args[0];
-
+    
+    File outFile = new File ("HTMLDump.txt");
+    FileWriter fWriter = new FileWriter (outFile, true);
+    PrintWriter pWriter = new PrintWriter (fWriter);
+    
     URL u;
     InputStream is = null;
     DataInputStream dis;
@@ -38,8 +42,11 @@ public class JGet {
       dis = new DataInputStream(new BufferedInputStream(is));
       while ((s = dis.readLine()) != null)
       {
-        System.out.println(s);
+        pWriter.println(s);
       }
+      
+      pWriter.println("------------ END OF DUMP ----------------------------");
+      pWriter.close();
     }
     catch (MalformedURLException mue)
     {
@@ -61,6 +68,7 @@ public class JGet {
       }
       catch (IOException ioe)
       {
+          System.out.println("Output file not found.");
       }
     }
 
