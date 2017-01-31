@@ -5,3 +5,4 @@ and what into the repository. It is usually an error to put things in
 two places - one of them inevitably gets out of date.
 
 Travis Vaughn- Test Edit.
+ok, i hoping to discover how to edit stuff directly from git bash, but unfortunately: no. -rob
