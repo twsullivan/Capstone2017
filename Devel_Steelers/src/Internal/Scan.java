@@ -1,8 +1,6 @@
-/**
- * 
- */
+package Internal;
 
-/**
+/*
  * @author lance
  *
  */

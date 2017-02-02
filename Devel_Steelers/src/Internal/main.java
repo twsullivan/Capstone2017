@@ -1,13 +1,16 @@
+package Internal;
+
 /**
  * 
  */
+
+import org.xbill.DNS.*;
 
 /**
  * @author Steelers
  *
  */
 public class main {
-
 
 	/**
 	 * @param args
@@ -16,13 +19,13 @@ public class main {
 
 		String[] testArgs = { "-i", "input.json", "-o", "output.json", "-q", "-e", "TEST:8.8.8.8", "-t", "50", "-n",
 				"John Smith" };
-		try{
+		try {
 			Scan scn = new Scan(testArgs);
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			usageMessage();
 		}
-		
+
 	}
 
 	private static void usageMessage() {
