@@ -4,6 +4,9 @@ package Internal;
  * @author lance
  *
  */
+import java.net.InetAddress;
+
+
 public class Scan {
 	private static String inputFile = "";
 	private static String outputFile = "";

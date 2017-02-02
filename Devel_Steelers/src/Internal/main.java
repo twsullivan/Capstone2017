@@ -1,15 +1,12 @@
 package Internal;
 
-/**
- * 
- */
-
-import org.xbill.DNS.*;
 
 /**
  * @author Steelers
  *
  */
+import org.xbill.DNS.*;
+
 public class main {
 
 	/**
@@ -25,6 +22,7 @@ public class main {
 			System.out.println(e.getMessage());
 			usageMessage();
 		}
+
 
 	}
 
