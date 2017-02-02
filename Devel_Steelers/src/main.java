@@ -3,7 +3,7 @@
  */
 
 /**
- * @author lance
+ * @author Steelers
  *
  */
 public class main {
@@ -12,6 +12,7 @@ public class main {
 	private static String outputFile = "";
 	private static String environment = "";
 	private static int queriesPerSecond = 0;
+	private static boolean[] optionsCheck = { false, false, false, false };
 
 	/**
 	 * @param args
@@ -19,20 +20,31 @@ public class main {
 	public static void main(String[] args) {
 
 		String[] testArgs = { "-i", "input.json", "-o", "output.json", "-e", "8.8.8.8", "-t", "100" };
+		testInputArgs(testArgs);
 
+	}
+
+	private static void testInputArgs(String[] testArgs) {
 		for (int i = 0; i < testArgs.length; i += 2) {
-			if (testArgs[i] == "-i")
+			if (testArgs[i] == "-i") {
 				setInputFile(testArgs[i + 1]);
-			else if (testArgs[i] == "-o")
+				setOptionsCheck(0);
+			} else if (testArgs[i] == "-o") {
 				setOutputFile(testArgs[i + 1]);
-			else if (testArgs[i] == "-e")
+				setOptionsCheck(1);
+			} else if (testArgs[i] == "-e") {
 				setEnvironment(testArgs[i + 1]);
-			else if (testArgs[i] == "-t")
+				setOptionsCheck(2);
+			} else if (testArgs[i] == "-t") {
 				setQueriesPerSecond(Integer.parseInt(testArgs[i + 1]));
-			else
+				setOptionsCheck(3);
+			} else
 				usageMessage();
 
 		}
+		for (int i = 0; i < 4; i++)
+			if (getOptionsCheck()[i] == false)
+				usageMessage();
 
 	}
 
@@ -44,13 +56,13 @@ public class main {
 		System.out.println("-o\t outputFile - The file containing the results of the queries.");
 		System.out.println("-e\t environment - The DNS server that will be queried.");
 		System.out.println("-t\t queriesPerSecond - Max queries per second.");
-
+		System.exit(0);
 	}
 
 	/**
 	 * @return the inputFile
 	 */
-	public static String getInputFile() {
+	private static String getInputFile() {
 		return inputFile;
 	}
 
@@ -58,14 +70,14 @@ public class main {
 	 * @param inputFile
 	 *            the inputFile to set
 	 */
-	public static void setInputFile(String inputFile) {
+	private static void setInputFile(String inputFile) {
 		main.inputFile = inputFile;
 	}
 
 	/**
 	 * @return the outputFile
 	 */
-	public static String getOutputFile() {
+	private static String getOutputFile() {
 		return outputFile;
 	}
 
@@ -73,14 +85,14 @@ public class main {
 	 * @param outputFile
 	 *            the outputFile to set
 	 */
-	public static void setOutputFile(String outputFile) {
+	private static void setOutputFile(String outputFile) {
 		main.outputFile = outputFile;
 	}
 
 	/**
 	 * @return the environment
 	 */
-	public static String getEnvironment() {
+	private static String getEnvironment() {
 		return environment;
 	}
 
@@ -88,14 +100,14 @@ public class main {
 	 * @param environment
 	 *            the environment to set
 	 */
-	public static void setEnvironment(String environment) {
+	private static void setEnvironment(String environment) {
 		main.environment = environment;
 	}
 
 	/**
 	 * @return the queriesPerSecond
 	 */
-	public static int getQueriesPerSecond() {
+	private static int getQueriesPerSecond() {
 		return queriesPerSecond;
 	}
 
@@ -103,7 +115,22 @@ public class main {
 	 * @param queriesPerSecond
 	 *            the queriesPerSecond to set
 	 */
-	public static void setQueriesPerSecond(int queriesPerSecond) {
+	private static void setQueriesPerSecond(int queriesPerSecond) {
 		main.queriesPerSecond = queriesPerSecond;
+	}
+
+	/**
+	 * @return the optionsCheck
+	 */
+	private static boolean[] getOptionsCheck() {
+		return optionsCheck;
+	}
+
+	/**
+	 * @param optionsCheck
+	 *            the optionsCheck to set
+	 */
+	private static void setOptionsCheck(int option) {
+		main.optionsCheck[option] = true;
 	}
 }
