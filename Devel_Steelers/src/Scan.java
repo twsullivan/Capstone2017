@@ -1,4 +1,3 @@
-package Internal;
 
 /*
  * @author lance
@@ -6,15 +5,14 @@ package Internal;
  */
 import java.net.InetAddress;
 
-
 public class Scan {
-	private static String inputFile = "";
-	private static String outputFile = "";
-	private static String environment = "";
-	private static String environmentIP = "";
-	private static String name = "";
-	private static int queriesPerSecond = 0;
-	private static boolean quiet = false;
+	private String inputFile = "";
+	private String outputFile = "";
+	private String environment = "";
+	private String environmentIP = "";
+	private String name = "";
+	private int queriesPerSecond = 0;
+	private boolean quiet = false;
 
 	/**
 	 * 
@@ -47,7 +45,7 @@ public class Scan {
 	/**
 	 * @return the inputFile
 	 */
-	public static String getInputFile() {
+	public String getInputFile() {
 		return inputFile;
 	}
 
@@ -55,14 +53,14 @@ public class Scan {
 	 * @param inputFile
 	 *            the inputFile to set
 	 */
-	private static void setInputFile(String inputFile) {
-		Scan.inputFile = inputFile;
+	private void setInputFile(String inputFile) {
+		this.inputFile = inputFile;
 	}
 
 	/**
 	 * @return the outputFile
 	 */
-	public static String getOutputFile() {
+	public String getOutputFile() {
 		return outputFile;
 	}
 
@@ -70,14 +68,14 @@ public class Scan {
 	 * @param outputFile
 	 *            the outputFile to set
 	 */
-	private static void setOutputFile(String outputFile) {
-		Scan.outputFile = outputFile;
+	private void setOutputFile(String outputFile) {
+		this.outputFile = outputFile;
 	}
 
 	/**
 	 * @return the environment
 	 */
-	public static String getEnvironment() {
+	public String getEnvironment() {
 		return environment;
 	}
 
@@ -85,14 +83,14 @@ public class Scan {
 	 * @param environment
 	 *            the environment to set
 	 */
-	private static void setEnvironment(String environment) {
-		Scan.environment = environment;
+	private void setEnvironment(String environment) {
+		this.environment = environment;
 	}
 
 	/**
 	 * @return the environmentIP
 	 */
-	public static String getEnvironmentIP() {
+	public String getEnvironmentIP() {
 		return environmentIP;
 	}
 
@@ -100,14 +98,14 @@ public class Scan {
 	 * @param environmentIP
 	 *            the environmentIP to set
 	 */
-	private static void setEnvironmentIP(String environmentIP) {
-		Scan.environmentIP = environmentIP;
+	private void setEnvironmentIP(String environmentIP) {
+		this.environmentIP = environmentIP;
 	}
 
 	/**
 	 * @return the name
 	 */
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -115,14 +113,14 @@ public class Scan {
 	 * @param name
 	 *            the name to set
 	 */
-	private static void setName(String name) {
-		Scan.name = name;
+	private void setName(String name) {
+		this.name = name;
 	}
 
 	/**
 	 * @return the queriesPerSecond
 	 */
-	public static int getQueriesPerSecond() {
+	public int getQueriesPerSecond() {
 		return queriesPerSecond;
 	}
 
@@ -130,14 +128,14 @@ public class Scan {
 	 * @param queriesPerSecond
 	 *            the queriesPerSecond to set
 	 */
-	private static void setQueriesPerSecond(int queriesPerSecond) {
-		Scan.queriesPerSecond = queriesPerSecond;
+	private void setQueriesPerSecond(int queriesPerSecond) {
+		this.queriesPerSecond = queriesPerSecond;
 	}
 
 	/**
 	 * @return the quiet
 	 */
-	public static boolean isQuiet() {
+	public boolean isQuiet() {
 		return quiet;
 	}
 
@@ -145,8 +143,8 @@ public class Scan {
 	 * @param quiet
 	 *            the quiet to set
 	 */
-	private static void setQuiet(boolean quiet) {
-		Scan.quiet = quiet;
+	private void setQuiet(boolean quiet) {
+		this.quiet = quiet;
 	}
 
 }

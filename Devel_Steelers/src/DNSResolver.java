@@ -1,4 +1,4 @@
-package Internal;
+
 
 
 /**
@@ -7,7 +7,7 @@ package Internal;
  */
 import org.xbill.DNS.*;
 
-public class main {
+public class DNSResolver {
 
 	/**
 	 * @param args
