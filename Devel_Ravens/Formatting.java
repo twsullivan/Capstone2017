@@ -84,7 +84,7 @@ public class formatting {
     }
             
     public static void main(String[] args) {       
-        Formatting tester = new Formatting();
+        formatting tester = new formatting();
         
         tester.format("htmlDump.txt");
         
