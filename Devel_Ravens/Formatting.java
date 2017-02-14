@@ -1,10 +1,7 @@
-
-package formatting;
-
 import java.io.*;
 import java.util.*;
 
-public class Formatting {
+public class formatting {
 
     public ArrayList output = new ArrayList();
     ArrayList tokenList = new ArrayList();
@@ -53,11 +50,10 @@ public class Formatting {
     
     //returns URL if the token includes one
     private String checkToken(String input){
-        // outdated //String tmp = "http";
         String returnString = "0";
         
         if(input.length() > 5){
-            if(isURL(input)){       //outdated //if(tmp.equals(input.charAt(0) + "" + input.charAt(1) + "" + input.charAt(2) + "" + input.charAt(3))){
+            if(isURL(input)){       
                 returnString = input;
             }
             else{
