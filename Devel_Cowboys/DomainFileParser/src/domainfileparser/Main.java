@@ -15,7 +15,19 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Console console = new Console(args);
+        
+        String[] args2 = new String[] {
+            
+            "/Users/username/Desktop/test/domains.txt",
+            "/Users/username/Desktop/test",
+            "test",
+            "test",
+            "dnsblackhole",
+            "0"
+        
+        };
+        
+        Console console = new Console(args2);
     }
     
 }

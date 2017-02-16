@@ -24,7 +24,7 @@ public class DNSBlackHoleParse {
                 lineList.add(lines[i].split("\t")[2]);
             }
         }
-        
+
         return lineList.toArray(new String[0]);
     }
 }
