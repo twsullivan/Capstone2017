@@ -1,0 +1,14 @@
+{
+  "domainNameListId": "ScrapedReddit01",
+  "listPreparedBy" : "John Smith",
+  "listDescription" : "Explain how list was developed, source of the data, tool used, date of run, any tool parameters, etc.",
+  "domainNames": [
+    "google.com",
+    "uwf.edu",
+    "en.wikipedia.org",
+	"nbcnews.com",
+	"foxnews.com",
+	"abcnews.go.com",
+	"www.cnn.com"
+    ]
+}
