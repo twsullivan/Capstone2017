@@ -1,15 +1,18 @@
+//package format;
+
 import java.io.*;
 import java.util.*;
 
 public class Format {
 
+    File inputFile;
     ArrayList urls = new ArrayList();
     ArrayList domains = new ArrayList();
     ArrayList tokenList = new ArrayList();
     String line = null;
     int count = 0;
 
-    public ArrayList format(File inputFile){
+    public ArrayList format(){
         
         try{
             FileReader fileReader = new FileReader(inputFile);
@@ -19,11 +22,12 @@ public class Format {
                 checkLine(line);
                 count++;
             }
-            
+            /* //Commented out because testing is easier without it
             //Empty the file
             PrintWriter writer = new PrintWriter(inputFile);
             writer.print("");
             writer.close();
+            */
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -128,13 +132,28 @@ public class Format {
       return returnList;
     }
 
+    public void setInputFile(File newFile){
+        inputFile = newFile;
+    }
+    
+    public File getInputFile(){
+        return inputFile;
+    }
+    
+    public ArrayList getUrls(){
+        return urls;
+    }
+    
+    public ArrayList getDomains(){
+        return domains;
+    }
     
     public static void main(String[] args) {
         
         Format tester = new Format();
         File thisFile = new File("htmlDump.txt");
-        
-        tester.format(thisFile);
+        tester.setInputFile(thisFile);
+        tester.format();
        // tester.urls = tester.removeDuplicates(tester.urls);
         tester.generateDomains(tester.urls);
         
