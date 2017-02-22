@@ -20,8 +20,11 @@ public class OutputJSON {
 
     public static String[] save(String[] domains, String outputFolder) {
 
+        long unixTime = System.currentTimeMillis() / 1000L;
+        String timestamp = Long.toString(unixTime);
+        
         try {
-            PrintWriter writer = new PrintWriter(outputFolder + "/test1.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter(outputFolder + "/domains_" + timestamp + ".txt", "UTF-8");
 
             for (String domain : domains) {
                 writer.println(domain);

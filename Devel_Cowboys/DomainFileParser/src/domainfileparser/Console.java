@@ -83,7 +83,7 @@ public class Console {
                 parserClassName = FILE_TYPE_CLASSES[i];
             }
         }
-        
+
         try
         {
             Class parserClass = Class.forName("domainfileparser." + parserClassName);
@@ -108,6 +108,11 @@ public class Console {
             displayError(cleanDomains[1],true);
         }
         
+        if(cleanDomains.length == 0)
+        {
+            displayError("An invalid input file or other parser error caused zero lines to be returned.", true);
+        }
+        
         String[] cleanRandomSample = randomSample(cleanDomains);
         
         String[] saveOutput = OutputJSON.save(cleanRandomSample, optionsValues[1]);
@@ -118,7 +123,7 @@ public class Console {
             displayError(saveOutput[1],true);
         }
         
-        System.out.println("\nFile saved successfully.\n");
+        System.out.println("\nFile saved successfully.\n\n");
     }
     
     private void displayError(String message, boolean terminate)
@@ -180,6 +185,11 @@ public class Console {
             while( (line = in.readLine()) != null)
             {
                 lineList.add(line);
+            }
+            
+            if(lineList.isEmpty())
+            {
+                return new String[] {"ERROR","Input file is empty."};
             }
             
             return lineList.toArray(new String[0]);
