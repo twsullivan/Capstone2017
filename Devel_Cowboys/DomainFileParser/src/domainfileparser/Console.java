@@ -35,6 +35,9 @@ public class Console {
     // File type classes
     private final String[] FILE_TYPE_CLASSES = new String[] {"AdBlockParse","DNSBlackHoleParse"};
     
+    // Enable (true) or disable (false) debug mode - prints more detailed error messages and diagnostic information when enabled.
+    private final boolean DEBUG = false;
+    
     // Values of options
     private String[] optionsValues = new String[6];
     
@@ -43,7 +46,7 @@ public class Console {
         
     // Max Number of Results (0 = unlimited)
     private int maxResults = 0;
-    
+       
 
     // Begin normal processing routine
     public Console(String[] args) {
@@ -69,7 +72,7 @@ public class Console {
         }
         
         // Store list of parsed domains
-        String[] cleanDomains = new String[]{"error","Did not match parser with file type."};
+        String[] cleanDomains = new String[]{};
         
         String parserClassName = "";
         
@@ -91,9 +94,13 @@ public class Console {
         }
         catch(Exception e)
         {
-            displayError("The parser could not be loaded.\n\n" + e.toString(), true);
+            if(DEBUG)
+            {
+                displayError("The parser could not be loaded.\n\nError detail: " + e.toString(), true);
+            }
+            
+            displayError("The parser could not be loaded.", true);
         }
-
         
         // Error occurred during parsing.
         if(cleanDomains[0].toLowerCase().equals("error"))
