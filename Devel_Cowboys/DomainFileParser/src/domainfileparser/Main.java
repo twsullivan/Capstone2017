@@ -18,11 +18,11 @@ public class Main {
         
         String[] args2 = new String[] {
             
-            "/Users/username/Desktop/test/domains.txt",
-            "/Users/username/Desktop/test",
+            "D:/Zack/Desktop/test/AdblockDNSList.txt",
+            "D:/Zack/Desktop/test",
             "test",
             "test",
-            "dnsblackhole",
+            "adblock",
             "0"
         
         };
