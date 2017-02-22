@@ -16,18 +16,18 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        String[] args2 = new String[] {
+        /*String[] args2 = new String[] {
             
-            "D:/Zack/Desktop/test/AdblockDNSList.txt",
-            "D:/Zack/Desktop/test",
-            "test",
-            "test",
+            "/Users/nicholasnawoschik/Dropbox/UWF/Capstone/201701_Capstone/Devel_Cowboys/Test Sources/AdblockDNSList.txt",
+            "/Users/nicholasnawoschik/Desktop/",
+            "Test",
+            "This is a test description.",
             "adblock",
             "0"
         
-        };
+        };*/
         
-        Console console = new Console(args2);
+        Console console = new Console(args);
     }
     
 }
