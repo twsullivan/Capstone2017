@@ -56,6 +56,12 @@ public class Console {
         String welcomeBorder = new String(new char[welcomeMessage.length()]).replace("\0", "#");
         System.out.println("\n" + welcomeBorder + "\n" + welcomeMessage + "\n" + welcomeBorder + "\n");
         
+        // Displays the usage when the user types in help
+        if(args[0].toLowerCase().equals("help")) {
+            displayUsage("", false);
+            System.exit(0);
+        }
+        
         // Check if all arguments are present and valid
         if(checkArguments(args) == false)
         {
