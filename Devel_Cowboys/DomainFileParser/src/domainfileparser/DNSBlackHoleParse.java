@@ -15,6 +15,11 @@ public class DNSBlackHoleParse {
 
     public static String[] parse(String[] lines)
     {
+        if (lines.length < 1) // No lines to parse
+        {
+            System.exit(666);
+        }
+        
         List<String> lineList = new ArrayList<>();
 
         for (int i = 0; i < lines.length; i++)
