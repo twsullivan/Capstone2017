@@ -25,7 +25,7 @@ public class OutputJSON {
         String output = preparedObject.toString(WriterConfig.PRETTY_PRINT);
         
         try {
-            PrintWriter writer = new PrintWriter(outputFolder + "/domains_" + timestamp + ".txt", "UTF-8");
+            PrintWriter writer = new PrintWriter(outputFolder + "/domains_" + timestamp + ".json", "UTF-8");
             
             writer.printf(output);
             
