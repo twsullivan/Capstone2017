@@ -30,10 +30,10 @@ public class Console {
                                                         "Description","File Type","Max Results"};
     
     // File type names
-    private final String[] FILE_TYPE_NAMES = new String[] {"adblock", "dnsblackhole"};
+    private final String[] FILE_TYPE_NAMES = new String[] {"adblock", "dnsblackhole", "internetlog"};
     
     // File type classes
-    private final String[] FILE_TYPE_CLASSES = new String[] {"AdBlockParse","DNSBlackHoleParse"};
+    private final String[] FILE_TYPE_CLASSES = new String[] {"AdBlockParse","DNSBlackHoleParse", "InternetLog"};
     
     // Enable (true) or disable (false) debug mode - prints more detailed error messages and diagnostic information when enabled.
     private final boolean DEBUG = false;
