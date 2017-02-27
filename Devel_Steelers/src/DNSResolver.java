@@ -18,7 +18,8 @@ public class DNSResolver {
 	try {
 	    Scan scn = new Scan(args);
 	    scn.run();
-
+	    
+	    
 	} catch (Exception e) {
 	    System.out.println(e.getMessage());
 	    usageMessage();

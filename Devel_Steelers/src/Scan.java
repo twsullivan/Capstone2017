@@ -6,6 +6,7 @@
 import java.io.*;
 import java.net.InetAddress;
 import org.xbill.DNS.*;
+import java.util.Iterator;
 
 public class Scan {
     private FileReader inputFile;
@@ -16,6 +17,7 @@ public class Scan {
     private int queriesPerSecond = 0;
     private boolean quiet = false;
     private SimpleResolver resolve;
+    private InputJSON json;
 
     public Scan(String[] inputArgs) throws Exception {
 
@@ -42,30 +44,47 @@ public class Scan {
 	// || getEnvironmentIP().getHostAddress() == "" || getQueriesPerSecond()
 	// < 1)
 	// throw new Exception("Not enough arguments.");
+	this.json = new InputJSON(getInputFile());
     }
 
     public void run() throws Exception {
-	String query = "www.noagendashow.com";
-
 	System.out.println("Setting DNS Resolver to : " + getEnvironmentIP().getHostAddress());
+	System.out.println("=========================================\n");
 	resolve = new SimpleResolver();
 	resolve.setAddress(getEnvironmentIP());
-
 	Lookup.setDefaultResolver(resolve);
-	Lookup lookupObj = new Lookup(query, Type.A, DClass.IN);
+	Record[] records;
+	ARecord a;
+	Lookup lookupObj;
+	Iterator<String> iterDomainJSON;
+	String query;
+	int result;
+	System.out.println("Domain List ID   : " + getJSON().getDomainNameListId());
+	System.out.println("List Prepared By : " + getJSON().getListPreparedBy());
+	System.out.println("List Description : " + getJSON().getListDescription());
 
-	Record[] records = lookupObj.run();
-	System.out.println("Code " + lookupObj.getResult() + " received from lookup of host : " + query);
+	iterDomainJSON = getJSON().getDomainNames().iterator();
 
-	if (lookupObj.getResult() == 0)
-	    for (int i = 0; i < records.length; i++) {
-		ARecord a = (ARecord) records[i];
-		System.out.println("FOUND : Host " + a.getName().toString() + " has address " + a.rdataToString());
-	    }
-	else if (lookupObj.getResult() == 3) {
-	    System.out.println("Host not found");
+	while (iterDomainJSON.hasNext()) {
+	    query = iterDomainJSON.next();
+	    lookupObj = new Lookup(query, Type.A, DClass.IN);
+	    records = lookupObj.run();
+	    result = lookupObj.getResult();
+
+	    if (result == 0) {
+		System.out.println("\n\nCode 0 (SUCCESS) received from lookup of host : " + query);
+		for (int i = 0; i < records.length; i++) {
+		    a = (ARecord) records[i];
+		    System.out.println("FOUND : Host " + a.getName().toString() + " has address " + a.rdataToString());
+		}
+	    } else if (result == 3)
+		System.out.println("\n\nCode 3 (HOST NOT FOUND) received from lookup of host : " + query);
+
 	}
+    }
 
+    public InputJSON getJSON() {
+	return json;
     }
 
     public FileReader getInputFile() {
