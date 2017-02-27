@@ -5,6 +5,9 @@
  */
 import java.io.*;
 import java.net.InetAddress;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.xbill.DNS.*;
 import java.util.Iterator;
 
@@ -18,22 +21,32 @@ public class Scan {
     private boolean quiet = false;
     private SimpleResolver resolve;
     private InputJSON json;
+    JSONObject finalJSON = new JSONObject();
 
+    @SuppressWarnings("unchecked")
     public Scan(String[] inputArgs) throws Exception {
 
 	for (int i = 0; i < inputArgs.length; i += 2)
-	    if (inputArgs[i] == "-i")
+	    if (inputArgs[i] == "-i") {
 		setInputFile(inputArgs[i + 1]);
-	    else if (inputArgs[i] == "-o")
+		finalJSON.put("Input File", inputArgs[i + 1]);
+	    } else if (inputArgs[i] == "-o") {
 		setOutputFile(inputArgs[i + 1]);
-	    else if (inputArgs[i] == "-e") {
+		finalJSON.put("Output File", inputArgs[i + 1]);
+	    } else if (inputArgs[i] == "-e") {
 		setEnvironment(inputArgs[i + 1].split(":")[0]);
+		finalJSON.put("Environment Name", inputArgs[i + 1].split(":")[0]);
 		setEnvironmentIP(inputArgs[i + 1].split(":")[1]);
-	    } else if (inputArgs[i] == "-t")
+		finalJSON.put("Environment IP", inputArgs[i + 1].split(":")[1]);
+
+	    } else if (inputArgs[i] == "-t") {
 		setQueriesPerSecond(inputArgs[i + 1]);
-	    else if (inputArgs[i] == "-n")
+		finalJSON.put("Queries Per Second", inputArgs[i + 1]);
+	    } else if (inputArgs[i] == "-n") {
 		setName(inputArgs[i + 1]);
-	    else if (inputArgs[i] == "-q") {
+		finalJSON.put("Scan Run By", inputArgs[i + 1]);
+
+	    } else if (inputArgs[i] == "-q") {
 		setQuiet(true);
 		i--;
 	    } else
@@ -47,40 +60,63 @@ public class Scan {
 	this.json = new InputJSON(getInputFile());
     }
 
+    @SuppressWarnings("unchecked")
     public void run() throws Exception {
 	System.out.println("Setting DNS Resolver to : " + getEnvironmentIP().getHostAddress());
 	System.out.println("=========================================\n");
 	resolve = new SimpleResolver();
 	resolve.setAddress(getEnvironmentIP());
 	Lookup.setDefaultResolver(resolve);
-	Record[] records;
-	ARecord a;
-	Lookup lookupObj;
-	Iterator<String> iterDomainJSON;
-	String query;
-	int result;
 	System.out.println("Domain List ID   : " + getJSON().getDomainNameListId());
 	System.out.println("List Prepared By : " + getJSON().getListPreparedBy());
 	System.out.println("List Description : " + getJSON().getListDescription());
 
+	Record[] records;
+	ARecord a;
+	Lookup dnsJob;
+	Iterator<String> iterDomainJSON;
+	String query;
+	int result;
 	iterDomainJSON = getJSON().getDomainNames().iterator();
+	JSONArray recordArray;
+	JSONObject hostEntry = new JSONObject();
 
 	while (iterDomainJSON.hasNext()) {
 	    query = iterDomainJSON.next();
-	    lookupObj = new Lookup(query, Type.A, DClass.IN);
-	    records = lookupObj.run();
-	    result = lookupObj.getResult();
-
+	    dnsJob = new Lookup(query, Type.A, DClass.IN);
+	    records = dnsJob.run();
+	    result = dnsJob.getResult();
+	    JSONObject hostResult = new JSONObject();
 	    if (result == 0) {
 		System.out.println("\n\nCode 0 (SUCCESS) received from lookup of host : " + query);
+		hostResult.put("Result Code", 0);
+		hostResult.put("Result Description", "Success");
+		hostResult.put("Host", query);
+		recordArray = new JSONArray();
 		for (int i = 0; i < records.length; i++) {
 		    a = (ARecord) records[i];
 		    System.out.println("FOUND : Host " + a.getName().toString() + " has address " + a.rdataToString());
+		    recordArray.add(a.rdataToString());
 		}
-	    } else if (result == 3)
-		System.out.println("\n\nCode 3 (HOST NOT FOUND) received from lookup of host : " + query);
+		hostResult.put("IP", recordArray);
 
+	    } else if (result == 3) {
+		System.out.println("\n\nCode 3 (HOST NOT FOUND) received from lookup of host : " + query);
+		hostResult.put("Result Code", 3);
+		hostResult.put("Result Description", "Host Not Found");
+	    }
+	    hostEntry.put(query, hostResult);
+	    finalJSON.put("Host", hostEntry);
 	}
+    }
+
+    @SuppressWarnings("unchecked")
+    public void save() throws Exception {
+	finalJSON.put("Domain List ID", getJSON().getDomainNameListId());
+	finalJSON.put("List Prepared By", getJSON().getListPreparedBy());
+
+	getOutputFile().write(finalJSON.toJSONString());
+	getOutputFile().close();
     }
 
     public InputJSON getJSON() {

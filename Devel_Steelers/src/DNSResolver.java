@@ -11,14 +11,14 @@ public class DNSResolver {
      */
     public static void main(String[] args) {
 
-	String[] testArgs = { "-i", "input.json", "-o", "output.json", "-q", "-e", "TEST:8.8.8.8", "-t", "50", "-n",
+	String[] testArgs = { "-i", "input.json", "-o", "output.json", "-q", "-e", "TEST:8.8.4.4", "-t", "50", "-n",
 		"John Smith" };
 	args = testArgs;
 
 	try {
 	    Scan scn = new Scan(args);
 	    scn.run();
-	    
+	    scn.save();
 	    
 	} catch (Exception e) {
 	    System.out.println(e.getMessage());
