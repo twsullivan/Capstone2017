@@ -1,13 +1,13 @@
-
 package DNSQueryTool;
 
 import java.io.IOException;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -16,13 +16,13 @@ import java.util.concurrent.TimeUnit;
 
 public class DNSClient {
 
-    // Constants Initialization
-    private static final int CORE_POOL_SIZE = 2;
-    private static final int MAXIMUM_POOL_SIZE = 4;
+    private static final int CORE_POOL_SIZE = 50;
+    private static final int MAXIMUM_POOL_SIZE = 100;
     private static final long KEEP_ALIVE_TIME = 10;
-    private static final int WORK_QUEUE_SIZE = 2;
+    private static final int WORK_QUEUE_SIZE = 100;
 
-    // Variable Initialization
+//    private static final int DNS_SERVER_PORT = 53;
+
     private String dnsServerAddress;
     private String outFileName;
     private boolean quiet = false;
@@ -47,8 +47,8 @@ public class DNSClient {
         remainingThreads--;
     }
 
-    private void run(String args[]) throws InterruptedException 
-    {    
+    private void run(String args[]) throws InterruptedException, SocketException, UnknownHostException, IOException {
+        
         int throttleTime = throttle > 0 ? 1000 / throttle : 0;
 
         // Get the default thread factory
@@ -56,7 +56,7 @@ public class DNSClient {
 
         // Creat thread pool
         ThreadPoolExecutor executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
-                KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(WORK_QUEUE_SIZE),
+                KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(WORK_QUEUE_SIZE),
                 threadFactory);
 
         MonitorThread monitor = new MonitorThread(executor, 1);
@@ -90,46 +90,77 @@ public class DNSClient {
             monitor.shutdown();
         }
 
-//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//        
-//        System.out.println("\n" + gson.toJson(dnsQueryOutput));
-
+        FileWriter writer = null;
+        
         try {
             // Write results to output file   
-            FileWriter writer = new FileWriter(outFileName);
+            writer = new FileWriter(outFileName);
             writer.write(gson.toJson(dnsQueryOutput));
-            writer.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println("File error: -o " + ex.getMessage());
+            UsageDump();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException ex) {
+            }
         }
     }
 
-    private void processArgs(String[] args) throws FileNotFoundException {
+    private void processArgs(String[] args) {
         int count = 0;
 
         if (args.length < 10 || args.length > 11) {
+            System.out.println("Wrong number of arguments.");
             UsageDump();
         }
         while (count < args.length) {
             if ("-i".equals(args[count])) {
                 count++;
-                File f = new File(args[count]);
-                if (f.exists()) {
+                try {
                     BufferedReader br = new BufferedReader(new FileReader(args[count]));
 
                     dnsQueryInput = gson.fromJson(br, DNSQueryInput.class);
                     dnsQueryOutput.domainNameListId = dnsQueryInput.domainNameListId;
                     dnsQueryOutput.queryResults = new DNSQueryResult[dnsQueryInput.domainNames.length];
-                } else {
-                    System.out.println("File: " + args[count] + " does not exist.");
+                } catch (FileNotFoundException ex) {
+                    System.out.println("File not found: -i ('" + args[count] + "' does not exist.)");
+                    UsageDump();
+                } catch (com.google.gson.JsonSyntaxException ex) {
+                    System.out.println("Syntax error: -i (Syntax error in file: " + args[count] + ")");
                     UsageDump();
                 }
-            }
+            } else
             if ("-o".equals(args[count])) {
                 count++;
-                outFileName = args[count];
-            }
+                if(args[count].split("\\.").length == 2 && args[count].split("\\.")[1].equals("json")) {
+                    
+                    FileWriter writer = null;
+                            
+                    try {
+                        // Write results to output file   
+                        writer = new FileWriter(args[count]);
+                    
+                        writer.write(gson.toJson(dnsQueryOutput));
+                        writer.close();
+                        outFileName = args[count];
+                    } catch (IOException ex) {
+                        System.out.println("File error: -o " + ex.getMessage());
+                        UsageDump();
+                    } finally {
+                        try {
+                            if (writer != null) {
+                                writer.close();
+                            }
+                        } catch (IOException ex) {}
+                    }                  
+                } else {
+                    System.out.println("Improper formatting: -o  (File '" + args[count] + "' does not end with 'json' file extension.)");
+                    UsageDump();
+                }
+            } else
             if ("-e".equals(args[count])) {
                 count++;
                 if (args[count].split(":").length == 2)
@@ -140,7 +171,7 @@ public class DNSClient {
                     System.out.println("Improper formatting: -e " + args[count]);
                     UsageDump();
                 }
-            }
+            } else
             if ("-t".equals(args[count])) {
                 count++;
                 try
@@ -152,16 +183,18 @@ public class DNSClient {
                     System.out.println("Not a number: -t " + args[count]);
                     UsageDump();
                 }
-            }
+            } else
             if ("-n".equals(args[count])) {
                 count++;
                 dnsQueryOutput.queriesRunBy = args[count];
-            }
+            } else
             if ("-q".equals(args[count])) {
                 quiet = true;
             } else {
-                quiet = false;
+                    System.out.println("Invalid switch: " + args[count]);
+                    UsageDump();
             }
+            
             count++;
         }
     }
