@@ -60,7 +60,9 @@ public class Format {
             String[] postSplit = line.split("/");
             
             //domainList.add(postSplit[2]);
-            domains.add(postSplit[2]);
+            if(postSplit.length > 1){
+                domains.add(postSplit[2]);
+            }
         }
         
         //return domainList;
@@ -143,4 +145,28 @@ public class Format {
     public ArrayList getDomains(){
         return domains;
     }  
+    
+    public void awesomeFileCreate(){
+        
+        File finalFile = new File("finalFile.txt");
+        
+        try{
+            PrintWriter bestWriter = new PrintWriter(finalFile);
+            for(int i=0; i<urls.size(); i++){
+                System.out.println( i + " |URL: | " + urls.get(i) + " |Domain: | " + domains.get(i));
+                bestWriter.println(i + " |URL: | " + urls.get(i) + " |Domain: | " + domains.get(i));
+            }
+        }
+        catch(IOException e){
+            
+        }
+        
+    }
+    
+        
+    @Override
+    public String toString(){
+           String turkey = "";
+           return turkey;
+    }
 }
