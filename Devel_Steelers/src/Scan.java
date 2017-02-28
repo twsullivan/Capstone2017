@@ -5,6 +5,8 @@
  */
 import java.io.*;
 import java.net.InetAddress;
+import java.time.Duration;
+import java.time.Instant;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -23,29 +25,20 @@ public class Scan {
     private InputJSON json;
     JSONObject finalJSON = new JSONObject();
 
-    @SuppressWarnings("unchecked")
     public Scan(String[] inputArgs) throws Exception {
 
 	for (int i = 0; i < inputArgs.length; i += 2)
 	    if (inputArgs[i] == "-i") {
 		setInputFile(inputArgs[i + 1]);
-		finalJSON.put("Input File", inputArgs[i + 1]);
 	    } else if (inputArgs[i] == "-o") {
 		setOutputFile(inputArgs[i + 1]);
-		finalJSON.put("Output File", inputArgs[i + 1]);
 	    } else if (inputArgs[i] == "-e") {
 		setEnvironment(inputArgs[i + 1].split(":")[0]);
-		finalJSON.put("Environment Name", inputArgs[i + 1].split(":")[0]);
 		setEnvironmentIP(inputArgs[i + 1].split(":")[1]);
-		finalJSON.put("Environment IP", inputArgs[i + 1].split(":")[1]);
-
 	    } else if (inputArgs[i] == "-t") {
 		setQueriesPerSecond(inputArgs[i + 1]);
-		finalJSON.put("Queries Per Second", inputArgs[i + 1]);
 	    } else if (inputArgs[i] == "-n") {
 		setName(inputArgs[i + 1]);
-		finalJSON.put("Scan Run By", inputArgs[i + 1]);
-
 	    } else if (inputArgs[i] == "-q") {
 		setQuiet(true);
 		i--;
@@ -62,59 +55,70 @@ public class Scan {
 
     @SuppressWarnings("unchecked")
     public void run() throws Exception {
-	System.out.println("Setting DNS Resolver to : " + getEnvironmentIP().getHostAddress());
-	System.out.println("=========================================\n");
+
 	resolve = new SimpleResolver();
 	resolve.setAddress(getEnvironmentIP());
 	Lookup.setDefaultResolver(resolve);
+
+	if (isQuiet())
+	    System.out.close();
+	int queryRate = 1000 / getQueriesPerSecond();
+
+	System.out.println("Setting DNS Resolver to : " + getEnvironmentIP().getHostAddress());
+	System.out.println("=========================================\n");
 	System.out.println("Domain List ID   : " + getJSON().getDomainNameListId());
 	System.out.println("List Prepared By : " + getJSON().getListPreparedBy());
 	System.out.println("List Description : " + getJSON().getListDescription());
 
 	Record[] records;
-	ARecord a;
 	Lookup dnsJob;
 	Iterator<String> iterDomainJSON;
 	String query;
 	int result;
 	iterDomainJSON = getJSON().getDomainNames().iterator();
-	JSONArray recordArray;
-	JSONObject hostEntry = new JSONObject();
+	JSONArray resultArray = new JSONArray();
+	JSONObject resultObj;
+	Instant start, end;
 
 	while (iterDomainJSON.hasNext()) {
 	    query = iterDomainJSON.next();
 	    dnsJob = new Lookup(query, Type.A, DClass.IN);
+
+	    start = Instant.now();
 	    records = dnsJob.run();
 	    result = dnsJob.getResult();
-	    JSONObject hostResult = new JSONObject();
+	    end = Instant.now();
+
+	    resultObj = new JSONObject();
+	    resultObj.put("domainName", query);
+	    resultObj.put("responseTimeMs", String.valueOf(Duration.between(start, end).toMillis()));
 	    if (result == 0) {
 		System.out.println("\n\nCode 0 (SUCCESS) received from lookup of host : " + query);
-		hostResult.put("Result Code", 0);
-		hostResult.put("Result Description", "Success");
-		hostResult.put("Host", query);
-		recordArray = new JSONArray();
-		for (int i = 0; i < records.length; i++) {
-		    a = (ARecord) records[i];
-		    System.out.println("FOUND : Host " + a.getName().toString() + " has address " + a.rdataToString());
-		    recordArray.add(a.rdataToString());
-		}
-		hostResult.put("IP", recordArray);
+		for (Record record : records)
+		    System.out.println(
+			    "FOUND : Host " + record.getName().toString() + " has address " + record.rdataToString());
+		resultObj.put("queryResult", ((ARecord) records[0]).rdataToString());
+	    } else if (result == 1) {
+		System.out.println("\n\nCode 1 (UNRECOVERABLE / BLOCKED) received from lookup of host : " + query);
+		resultObj.put("queryResult", "BLOCKED");
 
 	    } else if (result == 3) {
 		System.out.println("\n\nCode 3 (HOST NOT FOUND) received from lookup of host : " + query);
-		hostResult.put("Result Code", 3);
-		hostResult.put("Result Description", "Host Not Found");
+		resultObj.put("queryResult", "UNRESOLVED");
 	    }
-	    hostEntry.put(query, hostResult);
-	    finalJSON.put("Host", hostEntry);
+	    resultArray.add(resultObj);
+
+	    while (Duration.between(start, Instant.now()).toMillis() < queryRate)
+		;
 	}
+
+	finalJSON.put("environmentId", getEnvironment());
+	finalJSON.put("domainNameListId", getJSON().getDomainNameListId());
+	finalJSON.put("queriesRunBy", getName());
+	finalJSON.put("queryResults", resultArray);
     }
 
-    @SuppressWarnings("unchecked")
     public void save() throws Exception {
-	finalJSON.put("Domain List ID", getJSON().getDomainNameListId());
-	finalJSON.put("List Prepared By", getJSON().getListPreparedBy());
-
 	getOutputFile().write(finalJSON.toJSONString());
 	getOutputFile().close();
     }
@@ -128,12 +132,7 @@ public class Scan {
     }
 
     private void setInputFile(String inputFile) throws Exception {
-
-	try {
-	    this.inputFile = new FileReader(inputFile);
-	} catch (Exception e) {
-	    throw e;
-	}
+	this.inputFile = new FileReader(inputFile);
     }
 
     public FileWriter getOutputFile() {
@@ -141,11 +140,7 @@ public class Scan {
     }
 
     private void setOutputFile(String outputFile) throws Exception {
-	try {
-	    this.outputFile = new FileWriter(outputFile);
-	} catch (Exception e) {
-	    throw e;
-	}
+	this.outputFile = new FileWriter(outputFile);
     }
 
     public String getEnvironment() {
@@ -161,12 +156,7 @@ public class Scan {
     }
 
     private void setEnvironmentIP(String environmentIP) throws Exception {
-	try {
-	    this.environmentIP = InetAddress.getByName(environmentIP);
-	} catch (Exception e) {
-	    throw new Exception(e.getMessage() + " is an invalid IP address.");
-	}
-
+	this.environmentIP = InetAddress.getByName(environmentIP);
     }
 
     public String getName() {
@@ -182,14 +172,10 @@ public class Scan {
     }
 
     private void setQueriesPerSecond(String queriesPerSecond) throws Exception {
-	int i = 0;
-	try {
-	    i = Integer.parseInt(queriesPerSecond);
-	    if (i < 1)
-		throw new Exception("Queries per second must be > 0.");
-	} catch (Exception e) {
-	    throw e;
-	}
+	int i = Integer.parseInt(queriesPerSecond);
+
+	if (i < 1)
+	    throw new Exception("Queries per second must be > 0.");
 
 	this.queriesPerSecond = i;
     }

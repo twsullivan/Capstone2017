@@ -20,14 +20,12 @@ public class InputJSON {
 	setDomainNameListId((String) jsonObject.get("domainNameListId"));
 	setListPreparedBy((String) jsonObject.get("listPreparedBy"));
 	setListDescription((String) jsonObject.get("listDescription"));
-
 	setDomainNamesJSON((JSONArray) jsonObject.get("domainNames"));
 
 	@SuppressWarnings("unchecked")
 	Iterator<String> i = getDomainNamesJSON().iterator();
 	while (i.hasNext())
 	    domainNames.add(i.next());
-	setDomainNamesJSON(null);
 
     }
 
