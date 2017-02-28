@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /**
  * @author Steelers
  *
@@ -7,9 +9,10 @@ public class DNSResolver {
 
     public static void main(String[] args) {
 
-	String[] testArgs = { "-i", "input.json", "-o", "output.json", "-e", "TEST:8.8.4.4", "-t", "50", "-n",
-		"John Smith" };
-	args = testArgs;
+	// String[] testArgs = { "-i", "input.json", "-o", "output.json", "-e",
+	// "TEST:8.8.4.4", "-t", "50", "-n",
+	// "John Smith" };
+	// args = testArgs;
 
 	try {
 	    Scan scn = new Scan(args);

@@ -28,22 +28,23 @@ public class Scan {
     public Scan(String[] inputArgs) throws Exception {
 
 	for (int i = 0; i < inputArgs.length; i += 2)
-	    if (inputArgs[i] == "-i") {
+	    if (inputArgs[i].equalsIgnoreCase("-i")) {
 		setInputFile(inputArgs[i + 1]);
-	    } else if (inputArgs[i] == "-o") {
+	    } else if (inputArgs[i].equalsIgnoreCase("-o")) {
 		setOutputFile(inputArgs[i + 1]);
-	    } else if (inputArgs[i] == "-e") {
+	    } else if (inputArgs[i].equalsIgnoreCase("-e")) {
 		setEnvironment(inputArgs[i + 1].split(":")[0]);
 		setEnvironmentIP(inputArgs[i + 1].split(":")[1]);
-	    } else if (inputArgs[i] == "-t") {
+	    } else if (inputArgs[i].equalsIgnoreCase("-t")) {
 		setQueriesPerSecond(inputArgs[i + 1]);
-	    } else if (inputArgs[i] == "-n") {
+	    } else if (inputArgs[i].equalsIgnoreCase("-n")) {
 		setName(inputArgs[i + 1]);
-	    } else if (inputArgs[i] == "-q") {
+	    } else if (inputArgs[i].equalsIgnoreCase("-q")) {
 		setQuiet(true);
 		i--;
 	    } else
 		throw new Exception("Invalid arguments provided (duplicate or unknown).");
+
 	// !!FIX TOO FEW ARGS!!
 	// if (getInputFile().equals(null) || getOutputFile().equals(null)||
 	// getEnvironment().isEmpty() || getName().isEmpty()
