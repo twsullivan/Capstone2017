@@ -8,9 +8,10 @@ public class DomainScraper {
         String out = "HTMLDump.txt";
         
         JGet g = new JGet();
-        
         g.setOutput(out);
-        g.setURL("www.facebook.com");
+        g.setURL("www.uwf.edu");
+        g.runJGet();
+        g.setURL("www.stackoverflow.com");
         g.runJGet();
         
         Format f = new Format();

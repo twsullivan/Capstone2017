@@ -6,29 +6,24 @@ import java.util.*;
 public class Format {
 
     String inputFileName;
-    File inputFile;
     ArrayList urls = new ArrayList();
     ArrayList domains = new ArrayList();
     ArrayList tokenList = new ArrayList();
     String line = null;
     int count = 0;
+    
 
     public ArrayList format(){
         
         try{
-            FileReader fileReader = new FileReader(inputFileName);
+            File currentFile = new File(inputFileName);
+            FileReader fileReader = new FileReader(currentFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
         
             while((line = bufferedReader.readLine()) != null){
                 checkLine(line);
                 count++;
             }
-            /* //Commented out because testing is easier without it
-            //Empty the file
-            PrintWriter writer = new PrintWriter(inputFile);
-            writer.print("");
-            writer.close();
-            */
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -133,12 +128,12 @@ public class Format {
       return returnList;
     }
 
-    public void setInputFile(String inputFileName){
-        this.inputFileName = inputFileName;
+    public void setInputFile(String inputFile){
+        this.inputFileName = inputFile;
     }
     
-    public File getInputFile(){
-        return inputFile;
+    public String getInputFile(){
+        return inputFileName;
     }
     
     public ArrayList getUrls(){
