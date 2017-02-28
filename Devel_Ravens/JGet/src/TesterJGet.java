@@ -1,14 +1,20 @@
-
 import java.io.IOException;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 public class TesterJGet {
     public static void main(String[] args) throws IOException{
         JGet g = new JGet();
+        
+        for(int i=0; i<3; i++)
+        {
+            g.setURL("www.stackoverflow.com");
+            g.runJGet();
+            g.setURL("http://www.uwf.edu");
+            g.runJGet();
+            g.setOutput("Testing.txt");
+            g.setURL("google.com");
+            g.runJGet(); 
+        }
+        
+        
     }
 }
