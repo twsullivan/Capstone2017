@@ -87,4 +87,8 @@ public class Driver
             System.out.println(nameList.get(i));
         }
     }
+    
+    public ArrayList getNameList(){
+        return nameList;
+    }
 }
