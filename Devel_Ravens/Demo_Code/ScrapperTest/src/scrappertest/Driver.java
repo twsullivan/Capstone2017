@@ -60,8 +60,6 @@ public class Driver
     
     public void gainDomainNames()  throws IOException 
     {
-        for(int i = -1; i < nLevels; i++)
-        {
         System.out.println("Use JGet class, get file updated.");
         
         JGet get = new JGet();
@@ -74,7 +72,7 @@ public class Driver
         format.runWeblink();
         //format.getURLs();
         nameList = format.getDomains();
-        }
+        
     }
     
     public void outputJSONFile()
