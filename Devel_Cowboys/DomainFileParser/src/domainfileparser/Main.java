@@ -19,8 +19,8 @@ public class Main {
         /*
         String[] args2 = new String[] {
             
-            "/Users/nicholasnawoschik/Dropbox/UWF/Capstone/201701_Capstone/Devel_Cowboys/Test Sources/AdblockDNSList.txt",
-            "/Users/nicholasnawoschik/Desktop/",
+            "/Users/username/Desktop/test/input.txt",
+            "/Users/username/Desktop/test/",
             "Test",
             "This is a test description.",
             "adblock",
@@ -28,6 +28,7 @@ public class Main {
         
         };
         */
+        
         Console console = new Console(args);
     }
     

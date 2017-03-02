@@ -31,7 +31,8 @@ public class OutputJSON {
             
             writer.close();
         } catch (IOException e) {
-            System.out.println("IO Error");
+            
+            return new String[]{"Error", "Error saving output file."};
         }
 
         return new String[]{"OK"};

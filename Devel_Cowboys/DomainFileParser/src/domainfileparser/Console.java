@@ -23,7 +23,7 @@ public class Console {
     private final String PRODUCT_NAME = "Domain File Parser";
     
     // Product version to show in welcome message
-    private final String PRODUCT_VERSION = "v1.0";
+    private final String PRODUCT_VERSION = "v1.1";
     
     // Names of options
     private final String[] OPTIONS_NAMES = new String[] {"Input File","Output File Path","Name",

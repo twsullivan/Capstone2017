@@ -19,7 +19,7 @@ public class AdBlockParse {
     {
         if (lines.length < 1) // No lines to parse
         {
-            System.exit(666);
+            return new String[] {"Error", "Parse Error: No lines were received."};
         }
 
         List<String> lineList = new ArrayList<>();
