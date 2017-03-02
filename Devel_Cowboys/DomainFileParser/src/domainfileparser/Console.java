@@ -57,7 +57,7 @@ public class Console {
         System.out.println("\n" + welcomeBorder + "\n" + welcomeMessage + "\n" + welcomeBorder + "\n");
         
         // Displays the usage when the user types in help
-        if(args[0].toLowerCase().equals("help")) {
+        if(args.length == 0 || args[0].toLowerCase().equals("help")) {
             displayUsage("", false);
             System.exit(0);
         }
