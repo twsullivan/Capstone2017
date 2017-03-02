@@ -1,27 +1,54 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author devel_dolphins
  */
 package dolphins;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author acm52
- */
-public class jaccardController //Given environments, this is what will do the stuff (algorithm)
+public class JaccardController //Given environments, this is what will do the stuff (algorithm)
 {
-    public List<environment> environments = new ArrayList<environment>();
+    public List<Environment> environments = new ArrayList<Environment>();
     
-    public void addEnvironment(environment e)
+    public JaccardController()
     {
-        
+        //default constructor? needed?
     }
-
-
+    
+    /*Adds an environment object to the environments List<environment>*/
+    public void addEnvironment(Environment e)
+    {
+        environments.add(e);
+    }
+    
+    /*Returns an environment object from the environments List<environment> based on if the given string name was found.*/
+    public Environment getEnvironment(String name)
+    {
+        for(Environment e: environments)
+        {
+            if(e.getName().equalsIgnoreCase(name))
+            {
+                return e;
+            }
+            else
+            {
+                //System.out.println("Could not find environment in list.");
+            }
+        }
+        return null;
+    }
+    
+    /*Prints out all of the environments in the environments List<environment>*/
+    public void printEnvironments()
+    {
+        System.out.println(environments);
+    }
+    
+    /*lol*/
+    public void computeJaccardAnalysis()
+    {
+        System.out.println(environments.get(0).getName() + " and " + environments.get(1).getName() + " Cross: " +  environments.get(0).getCrossSection(environments.get(1)));
+    }
 }
 
 
