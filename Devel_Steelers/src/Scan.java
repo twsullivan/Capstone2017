@@ -3,15 +3,20 @@
  * @author Steelers
  *
  */
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.net.InetAddress;
 import java.time.Duration;
 import java.time.Instant;
-
+import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.xbill.DNS.*;
-import java.util.Iterator;
+import org.xbill.DNS.ARecord;
+import org.xbill.DNS.DClass;
+import org.xbill.DNS.Lookup;
+import org.xbill.DNS.Record;
+import org.xbill.DNS.SimpleResolver;
+import org.xbill.DNS.Type;
 
 public class Scan {
     private FileReader inputFile;
@@ -57,7 +62,7 @@ public class Scan {
     @SuppressWarnings("unchecked")
     public void run() throws Exception {
 
-	resolve = new SimpleResolver();
+	setResolve(new SimpleResolver());
 	resolve.setAddress(getEnvironmentIP());
 	Lookup.setDefaultResolver(resolve);
 
@@ -193,7 +198,7 @@ public class Scan {
 	return resolve;
     }
 
-    public void setResolve(SimpleResolver resolve) {
+    private void setResolve(SimpleResolver resolve) {
 	this.resolve = resolve;
     }
 
