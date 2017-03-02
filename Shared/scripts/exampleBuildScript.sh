@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# The project-specific build script
+# An example build script, based off of Falcon's build script.
 # Author: Austin Bolstridge
-# For project: Falcon Development
 
 ###############################################################
 #                 BEGIN USER EDITABLE OPTIONS                 #
@@ -13,12 +12,6 @@ SOURCE_DIRECTORY="./src"
 #For information on the options available, type "javac" into the terminal
 #or visit the following: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html
 OPTIONS="-g"
-
-#Which Java API version to compile against
-#We recommend using Java 7 for full backwards compatibility - however, if you use Java 8 features
-#You need to place "8" in here instead of "7"
-#In addition, we do not recommend going below Java 7, as a lot of features start disappearing in Java 6
-#JAVA_VERSION="7"
 
 #Which libraries you want to use to compile against.
 #Separate each JAR with a semicolon (;)
@@ -32,6 +25,7 @@ DESTINATION_DIRECTORY="./build/classes"
 #The destination directory for the JAR files
 JAR_DIRECTORY="./build"
 
+#What you want your JAR to be called
 JAR_NAME="DNSQueryTool"
 
 #The main class (class with the main function in it)

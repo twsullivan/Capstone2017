@@ -3,6 +3,10 @@
 # Script to build all Development (and maybe IT) projects
 # Author: Austin Bolstridge, Falcon Development Team
 
+#CONFIG
+ROOT_DIR="../../"
+
+cd ${ROOT_DIR}
 #Explaination:
 # ls -d */ lists directories only in the current directory (removing any *.sh or *.md files)
 # awk allows us to filter the results gained from the ls command
