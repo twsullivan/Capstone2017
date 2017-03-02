@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author devel_dolphins
  */
 package dolphins;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,30 +10,30 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-/**
- *
- * @author acm52
- */
-public class jsonController
+public class JsonController
 {
-    /*
-    public readFilesToList();
-    public convertFilesToStrings();
-    public convertStringsToJson();
-    public createEnvironmentsList();
-    public sortBlockedResults();
-    */
+    private String path;
     private ArrayList<String> jsonFileNames = new ArrayList<String>();
     private ArrayList<File> jsonFiles = new ArrayList<File>();
     private ArrayList<JSONObject> jsonObjects = new ArrayList<JSONObject>();
     private ArrayList<String> environmentNames = new ArrayList<String>();
-    public jsonController(){}
+    
+    public JsonController()
+    {
+        path = System.getProperty("user.dir");
+    }
+    
+    public JsonController(String inputPath)
+    {
+        path = inputPath;
+    }
+    
     
     public int findJsonFiles() //Checks the running directory for .json file names
     {
         try
         {
-        File dir = new File(System.getProperty("user.dir"));  
+        File dir = new File(path);  
         String[] filesInDirectory = dir.list();
         if(filesInDirectory == null)
         {
@@ -74,7 +72,7 @@ public class jsonController
         for(String fileNames: jsonFileNames)
         {
             try{
-            File temp = new File(fileNames);
+            File temp = new File(path + "\\" + fileNames);
             count++;
             //System.out.println("Made File Object from filename: " +fileNames);  //DEBUG TEXT
             jsonFiles.add(temp);
@@ -111,15 +109,6 @@ public class jsonController
         System.out.println("-Created ["+count+"] JSON Objects.");
     }
     
-    public void validateJSONObjects()  //checks each object has no problems
-    {
-        for(JSONObject obj: jsonObjects)
-        {
-            //make sure the parameters are valid i guess
-        }
-       
-    }
-    
     public int createEnvironmentsList()
     {
         System.out.println("CREATING ENVIRONMENTS LIST:");
@@ -139,14 +128,47 @@ public class jsonController
         return environmentNames.size();
     }
     
-    public void createEnvironmentObjects()
+    public JaccardController createJaccardController()
     {
-        //using the names from the list of environments, creates environment objects
+        JaccardController temp = new JaccardController();
+        int counter = 0;
+        for(String envName: environmentNames)
+        {
+            Environment e = new Environment(envName,counter);
+            temp.addEnvironment(e);
+            counter++;
+        }
+        return temp;
     }
     
-    public void addBlockedDomains()
+    public void addBlockedDomains(JaccardController jCon)
     {
-        //using the JSOBObjects list, based on the environment for that object, returns the STRING value of domainName for cases where queryResult = Blocked
+        for(JSONObject obj: jsonObjects)
+        {
+            try
+            {
+                JSONArray qResults = obj.getJSONArray("queryResults");      //creates a JSONArray for the queryResults attribute
+                String qEnvId = obj.getString("environmentId");         //extracts the name of the environment
+                Environment toAddto = jCon.getEnvironment(qEnvId);       //gets the environment object related to the environmentID
+                //System.out.println(toAddto);
+                for(int i = 0; i < qResults.length(); i++)
+                {    
+                    JSONObject qResultsObj = (JSONObject)qResults.get(i); 
+                    
+                    String queryStatus = qResultsObj.getString("queryResult");
+                    String domainName = qResultsObj.getString("domainName");
+                    if(queryStatus.equals("BLOCKED"))
+                    {
+                        if(!toAddto.contains(domainName))
+                        toAddto.addDomain(domainName);
+                    }
+                }                
+            }
+            catch(Exception e)
+            {
+                System.out.println("Error at:");
+                System.out.println(e);
+            }
+        }
     }
-   
 }

@@ -16,6 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
+        /*
         String[] args2 = new String[] {
             
             "/Users/nicholasnawoschik/Dropbox/UWF/Capstone/201701_Capstone/Devel_Cowboys/Test Sources/AdblockDNSList.txt",
@@ -26,8 +27,8 @@ public class Main {
             "0"
         
         };
-        
-        Console console = new Console(args2);
+        */
+        Console console = new Console(args);
     }
     
 }
