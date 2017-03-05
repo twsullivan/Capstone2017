@@ -12,7 +12,8 @@ public class JSON {
     String initialDNS;
     String listID;
     String listDescription;
-    File output = new File("JSON");
+    File output = new File("JSON.txt");
+    
    
     
     
@@ -30,6 +31,8 @@ public class JSON {
         writer.println("\"domainNameListId\": \"" + listID + "\",");
         writer.println("\"listPreparedBy\" : \"" + user + "\",");
         writer.println("\"listDescription\" : \"" + listDescription + "\",");
+        
+        writer.close();
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -38,14 +41,14 @@ public class JSON {
     
     public void printList(){
         try{
-        PrintWriter writer = new PrintWriter(output);
+        PrintWriter w = new PrintWriter(output);
         
-        writer.println("domainNames");
+        w.println("domainNames");
         
         for(int i=0; i < nameList.size(); i++){
-            writer.println("\"" + nameList.get(i) + "\",");
+            w.println("\"" + nameList.get(i) + "\",");
         }
-        
+        w.close();
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
