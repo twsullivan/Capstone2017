@@ -91,4 +91,10 @@ public class Driver
     public ArrayList getNameList(){
         return nameList;
     }
+    
+    public void usageDump(){
+        System.out.println("Usage dump");
+        System.out.println("Java -jar domainscraper.jar  <URL> <output file name><Max number of domains>");
+        System.exit(0);
+    }
 }
