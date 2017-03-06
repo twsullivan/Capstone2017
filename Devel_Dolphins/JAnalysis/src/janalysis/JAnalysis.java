@@ -3,7 +3,7 @@
  * @author devel_dolphins
  */
 
-package dolphins;	
+package janalysis;	
 public class JAnalysis
 {   
     public static void main(String[] args) throws Exception

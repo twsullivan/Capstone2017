@@ -3,7 +3,7 @@
  * @author devel_dolphins
  */
 
-package dolphins;
+package janalysis;
 import java.util.ArrayList;
 import java.util.List;
 
