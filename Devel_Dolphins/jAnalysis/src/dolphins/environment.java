@@ -6,6 +6,7 @@
 package dolphins;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Environment
 {
     private String name; //name of the environment
