@@ -10,7 +10,7 @@ public class JAnalysis
     {
         if(args.length > 0)
         {
-            if(args[0].equalsIgnoreCase("help"))
+            if(args[0].equalsIgnoreCase("--help") || args[0].equalsIgnoreCase("help"))
                 printHelp();
             else
                 startProcess(args[0]);
