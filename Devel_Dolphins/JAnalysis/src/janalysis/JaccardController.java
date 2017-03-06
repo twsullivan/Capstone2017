@@ -47,27 +47,7 @@ public class JaccardController //Given environments, this is what will do the st
     
     public void computeJaccardAnalysis()
     {
-        int totalEnvs = environments.size();
-        //System.out.println(totalEnvs);
-        for(int i = 0; i < totalEnvs; i++)
-        {
-            for(int j = 0; j < totalEnvs; j++)
-            {
-                if(j>i && j != i)
-                {
-                    System.out.println("["+i+"]: "+ environments.get(i).getName()+ ", Total Blocked: " + environments.get(i).getTotalNumOfDomains() + "\n["+j+"]: "+ environments.get(j).getName() + ", Total Blocked: " + environments.get(j).getTotalNumOfDomains());
-                    
-                    int total = environments.get(i).getTotalNumOfDomains() + environments.get(j).getTotalNumOfDomains();
-                    int cross = environments.get(i).getCrossSection(environments.get(j));
-                    System.out.println("Cross Section: " + cross);
-                    total = total - cross;
-                    System.out.println("Unique Environments In Both (Total Sum):" + total);
-                    double jaccard = (double)cross/(double)total;
-                    System.out.println("Jaccard Index: " + jaccard + "\n");
-                }
-            }
-        }
-        //System.out.println( + " and " + environments.get(1).getName() + " Cross: " +  environments.get(0).getCrossSection(environments.get(1)));
+        //
     }
 }
 
