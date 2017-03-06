@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Tim Sullivan
+ * @author Tim Sullivan, Austin Bolstridge
  */
 public class DNSResourceRecordPointer 
 {
@@ -21,5 +21,10 @@ public class DNSResourceRecordPointer
         {
             Logger.getLogger(DNSResourceRecordNameServer.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+        
+    @Override
+    public String toString() {
+        return ptrdName;
     }
 }

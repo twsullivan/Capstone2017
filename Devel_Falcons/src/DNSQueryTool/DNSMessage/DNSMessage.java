@@ -26,13 +26,13 @@ public class DNSMessage {
     {
         DNSMessageHeaderFlags flags = new DNSMessageHeaderFlags();
         
-        flags.qr = 0;
-        flags.opCode = DNSMessageHeaderFlagOpcodes.QUERY;
-        flags.aa = 0;
-        flags.tc = 0;
-        flags.rd = 1;
-        flags.ra = 0;
-        flags.rCode = DNSMessageHeaderFlagRCodes.NO_ERROR;
+        flags.setQr(0);
+        flags.setOpCode(DNSMessageHeaderFlagOpcodes.QUERY);
+        flags.setAa(0);
+        flags.setTc(0);
+        flags.setRd(1);
+        flags.setRa(0);
+        flags.setrCode(DNSMessageHeaderFlagRCodes.NO_ERROR);
         
         header.setId(id);
         header.setFlags(flags);

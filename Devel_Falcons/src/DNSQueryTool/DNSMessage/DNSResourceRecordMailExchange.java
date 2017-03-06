@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Tim Sullivna
+ * @author Tim Sullivan, Austin Bolstridge
  */
 public class DNSResourceRecordMailExchange {
     int preference;
@@ -26,5 +26,19 @@ public class DNSResourceRecordMailExchange {
         {
             Logger.getLogger(DNSResourceRecordNameServer.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    /**
+     * @return the preference
+     */
+    public int getPreference() {
+        return preference;
+    }
+
+    /**
+     * @return the exchange
+     */
+    public String getExchange() {
+        return exchange;
     }
 }
