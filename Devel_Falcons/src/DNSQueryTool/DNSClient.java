@@ -112,6 +112,10 @@ public class DNSClient {
     private void processArgs(String[] args) {
         int count = 0;
 
+        if ("-h".equals(args[count]) || "--help".equals(args[count])) {
+            UsageDump();
+        }
+        
         if (args.length < 10 || args.length > 11) {
             System.out.println("Wrong number of arguments.");
             UsageDump();
@@ -202,12 +206,13 @@ public class DNSClient {
     private void UsageDump() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nUsage: java -jar DNSQueryTool.jar -i <domainNames> -o <queryResults> -e <dnsEnvironment> -t <queriesPerSecond> -n <\"Name\"> -q (optional)\n\n");
+        sb.append("-h    Help - Displays this usage dump.\n");
         sb.append("-i    Input filename - The file containing the domain names.\n");
         sb.append("-o    Output filename - The file containing the results of the queries.\n");
         sb.append("-e    Environment - The DNS environment that will be queried. (GCA:8.8.8.8)\n");
         sb.append("-t    Throttle value - Max queries per second.\n");
         sb.append("-n    Name - Name of person running queries\n");
-        sb.append("-q    Optional flag; quiet if in command line. IF not there then queries left displayed.\n\n");
+        sb.append("-q    Optional flag; If in command line then no output is displayed.\n\n");
 
         System.out.print(sb);
         System.exit(0);
