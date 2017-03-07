@@ -17,41 +17,49 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.io.*;
+import java.util.ArrayList;
 
 public class Results 
 {
-    public Results(int total, int crossSection)
+    
+    private ArrayList<Integer> results = new ArrayList<>();
+    
+    public Results()
     {
-     double JCard;
-     JCard = crossSection/total;
+     
     }
     
-    public void output(double JCard)
+    public void JaccardCalculation(int a, int b, int crossSection){
+        int sumdomains = a + b;
+        int total = sumdomains - crossSection;
+        int result = crossSection/total;
+        //return result;
+    }
+    
+    public ArrayList<Integer> addResultsToList(ArrayList<Integer> tempResult, int result)
     {
+        for(int i: tempResult){
+            tempResult.add(result);
+        }
+        return tempResult;
+    }
     
-    File file = new File("JaccardIndexReport.txt");
-        if (file.createNewFile())
+    public void output(ArrayList<Integer> tempResult2)
+    {
+        Writer writer = null;
+        //
+        try{
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("JaccardReport.txt"), "utf-8"));
+            for(int i: tempResult2)
+            {
+                int result = tempResult2.get(i);
+                writer.write(result);
+            }
+            writer.close();
+        }
+        catch(IOException e)
         {
-        System.out.println("File is created!");
+            System.out.println("Error\n");
         }
-        else{
-        System.out.println("File already exists.");
-        }
-        
-    //FileWriter fileWriter = new FileWriter(file);
-        try (Writer writer = new BufferedWriter(new FileWriter(file))) 
-        {
-            String contents = (environments.get(0).getName() + " and " + environments.get(1).getName() + " Cross: " +  environments.get(0).getCrossSection(environments.get(1)));
-            System.in.println("Jaccard Index:" + JCard + "\n");
-            writer.write(contents);
-        } catch (IOException e) {
-            System.out.println("Error:Cannot output to file.\n");
-        }
-    
-        
-    FileWriter writer = new FileWriter(file);
-    writer.write("Test data");
-    writer.close();
- 
     }
 }
