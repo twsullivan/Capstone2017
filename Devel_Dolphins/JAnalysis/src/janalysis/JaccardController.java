@@ -63,6 +63,7 @@ public class JaccardController //Given environments, this is what will do the st
                 //totalDomain = getTotalDomain(xDomain, yDomain); //khang, we'll be pushing these total to the result class
                 //total = totalDomain - crossSection;
                 
+                
             }
         }
     }
