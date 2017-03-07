@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class Results 
 {
     
-    private ArrayList<Integer> results = new ArrayList<>();
+    private ArrayList<Integer> results = new ArrayList<Integer>();
     
     public Results()
     {
@@ -33,6 +33,7 @@ public class Results
         int sumdomains = a + b;
         int total = sumdomains - crossSection;
         int result = crossSection/total;
+        addResultsToList(results, result);
         //return result;
     }
     

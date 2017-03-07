@@ -48,20 +48,20 @@ public class JaccardController //Given environments, this is what will do the st
     public void computeJaccardAnalysis()
     {
         Results result = new Results();
+        ArrayList <String> domainNames = new ArrayList<String>();
         int x, y, xID, yID, xDomain, yDomain, total, totalDomain, crossSection;
         String xName, yName;
         for(x=0; x < environments.size(); x++){
             xName = environments.get(x).getName();
             xID = environments.get(x).getID();
             for(y=1; y < environments.size(); y++){
+                
                 yName = environments.get(y).getName();
                 yID = environments.get(y).getID();
                 xDomain = environments.get(x).getTotalNumOfDomains();
                 yDomain = environments.get(y).getTotalNumOfDomains();
                 crossSection = environments.get(x).getCrossSection(environments.get(y));
-                
-                
-                
+                result.JaccardCalculation(xDomain, yDomain, crossSection);
             }
         }
     }
