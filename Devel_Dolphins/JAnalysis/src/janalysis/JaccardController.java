@@ -47,8 +47,7 @@ public class JaccardController //Given environments, this is what will do the st
     
     public void computeJaccardAnalysis()
     {
-        //System.out.println(environments.get(0).getName() + " and " + environments.get(1).getName() + " Cross: " +  environments.get(0).getCrossSection(environments.get(1)));
-        //Environment e = new Environment();
+        Results result = new Results();
         int x, y, xID, yID, xDomain, yDomain, total, totalDomain, crossSection;
         String xName, yName;
         for(x=0; x < environments.size(); x++){
@@ -60,8 +59,7 @@ public class JaccardController //Given environments, this is what will do the st
                 xDomain = environments.get(x).getTotalNumOfDomains();
                 yDomain = environments.get(y).getTotalNumOfDomains();
                 crossSection = environments.get(x).getCrossSection(environments.get(y));
-                //totalDomain = getTotalDomain(xDomain, yDomain); //khang, we'll be pushing these total to the result class
-                //total = totalDomain - crossSection;
+                
                 
                 
             }
