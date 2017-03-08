@@ -32,10 +32,10 @@ do
 	cd ${TARGET_DIR}
 
 	#If the project-specific build script exists, AND it actually has content...
-	if [[ -e "build.sh" && -s "build.sh" ]]
+	if [[ -e "myBuild.sh" && -s "myBuild.sh" ]]
 	then
 		#...Execute the script...
-		./build.sh
+		./myBuild.sh
 	else
 		#...Otherwise, alert that this team doesn't have an auto-build script defined.
 		echo ${TARGET_DIR}" does not have a build script defined. Not building their project."
