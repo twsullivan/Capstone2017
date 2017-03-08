@@ -14,13 +14,20 @@ public class JSON {
     String listDescription;
     File output = new File("JSON.txt");
     
-   
+    public JSON()
+    {
+        user = "";
+        date = "";
+        initialDNS = "";
+        listID= "";
+        listDescription = "";
+    }
     
     
     public void makeJSON(){
         
         printInfo();
-        printList();       
+        //printList();       
     }
     
     public void printInfo(){
@@ -28,9 +35,20 @@ public class JSON {
         PrintWriter writer = new PrintWriter(output);
         
         writer.println("{");
-        writer.println("\"domainNameListId\": \"" + listID + "\",");
-        writer.println("\"listPreparedBy\" : \"" + user + "\",");
-        writer.println("\"listDescription\" : \"" + listDescription + "\",");
+        writer.println("\t\"domainNameListId\": \"" + listID + "\",");
+        writer.println("\t\"listPreparedBy\" : \"" + user + "\",");
+        writer.println("\t\"listDescription\" : \"" + listDescription + "\",");
+        
+        // ORIGINALLY INTENTED FOR OTHER METHOD
+        writer.println("\tdomainNames\": [");
+        
+        for(int i=0; i < nameList.size(); i++){
+            writer.println("\t\t\"" + nameList.get(i) + "\",");
+        }
+        writer.println("\t]");
+        writer.close(); 
+        //END OF TROUBLESHOOTING SECTION
+        
         
         writer.close();
         }
@@ -43,11 +61,12 @@ public class JSON {
         try{
         PrintWriter w = new PrintWriter(output);
         
-        w.println("domainNames");
+        w.println("\tdomainNames\": [");
         
         for(int i=0; i < nameList.size(); i++){
-            w.println("\"" + nameList.get(i) + "\",");
+            w.println("\t\t\"" + nameList.get(i) + "\",");
         }
+        w.println("\t]");
         w.close();
         }
         catch(FileNotFoundException e){
