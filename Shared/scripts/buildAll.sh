@@ -7,6 +7,8 @@
 ROOT_DIR="../../"
 
 cd ${ROOT_DIR}
+
+git pull
 #Explaination:
 # ls -d */ lists directories only in the current directory (removing any *.sh or *.md files)
 # awk allows us to filter the results gained from the ls command
@@ -34,6 +36,10 @@ do
 	#If the project-specific build script exists, AND it actually has content...
 	if [[ -e "myBuild.sh" && -s "myBuild.sh" ]]
 	then
+		cat ./myBuild.sh | tr -d '\r' > temp.sh
+		mv temp.sh myBuild.sh
+		git add ./myBuild.sh
+		git commit -m "Replaces \r\n with \n in ${TARGET_DIR}'s build script.'"
 		#...Execute the script...
 		./myBuild.sh
 	else
@@ -43,3 +49,11 @@ do
 	#Change back to our "root" directory (not actually root, but whatever)
 	cd ..
 done #End of our for loop
+
+git add .
+
+DATE="$(date --rfc-3339='seconds')"
+
+git commit -m "Auto-build auto-commit generated on ${DATE}"
+
+#git push
