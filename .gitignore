@@ -3,3 +3,18 @@
 /Devel_Cowboys/DomainFileParser/dist/
 /Devel_Cowboys/DomainFileParser/build/
 /Devel_Cowboys/DomainFileParser/nbproject/private/
+
+#Prevent class files from making it to git and polluting commits (and the repository)
+#especially considering we have to decompose any library JARs into its classes.
+*.class
+
+#Prevent any MANIFEST files from making its way to the repository
+**/build/**/*.MF
+
+#Prevent any properties located in the build folders from making it to the repository
+#This is set up in this way so that Netbeans projects still sync properly
+**/build/**/*.properties
+
+#Prevent any XML files located in build folders from making it to the repository
+#This is set up in this way so that Netbeans projects still sync properly
+**/build/**/*.xml
