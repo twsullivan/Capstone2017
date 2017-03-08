@@ -68,7 +68,7 @@ public class DNSMessage {
         baos.write((0x0000 & 0x00FF));
 
         // Authority Record Count: Specifies the number of resource records in the Authority section of 
-        // the message. (“NS” stands for “name server”)
+        // the message. ("NS" stands for "name server")
         baos.write((0x0000 & 0xFF00) >> 8);
         baos.write((0x0000 & 0x00FF));
 
