@@ -61,7 +61,7 @@ public class JaccardController //Given environments, this is what will do the st
                 xDomain = environments.get(x).getTotalNumOfDomains();
                 yDomain = environments.get(y).getTotalNumOfDomains();
                 crossSection = environments.get(x).getCrossSection(environments.get(y));
-                result.JaccardCalculation(xDomain, yDomain, crossSection);
+                result.JaccardResults(xDomain, yDomain, crossSection);
             }
         }
     }

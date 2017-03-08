@@ -29,23 +29,45 @@ public class Results
      
     }
     
-    public void JaccardCalculation(int a, int b, int crossSection){
+    public void JaccardResults(int a, int b, int crossSection){
         int sumdomains = a + b;
         int total = sumdomains - crossSection;
         int result = crossSection/total;
-        addResultsToList(results, result);
+        for(int i: results){
+            results.add(result);
+        }
+        //output(results);
+        //addResultsToList(results, result);
         //return result;
+        Writer writer = null;
+        //
+        try{
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("JaccardReport.txt"), "utf-8"));
+            for(int i: results)
+            {
+                int result2 = results.get(i);
+                writer.write("Jaccard analysis results for " + a + " and " + b + " is: ");
+                writer.write(result2);
+                writer.write("/n");
+            }
+            writer.close();
+        }
+        catch(IOException e)
+        {
+            //e.printStackTrace();
+            System.out.println("Error\n");
+        }
     }
     
-    public ArrayList<Integer> addResultsToList(ArrayList<Integer> tempResult, int result)
+    /*public ArrayList<Integer> addResultsToList(ArrayList<Integer> tempResult, int result)
     {
         for(int i: tempResult){
             tempResult.add(result);
         }
         return tempResult;
-    }
+    }*/
     
-    public void output(ArrayList<Integer> tempResult2)
+    /*public void output(ArrayList<Integer> tempResult2)
     {
         Writer writer = null;
         //
@@ -62,5 +84,5 @@ public class Results
         {
             System.out.println("Error\n");
         }
-    }
+    }*/
 }
