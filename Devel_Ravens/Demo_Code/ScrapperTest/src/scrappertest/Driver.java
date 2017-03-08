@@ -78,6 +78,14 @@ public class Driver
     public void outputJSONFile()
     {
         System.out.println("Use JSON Class, export DNS list to JSON file");
+        JSON j = new JSON();
+        
+        j.setNameList(nameList);
+        j.setUser(user);
+        j.setListID(listId);
+        j.setListDescription(listDesc);
+        j.setDate(date);
+        j.makeJSON();
     }
     
     public void showList()
