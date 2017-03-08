@@ -18,13 +18,7 @@ public class InternetLog {
     }
     
     public static String[] parse(String[] lines) {
-        List<String> lineList = new ArrayList<>();
         
-        for (int i = 0; i < lines.length; i++)
-        {
-            lineList.add(lines[i]);
-        }
-        
-        return lineList.toArray(new String[0]);
+        return lines;
     }
 }
