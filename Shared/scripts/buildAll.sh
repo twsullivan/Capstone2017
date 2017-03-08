@@ -56,4 +56,4 @@ DATE="$(date --rfc-3339='seconds')"
 
 git commit -m "Auto-build auto-commit generated on ${DATE}"
 
-#git push
+git push
