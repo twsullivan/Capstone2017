@@ -1,0 +1,27 @@
+{
+ "environmentId" : "A",
+ "domainNameListId" : "SourceOut01",
+ "queriesRunBy" : "Guy McGee",
+ "queryResults": [
+	{
+	"domainName" : "one",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+ 	"domainName" : "two",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "error"
+	},
+	{
+	"domainName" : "three",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+ 	"domainName" : "four",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+]
+}

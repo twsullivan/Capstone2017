@@ -47,21 +47,22 @@ public class JaccardController //Given environments, this is what will do the st
     
     public void computeJaccardAnalysis()
     {
-        Results result = new Results();
-        ArrayList <String> domainNames = new ArrayList<String>();
-        int x, y, xID, yID, xDomain, yDomain, total, totalDomain, crossSection;
-        String xName, yName;
-        for(x=0; x < environments.size(); x++){
-            xName = environments.get(x).getName();
-            xID = environments.get(x).getID();
-            for(y=1; y < environments.size(); y++){
-                
-                yName = environments.get(y).getName();
-                yID = environments.get(y).getID();
-                xDomain = environments.get(x).getTotalNumOfDomains();
-                yDomain = environments.get(y).getTotalNumOfDomains();
-                crossSection = environments.get(x).getCrossSection(environments.get(y));
-                result.JaccardResults(xDomain, yDomain, crossSection);
+        int totalEnvs = environments.size();
+        for(int i = 0; i < totalEnvs; i++)
+        {
+            for(int j = 0; j < totalEnvs; j++)
+            {
+                if(j>i && j != i)
+                {
+                    System.out.println("\n["+i+"]: Environment Name: "+ environments.get(i).getName()+ ", Total # Of Blocked Domains: " + environments.get(i).getTotalNumOfDomains() + "\n["+j+"]: Environment Name: "+ environments.get(j).getName() + ", Total # Of Blocked Domains: " + environments.get(j).getTotalNumOfDomains());
+                    int total = environments.get(i).getTotalNumOfDomains() + environments.get(j).getTotalNumOfDomains();
+                    int cross = environments.get(i).getCrossSection(environments.get(j));
+                    System.out.println("Cross Section Of " + environments.get(i).getName()+ " and " + environments.get(j).getName() +": "+ cross);
+                    total = total - cross;
+                    System.out.println("Unique Environments Blocked In Both (Total Sum):" + total);
+                    double jaccard = (double)cross/(double)total;
+                    System.out.println("Jaccard Index Of " + environments.get(i).getName()+ "-" + environments.get(j).getName() +": " + jaccard);
+                }
             }
         }
     }
