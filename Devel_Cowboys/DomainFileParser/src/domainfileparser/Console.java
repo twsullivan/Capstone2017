@@ -92,7 +92,7 @@ public class Console {
 
         try
         {
-            Class parserClass = Class.forName("domainfileparser." + parserClassName);
+            Class<?> parserClass = Class.forName("domainfileparser." + parserClassName);
             Method parseMethod = parserClass.getMethod("parse", String[].class);
             Object result = parseMethod.invoke(null, (Object) inputFileContents);
             
