@@ -8,8 +8,6 @@ public class JSON {
     
     ArrayList nameList;
     String user;
-    String date;
-    String initialDNS;
     String listID;
     String listDescription;
     File output = new File("JSON.txt");
@@ -17,8 +15,6 @@ public class JSON {
     public JSON()
     {
         user = "";
-        date = "";
-        initialDNS = "";
         listID= "";
         listDescription = "";
     }
@@ -26,20 +22,16 @@ public class JSON {
     
     public void makeJSON(){
         
-        printInfo();
-        //printList();       
-    }
-    
-    public void printInfo(){
         try{
         PrintWriter writer = new PrintWriter(output);
         
+        // *prints list, user id, & description
         writer.println("{");
         writer.println("\t\"domainNameListId\": \"" + listID + "\",");
         writer.println("\t\"listPreparedBy\" : \"" + user + "\",");
         writer.println("\t\"listDescription\" : \"" + listDescription + "\",");
         
-        // ORIGINALLY INTENTED FOR OTHER METHOD
+        // * Prints list content...
         writer.println("\tdomainNames\": [");
         
         for(int i=0; i < nameList.size(); i++){
@@ -47,27 +39,10 @@ public class JSON {
         }
         writer.println("\t]");
         writer.close(); 
-        //END OF TROUBLESHOOTING SECTION
+        
         
         
         writer.close();
-        }
-        catch(FileNotFoundException e){
-            System.out.println("File was not found.");
-        }
-    }
-    
-    public void printList(){
-        try{
-        PrintWriter w = new PrintWriter(output);
-        
-        w.println("\tdomainNames\": [");
-        
-        for(int i=0; i < nameList.size(); i++){
-            w.println("\t\t\"" + nameList.get(i) + "\",");
-        }
-        w.println("\t]");
-        w.close();
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -81,9 +56,7 @@ public class JSON {
     public void setUser(String passed){
         user = passed;
     }
-    public void setDate(String passed){
-        date = passed;
-    }
+    
     public void setListID(String passed){
         listID = passed;
     }
