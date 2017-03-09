@@ -7,23 +7,23 @@
 #                 BEGIN USER EDITABLE OPTIONS                 #
 ###############################################################
 #The location of all of your source files
-SOURCE_DIRECTORY="DomainFileParser/src/domainfileparser"
+SOURCE_DIRECTORY="./DomainFileParser/src/domainfileparser"
 
 #For information on the options available, type "javac" into the terminal
 #or visit the following: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html
-OPTIONS="-g"
+OPTIONS="-g -Xlint"
 
 #Which libraries you want to use to compile against.
 #Separate each JAR with a semicolon (;)
 #For example: 
 #	CLASSPATH="./libs/gson.jar;./libs/dns.jar"
-CLASSPATH="DomainFileParser/src/libraries/minimal-json-0.9.4.jar"
+CLASSPATH="./DomainFileParser/src/libraries/minimal-json-0.9.4.jar"
 
 #The destination directory for the .class files
-DESTINATION_DIRECTORY="build/classes"
+DESTINATION_DIRECTORY="./build/classes"
 
 #The destination directory for the JAR files
-JAR_DIRECTORY="build/"
+JAR_DIRECTORY="./build/"
 
 #What you want your JAR to be called
 JAR_NAME="DomainFileParser"

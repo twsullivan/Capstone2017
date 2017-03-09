@@ -1,0 +1,13 @@
+//
+// Do any local configuration here
+//
+
+
+zone "1." {
+	type master;
+	file "/etc/bind/zones/db.1";
+};
+
+// consider adding the 1918 zones here, if they are not used in your 
+// orginization
+// include "/etc/bind/zones.rfc1918";

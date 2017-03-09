@@ -24,7 +24,7 @@ OPTIONS="-g"
 #Separate each JAR with a semicolon (;)
 #For example: 
 #	CLASSPATH="./libs/gson.jar;./libs/dns.jar"
-CLASSPATH="./src/gson-2.6.2.jar"
+CLASSPATH="./src/libs/gson-2.6.2.jar"
 
 #The destination directory for the .class files
 DESTINATION_DIRECTORY="./build/classes"
