@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Driver 
 {
     private String user;
-    private String date;
+    //private String date;
     private String initialDNS;
     private String listId;
     private String listDesc;
@@ -27,7 +27,7 @@ public class Driver
     public Driver()
     {
         user = "";
-        date = "";
+        //date = "";
         initialDNS = "";
         listId = "";
         listDesc = "";
@@ -38,7 +38,7 @@ public class Driver
     public Driver(String use, String dat, String iDNS, String list, String desc, int n)
     {
         user = use;
-        date = dat;
+        //date = dat;
         initialDNS = iDNS;
         listId = list;
         listDesc = desc;
@@ -84,7 +84,7 @@ public class Driver
         j.setUser(user);
         j.setListID(listId);
         j.setListDescription(listDesc);
-        j.setDate(date);
+        //j.setDate(date);
         j.makeJSON();
     }
     
