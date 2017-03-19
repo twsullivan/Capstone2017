@@ -111,5 +111,69 @@ public class Main {
     {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v] [-o] <FILEPATH>", header, options, footer);
-    }  
+    }
+    
+    //TESTABLE CLONES
+    public static boolean parseCmdsT(Options opt, String[] args, String header, String footer)
+    {
+        boolean didItWork = false;
+        
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd;
+
+        try 
+        {
+            cmd = parser.parse(opt, args);
+            
+            String inputFilePath = cmd.getOptionValue("input");
+            String outputFilePath = cmd.getOptionValue("output");
+            
+            FolderReader jsonReader = new FolderReader(inputFilePath);
+            List<List<Double>> responseTimes = jsonReader.getEnvResponseTimes();  
+            List<List<Double>> statisticsForOutput = new ArrayList();
+            
+            for(int i = 0; i < responseTimes.size(); i++)
+            {
+                ArrayList<Double> parsedTempVals = new ArrayList();
+                for(int k = 0; k < responseTimes.get(i).size(); k++)
+                {
+                    parsedTempVals.add(responseTimes.get(i).get(k));
+                }
+                StatsCalculator statsObj = new StatsCalculator(parsedTempVals);
+                statsObj.calculateQueryStatistics();
+                List<Double> listOfStatistics = new ArrayList();
+                    
+                listOfStatistics.add(statsObj.getMean());
+                listOfStatistics.add(statsObj.getMedian());
+                listOfStatistics.add(statsObj.getStandardDeviation());
+                listOfStatistics.add(statsObj.getPercent98());
+                        
+                statisticsForOutput.add(listOfStatistics);
+            }
+                 
+            FileWriter writeObj = new FileWriter(statisticsForOutput,outputFilePath);
+                           
+        }
+        catch (IOException | ParseException e)
+        {
+            System.out.println(e.getMessage());
+            displayHelp(header, opt, footer);
+        }
+        didItWork = true; 
+        return didItWork;
+    }
+    
+    public static boolean displayHelpT(String header, Options options, String footer)
+    {
+        boolean didItWork = false;   
+        
+        HelpFormatter formatter = new HelpFormatter();
+        formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v] [-o] <FILEPATH>", header, options, footer);
+        
+        didItWork = true;
+        
+        return didItWork;
+    }
+    
+    
 }
