@@ -59,7 +59,11 @@ public class DNSClient {
         // Creat thread pool
         ThreadPoolExecutor executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
                 KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(dnsQueryInput.domainNames.length),
+<<<<<<< HEAD
                 threadFactory, rejectionHandler);
+=======
+                threadFactory);
+>>>>>>> 75887975301f87ea0ec4fd6cd450aa1b82c90367
 
         MonitorThread monitor = new MonitorThread(executor, 1);
         Thread monitorThread = new Thread(monitor);
@@ -114,8 +118,10 @@ public class DNSClient {
     private void processArgs(String[] args) {
         int count = 0;
 
-        if ("-h".equals(args[count]) || "--help".equals(args[count])) {
-            UsageDump();
+        if (args.length > 0) {
+            if ("-h".equals(args[count]) || "--help".equals(args[count])) {
+                UsageDump();
+            }
         }
         
         if (args.length < 10 || args.length > 11) {

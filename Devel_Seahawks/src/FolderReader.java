@@ -100,6 +100,87 @@ public class FolderReader
         }
         this.envResponseTimes = queryEnvironments;
     }
+    
+    //TESTABLE CLONES
+    public boolean getJSONSInDirT(String path) throws IOException
+    {
+        boolean didItWork = false;
+        File dir = new File(path);
+      
+        if (dir.exists())
+        {
+            File[] tempFileList = dir.listFiles(new FilenameFilter()
+            {
+                @Override
+                public boolean accept(File dir, String name)
+                {
+                    return name.endsWith(".JSON") || name.endsWith(".json");
+                }
+            });
+            didItWork = true;
+            return didItWork;
+        }
+        else
+        {
+            throw new IOException("Error: Directory not found.");
+        }   
+    }
+    
+    public boolean setEnvResponseTimesT(File[] filelist, List<List<Double>> envResponseTimesT) throws FileNotFoundException
+    {  
+        boolean didItWork = false;
+        List<List<Double>> queryEnvironments = new ArrayList<>();
+        
+        for (File fileListIter : fileList) 
+        {
+            Reader reader = new FileReader(fileListIter);
+
+            JsonParser parser = new JsonParser();
+            JsonObject obj = (JsonObject)parser.parse(reader);
+            JsonArray arr = obj.getAsJsonArray("queryResults");
+            Gson gson = new Gson();
+
+            String eId = obj.get("environmentId").getAsString();
+            String dListId = obj.get("domainNameListId").getAsString();
+            String qRunBy = obj.get("queriesRunBy").getAsString();
+            ArrayList qRes = gson.fromJson(arr, ArrayList.class);
+       
+            Object[] tempArr = qRes.toArray();
+            String[] stringOfJsonObjectsArr = new String[tempArr.length];
+            ArrayList<String[]> queryResultElements = new ArrayList<>();
+            
+            List<Double> responseTimes = new ArrayList<>();
+            
+            
+            for(int i = 0; i < tempArr.length; i++)
+            {
+                stringOfJsonObjectsArr[i] = tempArr[i].toString();
+            }
+            
+            for (String stringOfJsonObjectsArr1 : stringOfJsonObjectsArr) 
+            {
+                StringBuffer buff;
+                String[] splitElement = stringOfJsonObjectsArr1.split(", ");
+                String tempQueryResult = splitElement[1];
+                if(tempQueryResult.substring(0,14).equals("responseTimeMs"))
+                {
+                    buff = new StringBuffer(tempQueryResult);
+                    buff.delete(0, 15);
+                    String buffConverted = buff.toString();  
+                    Double val = Double.parseDouble(buffConverted);
+                    responseTimes.add(val);
+                }
+            }
+            queryEnvironments.add(responseTimes);
+            didItWork = true;
+        }
+        envResponseTimesT = queryEnvironments;
+        
+        return didItWork;
+    }
+    
+    
+    
 }
 
 

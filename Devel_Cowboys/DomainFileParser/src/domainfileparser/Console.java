@@ -23,7 +23,7 @@ public class Console {
     private final String PRODUCT_NAME = "Domain File Parser";
     
     // Product version to show in welcome message
-    private final String PRODUCT_VERSION = "v1.1";
+    private final String PRODUCT_VERSION = "v1.2";
     
     // Names of options
     private final String[] OPTIONS_NAMES = new String[] {"Input File","Output File Path","Name",
@@ -92,7 +92,7 @@ public class Console {
 
         try
         {
-            Class parserClass = Class.forName("domainfileparser." + parserClassName);
+            Class<?> parserClass = Class.forName("domainfileparser." + parserClassName);
             Method parseMethod = parserClass.getMethod("parse", String[].class);
             Object result = parseMethod.invoke(null, (Object) inputFileContents);
             
@@ -373,7 +373,7 @@ public class Console {
         System.out.println("Output File Path (required): Absolute folder path to save the output file containing domains in JSON format. The file name will be generated automatically so it does not need to be included. Output file name example: domainparser_results_1486000110.json\n");
         System.out.println("Name (required): The name of the user that performed the web scrape.\n");
         System.out.println("Description (required): Information about the domain list and its origin.\n");
-        System.out.println("File Type (required): Which log format is being processed (AdBlock, DNSBlackHole).\n");
+        System.out.println("File Type (required): Which log format is being processed (AdBlock, DNSBlackHole, InternetLog).\n");
         System.out.println("Max Results (required): Maximum number of results to output. If set to 0, result set is unlimited.\n\n");
         
         System.out.println("Example (Windows): java -jar DomainFileParser.jar \"C:\\Users\\bob\\Desktop\\domains.txt\" "

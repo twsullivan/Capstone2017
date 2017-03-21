@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Delikarl/Desktop/Capstone/201701_Capstone/Devel_Dolphins/jAnalysis/src/dolphins/JAnalysis.java</file>
-            <file>file:/C:/Users/Delikarl/Desktop/Capstone/201701_Capstone/Devel_Dolphins/jAnalysis/src/dolphins/environment.java</file>
-            <file>file:/C:/Users/Delikarl/Desktop/Capstone/201701_Capstone/Devel_Dolphins/jAnalysis/src/dolphins/jsonController.java</file>
-            <file>file:/C:/Users/Delikarl/Desktop/Capstone/201701_Capstone/Devel_Dolphins/jAnalysis/src/dolphins/jaccardController.java</file>
+            <file>file:/C:/Users/acm52/201701_Capstone/Devel_Dolphins/JAnalysis/src/janalysis/JaccardController.java</file>
+            <file>file:/C:/Users/acm52/201701_Capstone/Devel_Dolphins/JAnalysis/src/janalysis/JAnalysis.java</file>
+            <file>file:/C:/Users/acm52/201701_Capstone/Devel_Dolphins/JAnalysis/src/janalysis/JsonController.java</file>
+            <file>file:/C:/Users/acm52/201701_Capstone/Devel_Dolphins/JAnalysis/src/janalysis/Environment.java</file>
         </group>
     </open-files>
 </project-private>

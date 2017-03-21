@@ -1,15 +1,11 @@
-
-
 import java.util.ArrayList;
 
 public class QResults 
 {
-
 	private String environmentId;
 	private String domainNameListId;
 	private String queriesRunBy;
 	private ArrayList<InputFile> queryResults;
-
 
     public QResults()
     {
@@ -64,6 +60,51 @@ public class QResults
     public void setQueryResults(ArrayList<InputFile> queryResults)
     {
         this.queryResults = queryResults;
+    }
+    
+    //TESTABLE CLONES
+    public static boolean setenvironmentIdT(String environmentId)
+    {
+        boolean didItWork = false;
+        
+        environmentId = environmentId;
+        
+        didItWork = true;
+        
+        return didItWork;
+    }
+
+    public static boolean setDomainNameListIdT(String domainNameListId)
+    {
+        boolean didItWork = false;
+        
+        domainNameListId = domainNameListId;
+        
+        didItWork = true;
+        
+        return didItWork;
+    }
+
+    public static boolean setQueriesRunByT(String queriesRunBy)
+    {
+        boolean didItWork = false;
+        
+        queriesRunBy = queriesRunBy;
+        
+        didItWork = true;
+        
+        return didItWork;
+    }
+    
+    public static boolean setQueryResultsT(ArrayList<InputFile> queryResults)
+    {
+        boolean didItWork = false;
+        
+        queryResults = queryResults;
+        
+        didItWork = true;
+        
+        return didItWork;
     }
        
 }

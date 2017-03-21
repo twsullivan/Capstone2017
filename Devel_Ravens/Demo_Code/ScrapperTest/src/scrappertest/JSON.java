@@ -8,47 +8,41 @@ public class JSON {
     
     ArrayList nameList;
     String user;
-    String date;
-    String initialDNS;
     String listID;
     String listDescription;
     File output = new File("JSON.txt");
     
-   
+    public JSON()
+    {
+        user = "";
+        listID= "";
+        listDescription = "";
+    }
     
     
     public void makeJSON(){
         
-        printInfo();
-        printList();       
-    }
-    
-    public void printInfo(){
         try{
         PrintWriter writer = new PrintWriter(output);
         
+        // *prints list, user id, & description
         writer.println("{");
-        writer.println("\"domainNameListId\": \"" + listID + "\",");
-        writer.println("\"listPreparedBy\" : \"" + user + "\",");
-        writer.println("\"listDescription\" : \"" + listDescription + "\",");
+        writer.println("\t\"domainNameListId\": \"" + listID + "\",");
+        writer.println("\t\"listPreparedBy\" : \"" + user + "\",");
+        writer.println("\t\"listDescription\" : \"" + listDescription + "\",");
         
-        writer.close();
-        }
-        catch(FileNotFoundException e){
-            System.out.println("File was not found.");
-        }
-    }
-    
-    public void printList(){
-        try{
-        PrintWriter w = new PrintWriter(output);
-        
-        w.println("domainNames");
+        // * Prints list content...
+        writer.println("\tdomainNames\": [");
         
         for(int i=0; i < nameList.size(); i++){
-            w.println("\"" + nameList.get(i) + "\",");
+            writer.println("\t\t\"" + nameList.get(i) + "\",");
         }
-        w.close();
+        writer.println("\t]");
+        writer.close(); 
+        
+        
+        
+        writer.close();
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -62,9 +56,7 @@ public class JSON {
     public void setUser(String passed){
         user = passed;
     }
-    public void setDate(String passed){
-        date = passed;
-    }
+    
     public void setListID(String passed){
         listID = passed;
     }
