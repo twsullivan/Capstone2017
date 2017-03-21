@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 public class DNSClient {
 
     private static final int CORE_POOL_SIZE = 50;
-    private static final int MAXIMUM_POOL_SIZE = 100;
+    private static final int MAXIMUM_POOL_SIZE = 200;
     private static final long KEEP_ALIVE_TIME = 10;
-    private static final int WORK_QUEUE_SIZE = 100;
+    private static final int WORK_QUEUE_SIZE = 2000;
 
 //    private static final int DNS_SERVER_PORT = 53;
 
@@ -54,10 +54,12 @@ public class DNSClient {
         // Get the default thread factory
         ThreadFactory threadFactory = Executors.defaultThreadFactory();
 
+        RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
+        
         // Creat thread pool
         ThreadPoolExecutor executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
-                KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(WORK_QUEUE_SIZE),
-                threadFactory);
+                KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(dnsQueryInput.domainNames.length),
+                threadFactory, rejectionHandler);
 
         MonitorThread monitor = new MonitorThread(executor, 1);
         Thread monitorThread = new Thread(monitor);

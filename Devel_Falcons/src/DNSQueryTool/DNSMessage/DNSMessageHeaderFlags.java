@@ -72,7 +72,7 @@ public class DNSMessageHeaderFlags {
             case DNSMessageHeaderFlagRCodes.SERVER_FAILURE:
                 output = (output & 0xFFFF) | 2;
                 break;
-            case DNSMessageHeaderFlagRCodes.NAME_ERROR:
+            case DNSMessageHeaderFlagRCodes.NXDOMAIN:
                 output = (output & 0xFFFF) | 3;
                 break;
             case DNSMessageHeaderFlagRCodes.NOT_IMPLEMENTED:

@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author doittws
+ * @author Tim Sullivan
  */
 public class DNSQuery implements Runnable {
 
@@ -98,8 +98,10 @@ public class DNSQuery implements Runnable {
                         break;
                     }
                 }
+            } else if(message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN){
+                result.setAddress("BLOCKED");
             } else {
-                result.setAddress("error");
+                result.setAddress("ERROR");
             }
 
             result.setResponseTime(responseTime);
