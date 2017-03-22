@@ -5,6 +5,7 @@
  */
 package janalysis;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -17,16 +18,13 @@ import static org.junit.Assert.*;
  */
 public class EnvironmentTest {
     
+    private String name; //name of the environment
+    private int id; //will be useful when we're comparing environment 1 to 2, 3 to 8, etc. gives us an index.
+    private List<String> domains = new ArrayList<String>(); //list of blocked domains
+    
     public EnvironmentTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     /**
      * Test of addDomain method, of class Environment.
@@ -35,7 +33,7 @@ public class EnvironmentTest {
     public void testAddDomain() {
         System.out.println("addDomain");
         String blockedDomain = "";
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         instance.addDomain(blockedDomain);
     }
 
@@ -45,7 +43,7 @@ public class EnvironmentTest {
     @Test
     public void testGetTotalNumOfDomains() {
         System.out.println("getTotalNumOfDomains");
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         int expResult = 0;
         int result = instance.getTotalNumOfDomains();
         assertEquals(expResult, result);
@@ -71,7 +69,7 @@ public class EnvironmentTest {
     public void testContains() {
         System.out.println("contains");
         String name = "";
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         boolean expResult = false;
         boolean result = instance.contains(name);
         assertEquals(expResult, result);
@@ -83,7 +81,7 @@ public class EnvironmentTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         String expResult = "";
         String result = instance.getName();
         assertEquals(expResult, result);
@@ -95,7 +93,7 @@ public class EnvironmentTest {
     @Test
     public void testGetID() {
         System.out.println("getID");
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         int expResult = 0;
         int result = instance.getID();
         assertEquals(expResult, result);
@@ -107,12 +105,10 @@ public class EnvironmentTest {
     @Test
     public void testGetDomains() {
         System.out.println("getDomains");
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         List<String> expResult = null;
         List<String> result = instance.getDomains();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -121,12 +117,10 @@ public class EnvironmentTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Environment instance = null;
+        Environment instance = new Environment(name, id);
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
