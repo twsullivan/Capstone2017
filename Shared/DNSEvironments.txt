@@ -1,7 +1,7 @@
 Please keep this file updated with any changes to the IP addresses or names of our DNS environments
 Environment Short Name, IP Address of server
-Baseline,
-GCA,
+Baseline,52.39.41.94
+GCA,52.39.31.144
 OurRPZ,
 UWF-CS,
 UWF-IT,
