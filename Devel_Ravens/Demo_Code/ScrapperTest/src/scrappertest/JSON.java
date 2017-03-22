@@ -10,17 +10,30 @@ public class JSON {
     String user;
     String listID;
     String listDescription;
-    File output = new File("JSON.txt");
+    File output;
     
+    //Blank Constructor
     public JSON()
     {
         user = "";
         listID= "";
         listDescription = "";
+        output = new File("output.json");
     }
     
-    
-    public void makeJSON(){
+    //Constructor with values for variables
+    public JSON(String u, String id, String desc, String file)
+    {
+        user = u;
+        listID= id;
+        listDescription = desc;
+        output = new File(file);
+    }
+            
+    //Takes all the information and prints in JSON format
+    //to designated file
+    public void makeJSON()
+    {
         
         try{
         PrintWriter writer = new PrintWriter(output);
@@ -49,18 +62,29 @@ public class JSON {
         }
     }
     
+    //Setter for nameList
     public void setNameList(ArrayList passedList){
         nameList = passedList;
     }
     
+    //Setter for user
     public void setUser(String passed){
         user = passed;
     }
     
+    //Setter for ListID
     public void setListID(String passed){
         listID = passed;
     }
+    
+    //Setter for ListDescription
     public void setListDescription(String passed){
         listDescription = passed;
+    }
+    
+    //Setter for output
+    public void setOutput(String passed)
+    {
+        output = new File(passed);
     }
 }

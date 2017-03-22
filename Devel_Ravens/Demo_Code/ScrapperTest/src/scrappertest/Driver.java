@@ -17,35 +17,49 @@ import java.util.ArrayList;
 public class Driver 
 {
     private String user;
-    //private String date;
     private String initialDNS;
     private String listId;
     private String listDesc;
+    private ArrayList linkList;
     private ArrayList nameList;
     private int nLevels;
+    private String fileName;
     
+    //**************************************************************************
+    //Constructors
+    //**************************************************************************
+    
+    //Empty
     public Driver()
     {
         user = "";
-        //date = "";
         initialDNS = "";
         listId = "";
         listDesc = "";
         nameList = new ArrayList();
+        linkList = new ArrayList();
         nLevels = 0;
+        fileName = "output.json";
     }
     
-    public Driver(String use, String dat, String iDNS, String list, String desc, int n)
+    //Parameters
+    public Driver(String use, String iDNS, String list, String desc, int n, String fileN)
     {
         user = use;
-        //date = dat;
         initialDNS = iDNS;
         listId = list;
         listDesc = desc;
         nameList = new ArrayList();
+        linkList = new ArrayList();
         nLevels = n;
+        fileName = fileN;
     }
     
+    //**************************************************************************
+    //Core Methods--------------------------------------------------------------
+    //**************************************************************************
+    
+    //Main layout for class
     public void runDriver()
     {
         try {
@@ -55,9 +69,10 @@ public class Driver
         }
         outputJSONFile();
         
-        showList();
+        System.out.println("Complete");
     }
     
+    //Uses the JGet and Format classes
     public void gainDomainNames()  throws IOException 
     {
         System.out.println("Use JGet class, get file updated.");
@@ -70,11 +85,28 @@ public class Driver
         Format format = new Format();
         format.runHReF();
         format.runWeblink();
-        //format.getURLs();
         nameList = format.getDomains();
+        
+        /*if(nLevels > 0)
+        {
+            linkList = format.getURLs();
+            continueDomainNames();
+        }*/
         
     }
     
+    public void continueDomainNames()
+    {
+        int count = 0;
+        
+        while(count < nLevels)
+        {
+            
+            count++;
+        }
+    }
+    
+    //Uses JSON class
     public void outputJSONFile()
     {
         System.out.println("Use JSON Class, export DNS list to JSON file");
@@ -84,9 +116,13 @@ public class Driver
         j.setUser(user);
         j.setListID(listId);
         j.setListDescription(listDesc);
-        //j.setDate(date);
+        j.setOutput(fileName);
         j.makeJSON();
     }
+    
+    //**************************************************************************
+    //Verification methods (Dev use only)---------------------------------------
+    //**************************************************************************
     
     public void showList()
     {
@@ -100,9 +136,16 @@ public class Driver
         return nameList;
     }
     
+    //Usage dump
     public void usageDump(){
-        System.out.println("Usage dump");
+        System.out.println("Usage dump:");
+        System.out.println("Please try teh command again with the following format");
         System.out.println("Java -jar domainscraper.jar  <URL> <output file name><Max number of domains>");
         System.exit(0);
     }
+    
+    //**************************************************************************
+    //Setters and Getters-------------------------------------------------------
+    //**************************************************************************
+    
 }
