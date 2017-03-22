@@ -1,7 +1,10 @@
+
+
 import java.util.ArrayList;
 
 public class InputFile
 {
+
     private String domainName;
     private String responseTime;
     private String queryResult;
@@ -47,38 +50,5 @@ public class InputFile
     {
         this.queryResult = queryResult;
     }
-    
-    //TESTABLE CLONES
-    public static boolean setDomainNameT(String domainName)
-    {
-        boolean didItWork = false;
-        
-        domainName = domainName;
-        
-        didItWork = true;
-        
-        return didItWork;
-    }
-    
-    public static boolean setResponseTimeT(String responseTime)
-    {
-        boolean didItWork = false;
-        
-        responseTime = responseTime;
-        
-        didItWork = true;
-        
-        return didItWork;
-    }
 
-    public static boolean setQueryResultT(String queryResult)
-    {
-        boolean didItWork = false;
-        
-        queryResult = queryResult;
-        
-        didItWork = true;
-        
-        return didItWork;
-    }
 }
