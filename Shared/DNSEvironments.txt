@@ -1,0 +1,13 @@
+Please keep this file updated with any changes to the IP addresses or names of our DNS environments
+Environment Short Name, IP Address of server
+Baseline,
+GCA,
+OurRPZ,
+UWF-CS,
+UWF-IT,
+UWF-ResNet,
+Google,8.8.8.8
+Dyn,
+OpenDNS,
+CoxISP,
+MediaComISP,
