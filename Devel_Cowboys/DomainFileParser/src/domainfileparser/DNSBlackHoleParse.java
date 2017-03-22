@@ -6,6 +6,7 @@ import java.util.List;
 /**
  *
  * @author pgabriel
+ * @author tjk5
  */
 public class DNSBlackHoleParse {
 
@@ -21,14 +22,31 @@ public class DNSBlackHoleParse {
         }
         
         List<String> lineList = new ArrayList<>();
-
-        for (int i = 0; i < lines.length; i++)
-        {
-            if (i > 3)
+        
+      //Original blackhole format
+        if (lines[0].charAt(0) == '#')
+        {	
+            for (int i = 0; i < lines.length; i++)
             {
-                lineList.add(lines[i].split("\t")[2]);
+                if (i > 3)
+                {   	
+                    lineList.add(lines[i].split("\t")[2]);	
+                }
             }
         }
+        
+        //Updated blackhole list
+        if (Character.isDigit(lines[0].charAt(0)))
+        {
+        	for (int i = 0; i < lines.length; i++)
+            {
+                if (i > 1)
+                {	
+                    lineList.add(lines[i].split("\t")[1]);	  	
+                }
+            }
+        }
+                   
 
         return lineList.toArray(new String[0]);
     }
