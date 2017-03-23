@@ -104,9 +104,9 @@ public class DNSQuery implements Runnable {
                 result.setAddress("ERROR");
             }
 
-            result.setResponseTime(responseTime);
+            result.setResponseTime("" + responseTime);
         } else {
-            result.setResponseTime(0);
+            result.setResponseTime("0");
             result.setDomainName(domain);
             result.setAddress("error");
         }
