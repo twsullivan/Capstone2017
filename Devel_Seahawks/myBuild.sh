@@ -8,7 +8,7 @@
 ###############################################################
 #The location of all of your source files
 
-SOURCE_DIRECTORY="https://github.com/UWF-HMCSE-CS/201701_Capstone/tree/master/Devel_Seahawks/src"
+SOURCE_DIRECTORY="./src"
 
 #For information on the options available, type "javac" into the terminal
 #or visit the following: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html
@@ -20,11 +20,11 @@ OPTIONS="-g"
 #For example: 
 #CLASSPATH="./libs/gson.jar;./libs/dns.jar"
 
-CLASSPATH="https://github.com/UWF-HMCSE-CS/201701_Capstone/blob/master/Devel_Seahawks/dist/lib/commons-cli-1.3.1.jar";"https://github.com/UWF-HMCSE-CS/201701_Capstone/blob/master/Devel_Seahawks/dist/lib/gson-2.8.0.jar"
+CLASSPATH="./dist/lib/commons-cli-1.3.1.jar";"./dist/lib/gson-2.8.0.jar"
 
 #The destination directory for the .class files
 
-DESTINATION_DIRECTORY="https://github.com/UWF-HMCSE-CS/201701_Capstone/tree/master/Devel_Seahawks/build/classes"
+DESTINATION_DIRECTORY="./build/classes"
 
 #The destination directory for the JAR files
 
@@ -37,7 +37,7 @@ JAR_NAME="QStats"
 #The main class (class with the main function in it)
 #Include the FULL class path, with package
 
-MAIN_CLASS="https://github.com/UWF-HMCSE-CS/201701_Capstone/blob/master/Devel_Seahawks/build/classes/Main.class"
+MAIN_CLASS="./build/classes/Main.class"
 
 ###############################################################
 #                  END USER EDITABLE OPTIONS                  #
