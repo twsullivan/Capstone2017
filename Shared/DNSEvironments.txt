@@ -2,7 +2,7 @@ Please keep this file updated with any changes to the IP addresses or names of o
 Environment Short Name, IP Address of server
 Baseline,52.39.41.94
 GCA,52.39.31.144
-OurRPZ,52.25.230.0 (DNS2)  or  35.161.58.65 (DNS3) (DNS1/RPZ is under attack, will update with resolution)
+OurRPZ,52.34.46.237 (DNS1/RPZ),52.25.230.0 (DNS2),  or  35.161.58.65 (DNS3) 
 UWF-CS,
 UWF-IT,
 UWF-ResNet,
