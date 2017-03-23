@@ -2,7 +2,7 @@
 	"domainNameListId": "CITest1",
 	"listPreparedBy" : "Ravens",
 	"listDescription" : "json file for testing integration with Dev Team Cowboys",
-	domainNames": [
+	"domainNames": [
 		"code.jquery.com",
 		"goargos.com",
 		"uwf.edu",
