@@ -1,1 +1,3 @@
-test
+#!/bin/bash
+#Integration test
+
