@@ -4,6 +4,37 @@ package scrappertest;
 import java.io.*;
 import java.util.*;
 
+	
+/**JSON is an attempt to implement JSON format & functionality in java to designated output file
+	 * for multi-platform usability.
+	 * <p>
+	 * Takes all the information and prints in JSON format
+	 * <p>
+	 * Public methods:
+	 * <ol>
+	 * <li> writer.println() - *prints list
+	 * <li> prints user id & description. </li>
+ * <li> Prints list content. </li>
+	 * <li>setNameList () - Setter for nameList,uses an arraylist.</li>
+	 * <li>setUser (String passed) - Setter for user.</li>
+	 * <li>setListID () - Setter for ListID.</li>
+	 * <li>setListDescription (String filename) - sets the list description for the domain name.</li>
+ * <li>setOutput(String passed) – Setter for output file</li>
+	 * </ol>
+	 * 
+	 * The idea was found at - http://stackoverflow.com/questions/2591098/how-to-parse-json-in-java
+	
+	 * 
+	 * @author Ibraheem Adediran
+	 * Capstone Systems Project - 10215 CIS4595C 201701
+	 * Team - Devel_Ravens
+	 * @ try PrintWriter writer
+	 * @catch FileNotFoundException e If File was not found. 
+	 * 
+	 */
+	
+
+
 public class JSON {
     
     ArrayList nameList;
