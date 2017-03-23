@@ -1,9 +1,10 @@
-mkdir -p ./build
+rm -r ./build
+mkdir -p ./build/classes
 
-javac -g -cp ./lib ./src/*.java -d ./build
+cp -r ./lib/org ./build/classes/
 
-touch ./build/MANIFEST.MF
-echo "Manifest-Version: 1.0" > ./build/MANIFEST.MF
-echo "Main-Class: DNSResolver" >> ./build/MANIFEST.MF
+javac -g -cp ./build/classes ./src/*.java -d ./build/classes
 
-jar cfm ./build/DNSResolver.jar ./build/MANIFEST.MF -C ./build .
+
+jar cfe ./build/DNSResolver.jar DNSResolver -C ./build/classes .
+
