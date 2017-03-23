@@ -47,9 +47,12 @@ public class JSON {
         // * Prints list content...
         writer.println("\t\"domainNames\": [");
         
-        for(int i=0; i < nameList.size(); i++){
+        for(int i=0; i < nameList.size()-1; i++){
             writer.println("\t\t\"" + nameList.get(i) + "\",");
         }
+        
+        writer.println("\t\t\"" + nameList.get(nameList.size()-1) + "\"");
+        
         writer.println("\t]");
         writer.println("}");
         writer.close(); 
