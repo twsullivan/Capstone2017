@@ -8,7 +8,7 @@ public class DNSQueryResult implements java.io.Serializable
 {
 //    private transient short Transaction_ID;
     private String domainName;
-    private long responseTimeMs;
+    private String responseTimeMs;
     private String queryResult;
 
     /**
@@ -40,14 +40,14 @@ public class DNSQueryResult implements java.io.Serializable
     /**
      * @return the ResponseTime
      */
-    public long getResponseTime() {
+    public String getResponseTime() {
         return responseTimeMs;
     }
 
     /**
      * @param ResponseTime the ResponseTime to set
      */
-    public void setResponseTime(long ResponseTime) {
+    public void setResponseTime(String ResponseTime) {
         this.responseTimeMs = ResponseTime;
     }
 
