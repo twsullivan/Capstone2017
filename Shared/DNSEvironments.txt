@@ -10,4 +10,4 @@ Google,8.8.8.8
 Dyn,
 OpenDNS,
 CoxISP,
-MediaComISP,97.64.183.164
+MediaComISP,97.64.148.90/97.64.209.37
