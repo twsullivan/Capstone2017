@@ -1,25 +1,17 @@
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.*;
+import java.io.*;
+import java.util.*;
 
-public class FolderReader
+public final class FolderReader //changed
 {
     File[] fileList;
     private List<List<Double>> envResponseTimes;
     private List<Integer> envCounts = new ArrayList();
-        
+    private List<String> envID = new ArrayList();
+    
     public FolderReader()
     {
-        
+        //Empty
     }
     
     public FolderReader(String filePath, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved) throws IOException, NumberFormatException //changed
@@ -35,6 +27,11 @@ public class FolderReader
     public List<List<Double>> getEnvResponseTimes() {
         return envResponseTimes;
     }
+    
+    public List<String> getEnvID() {
+        return envID;
+    }
+        
     
     private File[] getJSONSInDir(String path) throws IOException //filepath passed here as path
     {
@@ -58,7 +55,7 @@ public class FolderReader
       }
     }
     
-    private boolean validateIPAddress(String ip)
+    private boolean validateIPAddress(String ip) //changed
     {
         if ( ip == null || ip.isEmpty() ) {
             return false;
@@ -82,11 +79,18 @@ public class FolderReader
         return true;
     }
     
-    public void setEnvResponseTimes(File[] filelist, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved) throws FileNotFoundException, NumberFormatException
+    public void setEnvResponseTimes(File[] filelist, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved) throws FileNotFoundException, NumberFormatException, JsonSyntaxException
     {  //changed
        List<List<Double>> queryEnvironments = new ArrayList<>();
         
         for (File fileListIter : fileList) {
+            
+            
+            if(verbose)
+            {
+                System.out.println("\n-Opening File: " + fileListIter + "-");
+            }
+            
             Reader reader = new FileReader(fileListIter);
 
             JsonParser parser = new JsonParser();
@@ -95,8 +99,8 @@ public class FolderReader
             Gson gson = new Gson();
 
             String eId = obj.get("environmentId").getAsString();
-            String dListId = obj.get("domainNameListId").getAsString();
-            String qRunBy = obj.get("queriesRunBy").getAsString();
+            this.envID.add(eId);
+            
             ArrayList qRes = gson.fromJson(arr, ArrayList.class);
        
             Object[] tempArr = qRes.toArray();
@@ -134,6 +138,12 @@ public class FolderReader
                          buff.delete(0, 15);
                          String buffConverted = buff.toString();  
                          Double val = Double.parseDouble(buffConverted);
+                         if(val < 0)
+                         {
+                             throw new ArithmeticException("Negative value(s) in query data.");
+                         }
+                         
+                         
                          responseTimes.add(val);
                          countOfDomains++;
                 }
@@ -158,6 +168,10 @@ public class FolderReader
                          buff.delete(0, 15);
                          String buffConverted = buff.toString();  
                          Double val = Double.parseDouble(buffConverted);
+                         if(val < 0)
+                         {
+                             throw new ArithmeticException("Negative value(s) in query data.");
+                         }
                          responseTimes.add(val);
                          countOfDomains++;
                     }
@@ -182,10 +196,11 @@ public class FolderReader
                 }
                 else
                 {
-                    throw new NumberFormatException();
+                    throw new NumberFormatException("One or more .JSON file(s) are not formatted correctly. Please see documentation for correct format.");
                 }
             }
             Integer intObjOfCounts = countOfDomains;
+            
             queryEnvironments.add(responseTimes);
             envCounts.add(intObjOfCounts);
             
