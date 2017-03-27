@@ -7,7 +7,7 @@
 #                 BEGIN USER EDITABLE OPTIONS                 #
 ###############################################################
 #The location of all of your source files
-SOURCE_DIRECTORY="./JAnalysis/src/janalysis"
+SOURCE_DIRECTORY="./JaccardAnalysisToolFinal/src/jaccardanalysistool"
 
 #For information on the options available, type "javac" into the terminal
 #or visit the following: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html
@@ -17,20 +17,20 @@ OPTIONS="-g"
 #Separate each JAR with a semicolon (;)
 #For example: 
 #	CLASSPATH="./libs/gson.jar;./libs/dns.jar"
-CLASSPATH="./JAnalysis/src/janalysis/json-20160810.jar"
+CLASSPATH="./JaccardAnalysisToolFinal/json-20160810.jar"
 
 #The destination directory for the .class files
-DESTINATION_DIRECTORY="./JAnalysis/build/classes"
+DESTINATION_DIRECTORY="./build/classes"
 
 #The destination directory for the JAR files
-JAR_DIRECTORY="./JAnalysis/build"
+JAR_DIRECTORY="./build"
 
 #What you want your JAR to be called
 JAR_NAME="JAnalysis"
 
 #The main class (class with the main function in it)
 #Include the FULL class path, with package
-MAIN_CLASS="janalysis.JAnalysis"
+MAIN_CLASS="jaccardanalysistool.JaccardAnalysisTool"
 ###############################################################
 #                  END USER EDITABLE OPTIONS                  #
 ###############################################################
