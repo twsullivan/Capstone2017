@@ -5,16 +5,13 @@
  */
 package domainfileparser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Nick Nawoschik
  */
 public class InternetLog {
+    
     public InternetLog() {
-        
     }
     
     public static String[] parse(String[] lines) {

@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class DNSBlackHoleParse {
 
-    
     public DNSBlackHoleParse() {
     }
 
@@ -23,7 +22,7 @@ public class DNSBlackHoleParse {
         
         List<String> lineList = new ArrayList<>();
         
-      //Original blackhole format
+        //Original blackhole format
         if (lines[0].charAt(0) == '#')
         {	
             for (int i = 0; i < lines.length; i++)
@@ -46,8 +45,7 @@ public class DNSBlackHoleParse {
                 }
             }
         }
-                   
-
+        
         return lineList.toArray(new String[0]);
     }
 }

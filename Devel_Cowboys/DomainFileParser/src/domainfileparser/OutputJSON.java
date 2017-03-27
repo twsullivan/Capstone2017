@@ -3,6 +3,7 @@ package domainfileparser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import com.eclipsesource.json.*;
+import java.io.File;
 
 /**
  *
@@ -24,18 +25,24 @@ public class OutputJSON {
         JsonObject preparedObject = Json.object().add("domainNameListId", "id_" + timestamp).add("listPreparedBy", name).add("listDescription", description).add("domainNames", domains);
         String output = preparedObject.toString(WriterConfig.PRETTY_PRINT);
         
+        if(outputFolder.charAt(outputFolder.length() - 1) == '/' || outputFolder.charAt(outputFolder.length() - 1) == '\\')
+        {
+            outputFolder = outputFolder.substring(0, outputFolder.length() - 1);
+        }
+        
+        String savePath = outputFolder + File.separator + "domains_" + timestamp + ".json";
+        
         try {
-            PrintWriter writer = new PrintWriter(outputFolder + "/domains_" + timestamp + ".json", "UTF-8");
             
+            PrintWriter writer = new PrintWriter(savePath, "UTF-8");
             writer.printf(output);
-            
             writer.close();
+            
         } catch (IOException e) {
             
             return new String[]{"Error", "Error saving output file."};
         }
 
-        return new String[]{"OK"};
+        return new String[]{"OK",savePath};
     }
-    
 }
