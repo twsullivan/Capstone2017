@@ -39,12 +39,12 @@ public class Format {
                 checkLine(line);
                 count++;
             }
-            
+            /*
             //Deletes the contents of the HTMLDump.txt file
             currentFile.delete();
             FileWriter out = new FileWriter(currentFile);
             out.write("");
-            out.close();
+            out.close();*/
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");

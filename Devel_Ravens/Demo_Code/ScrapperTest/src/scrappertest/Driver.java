@@ -53,6 +53,7 @@ public class Driver
         linkList = new ArrayList();
         nLevels = n;
         fileName = fileN;
+
     }
     
     //**************************************************************************
@@ -75,17 +76,16 @@ public class Driver
     //Uses the JGet and Format classes
     public void gainDomainNames()  throws IOException 
     {
-        System.out.println("Use JGet class, get file updated.");
-        
-        JGet get = new JGet();
+        //System.out.println("Use JGet class, get file updated.");
+        JGet get = new JGet();        
         get.setURL(initialDNS);
         get.runJGet();
         
-        System.out.println("Use Format class, updte DNS list.");
+        //System.out.println("Use Format class, update DNS list.");
         Format format = new Format();
         format.runHReF();
         format.runWeblink();
-        nameList = format.getDomains();
+        setNameList(format.getDomains());
         
         /*if(nLevels > 0)
         {
@@ -109,7 +109,7 @@ public class Driver
     //Uses JSON class
     public void outputJSONFile()
     {
-        System.out.println("Use JSON Class, export DNS list to JSON file");
+        //System.out.println("Use JSON Class, export DNS list to JSON file");
         JSON j = new JSON();
         
         j.setNameList(nameList);
@@ -139,13 +139,69 @@ public class Driver
     //Usage dump
     public void usageDump(){
         System.out.println("Usage dump:");
-        System.out.println("Please try teh command again with the following format");
-        System.out.println("Java -jar domainscraper.jar  <URL> <output file name><Max number of domains>");
+        System.out.println("Please try the command again with the following format");
+        System.out.println("java -jar scrappertest.jar  <\"user name\"> <URL> <listID> <\"List Description\"> <Max number of domains>");
         System.exit(0);
     }
     
     //**************************************************************************
     //Setters and Getters-------------------------------------------------------
     //**************************************************************************
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    /**
+     * @param initialDNS the initialDNS to set
+     */
+    public void setInitialDNS(String initialDNS) {
+        this.initialDNS = initialDNS;
+    }
+
+    /**
+     * @param listId the listId to set
+     */
+    public void setListId(String listId) {
+        this.listId = listId;
+    }
+
+    /**
+     * @param listDesc the listDesc to set
+     */
+    public void setListDesc(String listDesc) {
+        this.listDesc = listDesc;
+    }
+
+    /**
+     * @param linkList the linkList to set
+     */
+    public void setLinkList(ArrayList linkList) {
+        this.linkList = linkList;
+    }
+
+    /**
+     * @param nameList the nameList to set
+     */
+    public void setNameList(ArrayList nameList) {
+        this.nameList = nameList;
+    }
+
+    /**
+     * @param nLevels the nLevels to set
+     */
+    public void setnLevels(int nLevels) {
+        this.nLevels = nLevels;
+    }
+
+    /**
+     * @param fileName the fileName to set
+     */
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
     
 }
