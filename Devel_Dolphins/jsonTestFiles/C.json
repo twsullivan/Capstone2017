@@ -1,0 +1,37 @@
+{
+ "environmentId" : "C",
+ "domainNameListId" : "SourceOut01",
+ "queriesRunBy" : "Guy McGee",
+ "queryResults": [
+	{
+	"domainName" : "one",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+ 	"domainName" : "two",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+	"domainName" : "three",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+ 	"domainName" : "four",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+	"domainName" : "five",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+	{
+ 	"domainName" : "six",
+ 	"responseTimeMs" : "0",
+ 	"queryResult" : "BLOCKED"
+	},
+]
+}
