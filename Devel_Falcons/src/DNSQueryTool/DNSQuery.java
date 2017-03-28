@@ -87,28 +87,35 @@ public class DNSQuery implements Runnable {
             // Calculate response time
             long responseTime = System.currentTimeMillis() - startTime;
 
-            message.ParseResponse(rcvBuffer);
+            try {
+                message.ParseResponse(rcvBuffer);
 
-            result.setDomainName(domain);
+                result.setDomainName(domain);
 
-            if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NO_ERROR) {
-                for (DNSMessageCommonResourceRecord answer : message.getAnswers()) {
-                    if (answer.getType() == DNSMessageRecordType.A) {
-                        result.setAddress(answer.getrData().toString());
-                        break;
+                if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NO_ERROR) {
+                    for (DNSMessageCommonResourceRecord answer : message.getAnswers()) {
+                        if (answer.getType() == DNSMessageRecordType.A) {
+                            result.setAddress(answer.getrData().toString());
+                            break;
+                        }
                     }
+                } else if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN) {
+                    result.setAddress("BLOCKED");
+                } else {
+                    result.setAddress("ERROR");
                 }
-            } else if(message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN){
-                result.setAddress("BLOCKED");
-            } else {
+
+                result.setResponseTime(responseTime);
+
+            } catch (Exception ex) {
+                result.setResponseTime(0);
+                result.setDomainName(domain);
                 result.setAddress("ERROR");
             }
-
-            result.setResponseTime(responseTime);
         } else {
             result.setResponseTime(0);
             result.setDomainName(domain);
-            result.setAddress("error");
+            result.setAddress("ERROR");
         }
 
         if (parent != null) {
