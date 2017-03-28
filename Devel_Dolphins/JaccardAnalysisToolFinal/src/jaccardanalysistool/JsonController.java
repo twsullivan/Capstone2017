@@ -1,5 +1,7 @@
 /**
- *
+ * JsonController.java
+ * This class is responsible for creating a JsonController object.
+ * The JsonController object is used for reading, parsing, and handling the relevant JSON files.
  * @author devel_dolphins
  */
 package jaccardanalysistool;
@@ -12,73 +14,68 @@ import org.json.JSONTokener;
 
 public class JsonController
 {
-    private String path;
-    private ArrayList<String> jsonFileNames = new ArrayList<String>();
-    private ArrayList<File> jsonFiles = new ArrayList<File>();
-    private ArrayList<JSONObject> jsonObjects = new ArrayList<JSONObject>();
-    private ArrayList<String> environmentNames = new ArrayList<String>();
-    private JSONArray currentArray;
-    private String currentEnvironment;
+    private String path;    //The path that will be used to check for Json files
+    private ArrayList<String> jsonFileNames = new ArrayList<String>(); //A list to contain the names of JSON files found within the path
+    private ArrayList<File> jsonFiles = new ArrayList<File>(); //A list of File Objects to be created using the filenames
+    private ArrayList<JSONObject> jsonObjects = new ArrayList<JSONObject>(); //A list of JSON objects to be created from parsing the File Objects list.
+    private ArrayList<String> environmentNames = new ArrayList<String>(); //A list to contain the unique "environmentID" attributes found within the JSON Objects
+    private JSONArray currentArray; //Keeps track of the current JSONArray that is being handled for printing out more specific error messages.
+    private String currentEnvironment; //Keeps track of the current environment that is being handled for printing out more specific error messages.
     private int currentCounter;
     private int currentObjectCounter = 0;
     
+    /*Default constructor, creates a JsonController object using the current running path*/
     public JsonController()
     {
         path = System.getProperty("user.dir");
     }
     
+    /*Parameterized constructor, creates a JsonController object using an input string path*/
     public JsonController(String inputPath)
     {
         path = inputPath;
     }
-    
-    
-    public int findJsonFiles() //Checks the running directory for .json file names
+
+    /*Scans the path given to the JsonController for files ending with .json, and returns the number of files found.*/
+    public int findJsonFiles()
     {
         try
         {
-        File dir = new File(path);  
-        String[] filesInDirectory = dir.list();
-        if(filesInDirectory == null)
-        {
-            System.out.println("Could not find any other files in the directory."); //This won't really ever happen
-        }
-        else
-        {
-            System.out.println("\nSEARCHING FOR FILES IN DIRECTORY:");  //DEBUG TEXT
-            int count = 0;
-            for (String fileNames : filesInDirectory)
+            File dir = new File(path);  
+            String[] filesInDirectory = dir.list();
+            if(filesInDirectory == null)
             {
-                //System.out.println("-" + fileNames);
-                if(fileNames.contains(".json"))
-                {
-                    //System.out.println("JSON File ["+fileNames+"] Found. Adding to jsonFiles ArrayList."); //DEBUG TEXT
-                    jsonFileNames.add(fileNames);
-                    count++;
-                }
+                System.out.println("Could not find any files in the directory.");
             }
-            System.out.println("-Found ["+count+"] json files.");
-            return count;
-        }       
+            else
+            {
+                System.out.println("\nSEARCHING FOR FILES IN DIRECTORY:");  //DEBUG TEXT
+                int count = 0;
+                for (String fileNames : filesInDirectory)
+                {
+                    if(fileNames.contains(".json"))
+                    {
+                        jsonFileNames.add(fileNames);
+                        count++;
+                    }
+                }
+                System.out.println("-Found ["+count+"] json files.");
+                return count;
+            }       
         }
         catch(Exception e)
         {
             System.out.println(e);
         }
-        return 0;
-        
+            return 0;        
     }
-    
-    public void loadFilesToList() //Using the ArrayList<String> of filenames, tries to open each as a File object and adds to the ArrayList<File> 
+    /*Using the ArrayList<String> of filenames, tries to open each as a File object and adds to the ArrayList<File>*/ 
+    public void loadFilesToList() 
     {
-        //System.out.println("CREATING FILE OBJECTS:");
-        int count = 0;
         for(String fileNames: jsonFileNames)
         {
             try{
             File temp = new File(path + "\\" + fileNames);
-            count++;
-            //System.out.println("Made File Object from filename: " +fileNames);  //DEBUG TEXT
             jsonFiles.add(temp);
             }
             catch(Exception e)
@@ -86,23 +83,21 @@ public class JsonController
                 System.out.println(e); //DEBUG FOR IF FILES ARE NOT ABLE TO BE READ
             }
         }
-        //System.out.println("-Created ["+count+"] File Objects.");
-        //System.out.println("\nFILE OBJECTS LOADED TO LIST:");
-        //System.out.println(jsonFiles);
     }
     
+    /*Parses the File objects in the jsonFiles List into JSONObjects by converting them to strings, then JSONObjects.*/
+    /*Adds the valid JSONObjects to the jsonObjects List*/
     public void createJSONObjects()
     {
-        System.out.println("PARSING JSON OBJECTS:"); //DEBUG TEXT
+        System.out.println("PARSING JSON OBJECTS:");
         int count = 0;
         for(File filename: jsonFiles)
         {
             try
             {
-                String content = new Scanner(filename).useDelimiter("\\Z").next();   //Converts file to String
+                String content = new Scanner(filename).useDelimiter("\\Z").next();
                 JSONObject temp = (JSONObject) new JSONTokener(content).nextValue();
                 jsonObjects.add(temp);
-                //System.out.println("Added " + filename + " to jsonObjects list."); //DEBUG TEXT
                 count++;
             }
             catch(Exception e)
@@ -114,6 +109,8 @@ public class JsonController
         System.out.println("-Created ["+count+"] JSON Objects.");
     }
     
+    /*Goes through the jsonObjects list and attempts to find the "environmentID" tag to create a list of Environments*/
+    /*Also returns the number of unique environments found as an integer value."*/
     public int createEnvironmentsList()
     {
         System.out.println("ENVIRONMENTS FOUND:");
@@ -121,8 +118,7 @@ public class JsonController
         {
             try
             { 
-                String temp = obj.getString("environmentId");
-                
+                String temp = obj.getString("environmentId");   
                 if(!environmentNames.contains(temp))
                 {
                     environmentNames.add(temp);
@@ -142,6 +138,7 @@ public class JsonController
         }
         return environmentNames.size();
     }
+    
     
     public JaccardController createJaccardController()
     {
@@ -175,7 +172,7 @@ public class JsonController
                     
                     String queryStatus = qResultsObj.getString("queryResult");
                     String domainName = qResultsObj.getString("domainName");
-                    if(queryStatus.equals("BLOCKED"))
+                    if(queryStatus.equalsIgnoreCase("BLOCKED"))
                     {
                         if(!toAddto.contains(domainName))
                         toAddto.addDomain(domainName);

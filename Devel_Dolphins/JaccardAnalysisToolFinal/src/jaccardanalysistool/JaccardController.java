@@ -1,5 +1,6 @@
 /**
- *
+ * JaccardController.java
+ * This class is responsible for handling Environment objects and calculating the Jaccard Index.
  * @author devel_dolphins
  */
 package jaccardanalysistool;
@@ -44,7 +45,7 @@ public class JaccardController //Given environments, this is what will do the st
         System.out.println(environments);
     }
     
-    
+    /*Computes and outputs the jaccard analysis between all of the Environment objects in the environments List.*/
     public void computeJaccardAnalysis()
     {
         int totalEnvs = environments.size();
@@ -54,14 +55,16 @@ public class JaccardController //Given environments, this is what will do the st
             {
                 if(j>i && j != i)
                 {
-                    System.out.println("\n["+i+"]: Environment Name: "+ environments.get(i).getName()+ ", Total # Of Blocked Domains: " + environments.get(i).getTotalNumOfDomains() + "\n["+j+"]: Environment Name: "+ environments.get(j).getName() + ", Total # Of Blocked Domains: " + environments.get(j).getTotalNumOfDomains());
+                    System.out.println("\nFor Environment ["+ environments.get(i).getName()+ "] There Are A Total Of [" + environments.get(i).getTotalNumOfDomains()+ "] Blocked Domains.");
+                    System.out.println("For Environment ["+ environments.get(j).getName()+ "] There Are A Total Of [" + environments.get(j).getTotalNumOfDomains()+ "] Blocked Domains.");  
                     int total = environments.get(i).getTotalNumOfDomains() + environments.get(j).getTotalNumOfDomains();
                     int cross = environments.get(i).getCrossSection(environments.get(j));
-                    System.out.println("Cross Section Of " + environments.get(i).getName()+ " and " + environments.get(j).getName() +": "+ cross);
+                    System.out.println("Environment ["+environments.get(i).getName() +"] and Environment ["+ environments.get(j).getName() +"] have [" + cross +"] Blocked Domains in Common. (Cross Section)");
                     total = total - cross;
                     System.out.println("Unique Environments Blocked In Both (Total Sum):" + total);
                     double jaccard = ((double)cross/(double)total)*100;
-                    System.out.println("Jaccard Index Of " + environments.get(i).getName()+ " and " + environments.get(j).getName() +": " + jaccard);
+                    System.out.println("The Jaccard Index for Blocked Domains in environments " + environments.get(i).getName()+ " and " + environments.get(j).getName() +" is: ");
+                    System.out.printf("%.2f\n", jaccard);
                 }
             }
         }
