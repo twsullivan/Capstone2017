@@ -90,7 +90,7 @@ public class Main {
                 }                
                 List<Integer> tempObjs = jsonReader.getEnvCounts();
                 List<String> tempEnvID = jsonReader.getEnvID();
-                FileWriter writeObj = new FileWriter(statisticsForOutput,outputFilePath,tempObjs,tempEnvID);
+                FileWrite writeObj = new FileWrite(statisticsForOutput,outputFilePath,tempObjs,tempEnvID);
                 
         }
         catch (IOException | ParseException | ArithmeticException | NumberFormatException | JsonSyntaxException e)
