@@ -37,7 +37,7 @@ JAR_NAME="QStats"
 #The main class (class with the main function in it)
 #Include the FULL class path, with package
 
-MAIN_CLASS="Main"
+MAIN_CLASS="src.Main"
 
 ###############################################################
 #                  END USER EDITABLE OPTIONS                  #
