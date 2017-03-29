@@ -87,28 +87,36 @@ public class DNSQuery implements Runnable {
             // Calculate response time
             long responseTime = System.currentTimeMillis() - startTime;
 
-            message.ParseResponse(rcvBuffer);
+            try {
+                message.ParseResponse(rcvBuffer);
 
-            result.setDomainName(domain);
+                result.setDomainName(domain);
 
-            if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NO_ERROR) {
-                for (DNSMessageCommonResourceRecord answer : message.getAnswers()) {
-                    if (answer.getType() == DNSMessageRecordType.A) {
-                        result.setAddress(answer.getrData().toString());
-                        break;
+                if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NO_ERROR) {
+                    for (DNSMessageCommonResourceRecord answer : message.getAnswers()) {
+                        if (answer.getType() == DNSMessageRecordType.A) {
+                            result.setAddress(answer.getrData().toString());
+                            break;
+                        }
                     }
+                } else if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN) {
+                    result.setAddress("BLOCKED");
+                } else {
+                    result.setAddress("UNRESOLVED");
                 }
-            } else if(message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN){
-                result.setAddress("BLOCKED");
-            } else {
-                result.setAddress("ERROR");
-            }
 
+                result.setResponseTime("" + responseTime);
+
+            } catch (Exception ex) {
+                result.setResponseTime("0");
+                result.setDomainName(domain);
+                result.setAddress("UNRESOLVED");
+            }
             result.setResponseTime("" + responseTime);
         } else {
             result.setResponseTime("0");
             result.setDomainName(domain);
-            result.setAddress("error");
+            result.setAddress("UNRESOLVED");
         }
 
         if (parent != null) {

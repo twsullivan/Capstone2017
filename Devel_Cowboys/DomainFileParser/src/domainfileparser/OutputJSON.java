@@ -14,12 +14,10 @@ public class OutputJSON {
     public OutputJSON() {
     }
 
-    public static String[] save(String[] contentArray, String outputFolder, String name, String description) {
+    public static String[] save(String[] contentArray, String outputFolder, String name, String description, String parseType) {
 
         long unixTime = System.currentTimeMillis() / 1000L;
         String timestamp = Long.toString(unixTime);
-        
-        String id = "id_" + unixTime;
                 
         JsonArray domains = Json.array(contentArray);
         JsonObject preparedObject = Json.object().add("domainNameListId", "id_" + timestamp).add("listPreparedBy", name).add("listDescription", description).add("domainNames", domains);
@@ -30,19 +28,25 @@ public class OutputJSON {
             outputFolder = outputFolder.substring(0, outputFolder.length() - 1);
         }
         
-        String savePath = outputFolder + File.separator + "domains_" + timestamp + ".json";
+        String savePath;
         
-        try {
-            
-            PrintWriter writer = new PrintWriter(savePath, "UTF-8");
-            writer.printf(output);
-            writer.close();
-            
+        if(parseType.equals("adblock")) {
+            savePath = outputFolder + File.separator + "AdBlock.json";
+        } else if(parseType.equals("dnsblackhole")) {
+            savePath = outputFolder + File.separator + "DNSBlackHole.json";
+        } else if (parseType.equals("internetlog")) {
+            savePath = outputFolder + File.separator + "InternetLog.json";
+        } else {
+            return new String[]{"Error", "Error saving output file. The parsing type was not recognized."};
+        }
+        
+        try (PrintWriter writer = new PrintWriter(savePath, "UTF-8")) {
+            writer.println(output);
         } catch (IOException e) {
             
             return new String[]{"Error", "Error saving output file."};
         }
-
+        
         return new String[]{"OK",savePath};
     }
 }

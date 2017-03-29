@@ -121,7 +121,7 @@ public class Console {
         
         String[] cleanRandomSample = randomSample(cleanDomains);
         
-        String[] saveOutput = OutputJSON.save(cleanRandomSample, optionsValues[1], optionsValues[2], optionsValues[3]);
+        String[] saveOutput = OutputJSON.save(cleanRandomSample, optionsValues[1], optionsValues[2], optionsValues[3], optionsValues[4]);
         
         // Error occurred during saving.
         if(saveOutput[0].toLowerCase().equals("error"))

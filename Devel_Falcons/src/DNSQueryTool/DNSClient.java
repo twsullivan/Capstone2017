@@ -22,7 +22,6 @@ public class DNSClient {
     private static final int WORK_QUEUE_SIZE = 2000;
 
 //    private static final int DNS_SERVER_PORT = 53;
-
     private String dnsServerAddress;
     private String outFileName;
     private boolean quiet = false;
@@ -48,20 +47,20 @@ public class DNSClient {
     }
 
     private void run(String args[]) throws InterruptedException, SocketException, UnknownHostException, IOException {
-        
+
         int throttleTime = throttle > 0 ? 1000 / throttle : 0;
 
         // Get the default thread factory
         ThreadFactory threadFactory = Executors.defaultThreadFactory();
 
         RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
-        
+
         // Creat thread pool
         ThreadPoolExecutor executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
                 KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(dnsQueryInput.domainNames.length),
                 threadFactory, rejectionHandler);
 
-        MonitorThread monitor = new MonitorThread(executor, 1);
+        MonitorThread monitor = new MonitorThread(executor, 1, dnsQueryInput.domainNames.length);
         Thread monitorThread = new Thread(monitor);
 
         if (!quiet) {
@@ -93,7 +92,7 @@ public class DNSClient {
         }
 
         FileWriter writer = null;
-        
+
         try {
             // Write results to output file   
             writer = new FileWriter(outFileName);
@@ -119,7 +118,7 @@ public class DNSClient {
                 UsageDump();
             }
         }
-        
+
         if (args.length < 10 || args.length > 11) {
             System.out.println("Wrong number of arguments.");
             UsageDump();
@@ -140,69 +139,71 @@ public class DNSClient {
                     System.out.println("Syntax error: -i (Syntax error in file: " + args[count] + ")");
                     UsageDump();
                 }
-            } else
-            if ("-o".equals(args[count])) {
-                count++;
-                if(args[count].split("\\.").length == 2 && args[count].split("\\.")[1].equals("json")) {
-                    
-                    FileWriter writer = null;
-                            
-                    try {
-                        // Write results to output file   
-                        writer = new FileWriter(args[count]);
-                    
-                        writer.write(gson.toJson(dnsQueryOutput));
-                        writer.close();
-                        outFileName = args[count];
-                    } catch (IOException ex) {
-                        System.out.println("File error: -o " + ex.getMessage());
-                        UsageDump();
-                    } finally {
-                        try {
-                            if (writer != null) {
-                                writer.close();
-                            }
-                        } catch (IOException ex) {}
-                    }                  
-                } else {
-                    System.out.println("Improper formatting: -o  (File '" + args[count] + "' does not end with 'json' file extension.)");
-                    UsageDump();
-                }
-            } else
-            if ("-e".equals(args[count])) {
-                count++;
-                if (args[count].split(":").length == 2)
-                {
-                    dnsQueryOutput.environmentId = args[count].split(":")[0];
-                    dnsServerAddress = args[count].split(":")[1];
-                } else {
-                    System.out.println("Improper formatting: -e " + args[count]);
-                    UsageDump();
-                }
-            } else
-            if ("-t".equals(args[count])) {
-                count++;
-                try
-                {
-                throttle = Integer.parseInt(args[count]);
-                }
-                catch (NumberFormatException ex)
-                {
-                    System.out.println("Not a number: -t " + args[count]);
-                    UsageDump();
-                }
-            } else
-            if ("-n".equals(args[count])) {
-                count++;
-                dnsQueryOutput.queriesRunBy = args[count];
-            } else
-            if ("-q".equals(args[count])) {
-                quiet = true;
             } else {
-                    System.out.println("Invalid switch: " + args[count]);
-                    UsageDump();
+                if ("-o".equals(args[count])) {
+                    count++;
+                    //if(args[count].split("\\.").length == 2 && args[count].split("\\.")[1].equals("json")) {
+                    if (args[count].substring(args[count].lastIndexOf(".") + 1).equals("json")) {
+                        FileWriter writer = null;
+
+                        try {
+                            // Write results to output file   
+                            writer = new FileWriter(args[count]);
+
+                            writer.write(gson.toJson(dnsQueryOutput));
+                            writer.close();
+                            outFileName = args[count];
+                        } catch (IOException ex) {
+                            System.out.println("File error: -o " + ex.getMessage());
+                            UsageDump();
+                        } finally {
+                            try {
+                                if (writer != null) {
+                                    writer.close();
+                                }
+                            } catch (IOException ex) {
+                            }
+                        }
+                    } else {
+                        System.out.println("Improper formatting: -o  (File '" + args[count] + "' does not end with 'json' file extension.)");
+                        UsageDump();
+                    }
+                } else {
+                    if ("-e".equals(args[count])) {
+                        count++;
+                        if (args[count].split(":").length == 2) {
+                            dnsQueryOutput.environmentId = args[count].split(":")[0];
+                            dnsServerAddress = args[count].split(":")[1];
+                        } else {
+                            System.out.println("Improper formatting: -e " + args[count]);
+                            UsageDump();
+                        }
+                    } else {
+                        if ("-t".equals(args[count])) {
+                            count++;
+                            try {
+                                throttle = Integer.parseInt(args[count]);
+                            } catch (NumberFormatException ex) {
+                                System.out.println("Not a number: -t " + args[count]);
+                                UsageDump();
+                            }
+                        } else {
+                            if ("-n".equals(args[count])) {
+                                count++;
+                                dnsQueryOutput.queriesRunBy = args[count];
+                            } else {
+                                if ("-q".equals(args[count])) {
+                                    quiet = true;
+                                } else {
+                                    System.out.println("Invalid switch: " + args[count]);
+                                    UsageDump();
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            
+
             count++;
         }
     }

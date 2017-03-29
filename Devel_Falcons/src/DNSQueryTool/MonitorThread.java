@@ -6,11 +6,13 @@ public class MonitorThread implements Runnable {
 
     private final ThreadPoolExecutor executor;
     private final int seconds;
+    private final int totalCount;
     private boolean run = true;
 
-    public MonitorThread(ThreadPoolExecutor executor, int delay) {
+    public MonitorThread(ThreadPoolExecutor executor, int delay, int totalCount) {
         this.executor = executor;
         this.seconds = delay;
+        this.totalCount = totalCount;
     }
 
     public void shutdown() {
@@ -24,7 +26,8 @@ public class MonitorThread implements Runnable {
             System.out.format("\r[Status] Active: %d, Completed: %d, Total: %d",
                     this.executor.getActiveCount(),
                     this.executor.getCompletedTaskCount(),
-                    this.executor.getTaskCount());
+                    this.totalCount);
+                    //this.executor.getTaskCount());
             try {
                 Thread.sleep(seconds * 1000);
             } catch (InterruptedException e) {
