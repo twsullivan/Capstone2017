@@ -28,7 +28,7 @@ public class OutputJSON {
             outputFolder = outputFolder.substring(0, outputFolder.length() - 1);
         }
         
-        String savePath = "";
+        String savePath;
         
         if(parseType.equals("adblock")) {
             savePath = outputFolder + File.separator + "AdBlock.json";
