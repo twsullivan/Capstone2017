@@ -20,7 +20,7 @@ OPTIONS="-g"
 #For example: 
 #CLASSPATH="./libs/gson.jar;./libs/dns.jar"
 
-CLASSPATH="./dist/lib/commons-cli-1.3.1.jar";"./dist/lib/gson-2.8.0.jar"
+CLASSPATH="./lib/commons-cli-1.3.1.jar";"./lib/gson-2.8.0.jar";"./lib/commons-cli-1.3.1-javadoc.jar"
 
 #The destination directory for the .class files
 
