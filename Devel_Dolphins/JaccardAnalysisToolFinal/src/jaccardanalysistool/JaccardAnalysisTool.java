@@ -1,5 +1,7 @@
 /**
- *
+ * JaccardAnalysisTool.java
+ * This is the main runnable for the Jaccard Analysis tool.
+ * It handles the input parameters, and handles the flow of events.
  * @author devel_dolphins
  */
 
@@ -19,6 +21,7 @@ public class JaccardAnalysisTool
             startProcess(System.getProperty("user.dir"));
     }
     
+    /*Runs the steps of normal flow while handling any errors*/
     public static void startProcess(String path)
     {
         System.out.println("Starting with path: \"" + path + "\"");
@@ -31,7 +34,6 @@ public class JaccardAnalysisTool
             {
                 JaccardController calculator = start.createJaccardController();                    
                 start.addBlockedDomains(calculator);
-                //calculator.printEnvironments();
                 calculator.computeJaccardAnalysis();
             }
             else
@@ -45,6 +47,7 @@ public class JaccardAnalysisTool
         }
     }
     
+    /*Prints out the usage dump*/
     public static void printHelp()
     {
         System.out.println("===================================================================");

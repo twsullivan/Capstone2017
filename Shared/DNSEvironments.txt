@@ -7,7 +7,7 @@ UWF-CS,
 UWF-IT,
 UWF-ResNet,
 Google,8.8.8.8
-Dyn,
-OpenDNS,
+Dyn, 216.146.35.35
+OpenDNS, 208.67.220.220
 CoxISP,
 MediaComISP,97.64.148.90/97.64.209.37
