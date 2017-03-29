@@ -132,5 +132,9 @@ public class Format {
     {
         return urls;
     }
+    
+    public void setFileName(String passed){
+        inputFileName = passed;
+    }
 }
 
