@@ -28,7 +28,7 @@ DESTINATION_DIRECTORY="./build/classes"
 
 #The destination directory for the JAR files
 
-JAR_DIRECTORY="https://github.com/UWF-HMCSE-CS/201701_Capstone/tree/master/Devel_Seahawks/build"
+JAR_DIRECTORY="./build"
 
 #What you want your JAR to be called
 
