@@ -1,21 +1,27 @@
+import java.awt.BorderLayout;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.*;
 
 public class FileWriter {
 
     List<List<Double>> statTable;
     String outputFilePath;
+    List<Integer> envCounts;
+    List<String> envID;
     
     public FileWriter() 
     {
         //Default Constructor
     }
     
-    public FileWriter(List<List<Double>> statTable, String outputFilePath) 
+    public FileWriter(List<List<Double>> statTable, String outputFilePath, List<Integer> envCounts, List<String> envID) //changed
     {
         this.statTable = statTable;
         this.outputFilePath = outputFilePath;
+        this.envCounts = envCounts;
+        this.envID = envID;
         writeOutputGlobally(outputFilePath);
     }
 
@@ -31,42 +37,62 @@ public class FileWriter {
         }
     }
   
-    private void writeToConsole()
+    private void writeToConsole() //changed
     {
-       System.out.println();
-       for(int i = 0; i < this.statTable.size(); i++)
-       {
-          System.out.println("-----------------------Query Statistics----------------------\n");
-          
-          System.out.println("Environment (" + (i+1) + "/" + this.statTable.size() + ")\n");
+      JFrame frame = new JFrame("QStats.jar Results");
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
+      String column[]={"Environment ID","Count Of Domains with RT's","MeanRT","MedianRT","Standard Deviation","98th Percentile"};
+      String data[][] = new String[this.statTable.size()][this.statTable.get(0).size()+2];
+      
+      for(int i = 0; i < this.statTable.size(); i++)
+       {      
+          data[i][0] = envID.get(i);   
+          data[i][1] = this.envCounts.get(i).toString();
           for(int k = 0; k < this.statTable.get(i).size(); k++)
           {
-              
-              switch (k) {
-                  case 0:
-                      System.out.print("Mean: ");
-                      break;
-                  case 1:
-                      System.out.print("Median: ");
-                      break;
-                  case 2:
-                      System.out.print("Standard Deviation: ");
-                      break;
-                  default:
-                      System.out.print("98th Percentile: ");
-                      break;
-              }
-              double temp = this.statTable.get(i).get(k);
-             System.out.format("%.2f%n",temp);
+             double temp = this.statTable.get(i).get(k);
+             data[i][k+2] = String.valueOf(temp);
           }
-          System.out.println("-------------------------------------------------------------");
-          System.out.println();
        }
+       
+       System.out.println("\nPrinting results...");
+       JTable table = new JTable(data, column);
+       JScrollPane scrollPane = new JScrollPane(table);
+       frame.add(scrollPane, BorderLayout.CENTER);
+       frame.setSize(1000, 200);
+       frame.setVisible(true);
+
+       /*
+       System.out.println("--------------------------------------Query Statistics------------------------------------------\n");
+       System.out.println("Env.#\t\tCount\t\tMeanRT\t\tMedianRT\tSTDV\t\t98th");
+       System.out.println("------------------------------------------------------------------------------------------------");
+       
+       for(int i = 0; i < this.statTable.size(); i++)
+       {
+          
+          System.out.print((i+1)+"\t\t");
+          System.out.print(this.envCounts.get(i).toString() + "\t\t");
+          
+          
+          for(int k = 0; k < this.statTable.get(i).size(); k++)
+          {
+             double temp = this.statTable.get(i).get(k);
+             System.out.printf("%3.2f",temp);
+             System.out.print("\t\t");
+          }
+          System.out.println();
+          
+
+       }
+       System.out.println("------------------------------------------------------------------------------------------------");
+       System.out.println();
+    */
     }
     
     private void writeToCSV(String outputFilePath)
     {
-        //TBA
+        //Your code goes here, Frank
     }
     
     private List<List<Double>> getStatTable() {
@@ -77,73 +103,4 @@ public class FileWriter {
         return outputFilePath;
     }
     
-    //TESTABLE CLONES
-    public static boolean writeOutputGloballyT(String outputFilePath, List<List<Double>> statTableT)
-    {
-        boolean didItWork = false;
-        
-        if(outputFilePath == null)
-        {
-            writeToConsoleT(statTableT);
-            didItWork = true;
-        }
-        else
-        {
-            writeToCSVT(outputFilePath);
-            didItWork = true;
-        }
-        
-        return didItWork;
-    }
-  
-    public static boolean writeToConsoleT(List<List<Double>> statTableT)
-    {
-        boolean didItWork = false;
-        
-        System.out.println();
-        for(int i = 0; i < statTableT.size(); i++)
-        {
-            System.out.println("-----------------------Query Statistics----------------------\n");
-          
-            System.out.println("Environment (" + (i+1) + "/" + statTableT.size() + ")\n");
-            for(int k = 0; k < statTableT.get(i).size(); k++)
-            {
-              
-                switch (k) 
-                {
-                    case 0:
-                        System.out.print("Mean: ");
-                        break;
-                    case 1:
-                        System.out.print("Median: ");
-                        break;
-                    case 2:
-                        System.out.print("Standard Deviation: ");
-                        break;
-                    default:
-                        System.out.print("98th Percentile: ");
-                        break;
-                }
-                double temp = statTableT.get(i).get(k);
-                System.out.format("%.2f%n",temp);
-            }
-            System.out.println("-------------------------------------------------------------");
-            System.out.println();
-            didItWork = true;
-        }
-        
-        return didItWork;
-    }
-    
-    public static boolean writeToCSVT(String outputFilePath)
-    {
-        boolean didItWork = false;
-        
-        if(outputFilePath != null)
-        {
-            didItWork = true;
-        }
-        
-        return didItWork;
-    }
 }

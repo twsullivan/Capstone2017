@@ -60,7 +60,7 @@ public class DNSClient {
                 KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<>(dnsQueryInput.domainNames.length),
                 threadFactory, rejectionHandler);
 
-        MonitorThread monitor = new MonitorThread(executor, 1);
+        MonitorThread monitor = new MonitorThread(executor, 1, dnsQueryInput.domainNames.length);
         Thread monitorThread = new Thread(monitor);
 
         if (!quiet) {

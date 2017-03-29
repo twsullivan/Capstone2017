@@ -1,15 +1,7 @@
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.*;
 
 import org.apache.commons.cli.*;
 /*
@@ -28,22 +20,22 @@ public class Main {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) { // changed
          
         final String header = "----------------------------QStats----------------------------";
-        final String footer = "--------------------------Version 1.0-------------------------";
+        final String footer = "--------------------------Version 1.6-------------------------";
         
         Options options = new Options();
 
-        Option inputFile = new Option("f", "input", true, "Input file path");
+        Option inputFile = new Option("f", "input", true, "Input file path -No Quotes-");
         inputFile.setRequired(true);
         options.addOption(inputFile);
 
-        Option outputFile = new Option("o", "output", true, "Output file path (if specified)");
+        Option outputFile = new Option("o", "output", true, "Output file path (if specified) -No Quotes-");
         outputFile.setRequired(false);
         options.addOption(outputFile);
         
-        Option verboseFlag = new Option("v", "Verbose statistics output");
+        Option verboseFlag = new Option("v", "Verbose output (Debug Mode)");
         verboseFlag.setRequired(false);
         options.addOption(verboseFlag);
         
@@ -55,29 +47,29 @@ public class Main {
         ignoreBlockedFlag.setRequired(false);
         options.addOption(ignoreBlockedFlag);
 
-        parseCmds(options, args, header, footer);
-        
-        
+        parseCmds(options, args, header, footer); 
     }
     
-    private static void parseCmds(Options opt, String[] args, String header, String footer)
+    private static void parseCmds(Options opt, String[] args, String header, String footer)//Changed
     {
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd;
-        
-        
+         
         try {
             cmd = parser.parse(opt, args);
             
             
             String inputFilePath = cmd.getOptionValue("input");
             String outputFilePath = cmd.getOptionValue("output");
+            boolean verboseFlagIndicator = cmd.hasOption('v');
+            boolean ignoreUnresolvedIndicator = cmd.hasOption('u');
+            boolean ignoreBlockedIndicator = cmd.hasOption('b');
             
-            FolderReader jsonReader = new FolderReader(inputFilePath);
+            FolderReader jsonReader = new FolderReader(inputFilePath, verboseFlagIndicator, ignoreBlockedIndicator, ignoreUnresolvedIndicator);
             List<List<Double>> responseTimes = jsonReader.getEnvResponseTimes();  
             List<List<Double>> statisticsForOutput = new ArrayList();
             
-            
+            System.out.println("\nProcessing data...");
                 for(int i = 0; i < responseTimes.size(); i++)
                 {
                     ArrayList<Double> parsedTempVals = new ArrayList();
@@ -95,85 +87,22 @@ public class Main {
                         listOfStatistics.add(statsObj.getPercent98());
                         
                   statisticsForOutput.add(listOfStatistics);
-                }
-                 
-                FileWriter writeObj = new FileWriter(statisticsForOutput,outputFilePath);
+                }                
+                List<Integer> tempObjs = jsonReader.getEnvCounts();
+                List<String> tempEnvID = jsonReader.getEnvID();
+                FileWriter writeObj = new FileWriter(statisticsForOutput,outputFilePath,tempObjs,tempEnvID);
                 
         }
-        catch (IOException | ParseException e)
+        catch (IOException | ParseException | ArithmeticException | NumberFormatException | JsonSyntaxException e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("\nError: " + e.getMessage() + "\n");
             displayHelp(header, opt, footer);
         }
     }
     
-    private static void displayHelp(String header, Options options, String footer)
+    private static void displayHelp(String header, Options options, String footer) //changed
     {
             HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v] [-o] <FILEPATH>", header, options, footer);
-    }
-    
-    //TESTABLE CLONES
-    public static boolean parseCmdsT(Options opt, String[] args, String header, String footer)
-    {
-        boolean didItWork = false;
-        
-        CommandLineParser parser = new DefaultParser();
-        CommandLine cmd;
-
-        try 
-        {
-            cmd = parser.parse(opt, args);
-            
-            String inputFilePath = cmd.getOptionValue("input");
-            String outputFilePath = cmd.getOptionValue("output");
-            
-            FolderReader jsonReader = new FolderReader(inputFilePath);
-            List<List<Double>> responseTimes = jsonReader.getEnvResponseTimes();  
-            List<List<Double>> statisticsForOutput = new ArrayList();
-            
-            for(int i = 0; i < responseTimes.size(); i++)
-            {
-                ArrayList<Double> parsedTempVals = new ArrayList();
-                for(int k = 0; k < responseTimes.get(i).size(); k++)
-                {
-                    parsedTempVals.add(responseTimes.get(i).get(k));
-                }
-                StatsCalculator statsObj = new StatsCalculator(parsedTempVals);
-                statsObj.calculateQueryStatistics();
-                List<Double> listOfStatistics = new ArrayList();
-                    
-                listOfStatistics.add(statsObj.getMean());
-                listOfStatistics.add(statsObj.getMedian());
-                listOfStatistics.add(statsObj.getStandardDeviation());
-                listOfStatistics.add(statsObj.getPercent98());
-                        
-                statisticsForOutput.add(listOfStatistics);
-            }
-                 
-            FileWriter writeObj = new FileWriter(statisticsForOutput,outputFilePath);
-                           
-        }
-        catch (IOException | ParseException e)
-        {
-            System.out.println(e.getMessage());
-            displayHelp(header, opt, footer);
-        }
-        didItWork = true; 
-        return didItWork;
-    }
-    
-    public static boolean displayHelpT(String header, Options options, String footer)
-    {
-        boolean didItWork = false;   
-        
-        HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v] [-o] <FILEPATH>", header, options, footer);
-        
-        didItWork = true;
-        
-        return didItWork;
-    }
-    
-    
+            formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v]", header, options, footer);
+    }  
 }

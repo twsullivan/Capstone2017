@@ -28,12 +28,6 @@ public class Format {
     inputFileName = "HTMLDump.txt";    
     }
     
-    public void runFormat()
-    {
-        runHReF();
-        //runWeblink();
-    }
-    
     public void runHReF()
     {
         try{
@@ -45,6 +39,12 @@ public class Format {
                 checkLine(line);
                 count++;
             }
+            /*
+            //Deletes the contents of the HTMLDump.txt file
+            currentFile.delete();
+            FileWriter out = new FileWriter(currentFile);
+            out.write("");
+            out.close();*/
         }
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
@@ -52,7 +52,7 @@ public class Format {
         catch(IOException e){
             System.out.println("IOException caught");
         }
-            
+        
             
     }
     
@@ -126,6 +126,11 @@ public class Format {
     public ArrayList getDomains()
     {
         return domains;
+    }
+    
+    public ArrayList getURLs()
+    {
+        return urls;
     }
 }
 

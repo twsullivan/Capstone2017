@@ -4,51 +4,84 @@
  * and open the template in the editor.
  */
 package scrappertest;
-
-import java.util.Scanner;
-
+import java.util.*;
 /**
  *
  * @author Cody Grogan
  */
-public class ScrapperTest {
+public class ScrapperTest 
+{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println("Start Application\n\n");
-        
-        Scanner in = new Scanner(System.in);
-        
-        //information required from users
-        String user;
-        String date;
-        String initialDNS = "www.stackoverflow.com";
-        String listId;
-        String listDesc;
-        int nLevels;
-        
-        //Gets needed information from user
-        System.out.println("Please input user's name: ");
-        user = in.nextLine();
-        System.out.println("Please input the date: ");
-        date = in.nextLine();
-        //System.out.println("Please input desired website address: ");
-        //initialDNS = in.nextLine();
-        System.out.println("Please input desired list ID: ");
-        listId = in.nextLine();
-        System.out.println("Please input describtion of list: ");
-        listDesc = in.nextLine();
-        System.out.println("Please input the level of search: ");
-        nLevels = in.nextInt();
-        System.out.println();
-        
-        //runs Driver class
-        Driver scrap = new Driver(user, date, initialDNS, listId, listDesc, nLevels);
-        scrap.runDriver();
-        
-        System.out.println("\n\nEnd Application");
-    }
+public static void main(String[] args)
+{
+   String user = "Test";
+   String initialDNS = "www.uwf.edu";
+   String listId = "T1";
+   String listDesc = "Test 1";
+   int nLevels = 0;
+   String fileName = "output.json";
+   Driver scrapper = new Driver();
+   
+   try
+   {
+       
+       if(args.length == 0){
+            scrapper.usageDump();
+       }
+       else{
+            user = args [0];
+            initialDNS = args[1];
+            listId = args[2];
+            listDesc = args[3];
+            nLevels = Integer.parseInt(args[4]);
+           /*
+           for(int i=0; i<args.length; i++){
+               System.out.println(i + " " + args[i]);
+           }
+           */
+           
+            scrapper.setUser(user);
+            scrapper.setInitialDNS(initialDNS);
+            scrapper.setListId(listId);
+            scrapper.setListDesc(listDesc);
+            scrapper.setnLevels(nLevels);
+
+            scrapper.runDriver();
+       }
+       
+   }
+   catch (ArrayIndexOutOfBoundsException e)
+   {
+       System.err.println("Error: No and/or malformed arguments.");
+       scrapper.usageDump();
+       //System.out.println ("Please ensure that the command includes the follow arguements:");
+       //System.out.println ("<URL> <output file name> <Number of Levels>");
+   }
+   catch (NumberFormatException e){
+       System.err.println("Error: Be sure that levels is a integer value.");
+       scrapper.usageDump();
+       
+   }
+    /*
+    Scanner input = new Scanner(System.in);
+    System.out.println("Please input user's name:");
+    user = input.nextLine();
+    System.out.println("What URL would you like to scrap?");
+    initialDNS = input.nextLine();
+    System.out.println("Please input list ID:");
+    listId = input.nextLine();
+    System.out.println("Please input list description:");
+    listDesc = input.nextLine();
+    System.out.println("How many levels do you wish to scrap?");
+    nLevels = input.nextInt();
+    */
+    
+    
+   
+   
+    //scrapper = new Driver(user, initialDNS, listId, listDesc, nLevels, fileName);
+    
+    //scrapper.runDriver();
+}
     
 }

@@ -81,7 +81,7 @@ public class JGet {
         }
         catch (MalformedURLException mue){
             System.err.println("Ouch - a MalformedURLException happened with \"" + getURL() + "\"");
-            System.err.println("Consider starting your URL with \"www.\" or \"http://www.\"");
+            System.err.println("Consider starting your URL with \"www.\" ,\"http://www.\", or \"https://www.\"");
                       
         }
         catch (IOException ioe){

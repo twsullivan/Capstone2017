@@ -23,7 +23,7 @@ public class Console {
     private final String PRODUCT_NAME = "Domain File Parser";
     
     // Product version to show in welcome message
-    private final String PRODUCT_VERSION = "v1.2";
+    private final String PRODUCT_VERSION = "v1.4";
     
     // Names of options
     private final String[] OPTIONS_NAMES = new String[] {"Input File","Output File Path","Name",
@@ -129,7 +129,14 @@ public class Console {
             displayError(saveOutput[1],true);
         }
         
-        System.out.println("\nFile saved successfully.\n\n");
+        if(saveOutput.length == 2 && saveOutput[1] != null)
+        {
+            System.out.println("\nFile saved successfully to \"" + saveOutput[1] + "\".\n\n");
+        }
+        else
+        {
+            System.out.println("\nFile saved successfully.\n\n");
+        }
     }
     
     private void displayError(String message, boolean terminate)
@@ -150,13 +157,13 @@ public class Console {
     private String[] randomSample(String[] domains)
     {
         // If max results equals 0, reutrn the entire domains array.
-        if(maxResults == 0)
+        if(maxResults == 0 || maxResults > domains.length)
         {
             return domains;
         }
         
         // Get indexes to return
-        Set<Integer> indexes = new HashSet<>(); //LinkedHashSet<>();
+        Set<Integer> indexes = new HashSet<>();
         
         while(indexes.size() < maxResults)
         {
@@ -370,11 +377,11 @@ public class Console {
         System.out.println("java -jar DomainFileParser.jar <input_file> <output_file_path> <name> <description> <file_type> <max_results>\n\n");
         
         System.out.println("Input File (required): Absolute path of the input file, including filename and extension, from which to extract domains.\n");
-        System.out.println("Output File Path (required): Absolute folder path to save the output file containing domains in JSON format. The file name will be generated automatically so it does not need to be included. Output file name example: domainparser_results_1486000110.json\n");
-        System.out.println("Name (required): The name of the user that performed the web scrape.\n");
+        System.out.println("Output File Path (required): Absolute folder path to save the output file containing domains in JSON format. The file name will be generated automatically so it does not need to be included. Output file name example: domains_1486000110.json\n");
+        System.out.println("Name (required): The name of the user who performed the web scrape.\n");
         System.out.println("Description (required): Information about the domain list and its origin.\n");
-        System.out.println("File Type (required): Which log format is being processed (AdBlock, DNSBlackHole, InternetLog).\n");
-        System.out.println("Max Results (required): Maximum number of results to output. If set to 0, result set is unlimited.\n\n");
+        System.out.println("File Type (required): The type of log format that is being processed (AdBlock, DNSBlackHole, InternetLog).\n");
+        System.out.println("Max Results (required): Maximum number of results to output. If set to 0, the result set is unlimited.\n\n");
         
         System.out.println("Example (Windows): java -jar DomainFileParser.jar \"C:\\Users\\bob\\Desktop\\domains.txt\" "
                          + "\"C:\\Users\\bob\\Desktop\" \"Bob Smith\" \"Domains from AdBlock on 02Feb17\" AdBlock 100\n");

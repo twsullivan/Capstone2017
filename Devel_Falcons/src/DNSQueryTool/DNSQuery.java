@@ -102,20 +102,21 @@ public class DNSQuery implements Runnable {
                 } else if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NXDOMAIN) {
                     result.setAddress("BLOCKED");
                 } else {
-                    result.setAddress("ERROR");
+                    result.setAddress("UNRESOLVED");
                 }
 
-                result.setResponseTime(responseTime);
+                result.setResponseTime("" + responseTime);
 
             } catch (Exception ex) {
-                result.setResponseTime(0);
+                result.setResponseTime("0");
                 result.setDomainName(domain);
-                result.setAddress("ERROR");
+                result.setAddress("UNRESOLVED");
             }
+            result.setResponseTime("" + responseTime);
         } else {
-            result.setResponseTime(0);
+            result.setResponseTime("0");
             result.setDomainName(domain);
-            result.setAddress("ERROR");
+            result.setAddress("UNRESOLVED");
         }
 
         if (parent != null) {
