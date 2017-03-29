@@ -17,20 +17,20 @@ OPTIONS="-g"
 #Separate each JAR with a semicolon (;)
 #For example: 
 #	CLASSPATH="./libs/gson.jar;./libs/dns.jar"
-CLASSPATH="./src/gson-2.6.2.jar"
+CLASSPATH=
 
 #The destination directory for the .class files
 DESTINATION_DIRECTORY="./build/classes/domainscrapper"
 
 #The destination directory for the JAR files
-JAR_DIRECTORY="https://github.com/UWF-HMCSE-CS/201701_Capstone/tree/master/Devel_Ravens/DomainScrapper/build"
+JAR_DIRECTORY="./build"
 
 #What you want your JAR to be called
 JAR_NAME="DomainScrapper"
 
 #The main class (class with the main function in it)
 #Include the FULL class path, with package
-MAIN_CLASS="DomainScrapper"
+MAIN_CLASS="domainscraper.DomainScrapper"
 ###############################################################
 #                  END USER EDITABLE OPTIONS                  #
 ###############################################################

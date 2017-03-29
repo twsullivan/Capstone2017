@@ -20,7 +20,7 @@ OPTIONS="-g"
 #For example: 
 #CLASSPATH="./libs/gson.jar;./libs/dns.jar"
 
-CLASSPATH="./dist/lib/commons-cli-1.3.1.jar";"./dist/lib/gson-2.8.0.jar"
+CLASSPATH="./lib/commons-cli-1.3.1.jar;./lib/gson-2.8.0.jar;./lib/commons-cli-1.3.1-javadoc.jar"
 
 #The destination directory for the .class files
 
@@ -28,7 +28,7 @@ DESTINATION_DIRECTORY="./build/classes"
 
 #The destination directory for the JAR files
 
-JAR_DIRECTORY="https://github.com/UWF-HMCSE-CS/201701_Capstone/tree/master/Devel_Seahawks/build"
+JAR_DIRECTORY="./build"
 
 #What you want your JAR to be called
 
