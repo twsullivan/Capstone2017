@@ -1,22 +1,28 @@
 import java.awt.BorderLayout;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 
-public class FileWriter {
+public class FileWrite {
 
     List<List<Double>> statTable;
     String outputFilePath;
     List<Integer> envCounts;
     List<String> envID;
     
-    public FileWriter() 
+    public FileWrite() 
     {
         //Default Constructor
     }
     
-    public FileWriter(List<List<Double>> statTable, String outputFilePath, List<Integer> envCounts, List<String> envID) //changed
+    public FileWrite(List<List<Double>> statTable, String outputFilePath, List<Integer> envCounts, List<String> envID) //changed
     {
         this.statTable = statTable;
         this.outputFilePath = outputFilePath;
@@ -92,7 +98,68 @@ public class FileWriter {
     
     private void writeToCSV(String outputFilePath)
     {
-        //Your code goes here, Frank
+
+        BufferedWriter writer = null;
+        FileWriter csvFile = null;
+        
+        try
+        {
+            
+          String header = "Environment ID" + "," + "Count of Domains with RT's" + "," + "MeanRT" + "," + "MedianRT" + "," + "Standard Deviation" + "," + "98th Percentile";
+          csvFile = new FileWriter(outputFilePath);
+          writer = new BufferedWriter(csvFile);
+          writer.write(header);
+          
+          String data[][] = new String[this.statTable.size()][this.statTable.get(0).size()+2];
+      
+          for(int i = 0; i < this.statTable.size(); i++)
+            {      
+            data[i][0] = envID.get(i);   
+            data[i][1] = this.envCounts.get(i).toString();
+          
+                    for(int k = 0; k < this.statTable.get(i).size(); k++)
+                    {
+                     double temp = this.statTable.get(i).get(k);
+                     data[i][k+2] = String.valueOf(temp);
+                    }
+            }
+
+            for(int i = 0; i < this.statTable.size(); i++)
+              {
+                  //System.out.println();
+                  writer.newLine();
+                  for(int k = 0; k < this.statTable.get(i).size()+2; k++)
+                  {
+                  //System.out.print(data[i][k] + ",");
+                  writer.write(data[i][k] + ",");
+
+                  }
+              }
+  
+        } 
+        catch (IOException x) 
+        {
+        x.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                if (writer != null)
+                {
+                    writer.close();
+                }
+                if (csvFile != null)
+                {
+                    csvFile.close();
+                }
+            }
+            catch (IOException ex)
+                    {
+                        ex.printStackTrace();
+                    }
+        }
+        
     }
     
     private List<List<Double>> getStatTable() {

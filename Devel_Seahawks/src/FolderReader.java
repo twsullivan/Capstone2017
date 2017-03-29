@@ -35,7 +35,7 @@ public final class FolderReader //changed
     
     private File[] getJSONSInDir(String path) throws IOException //filepath passed here as path
     {
-      File dir = new File(path); //the path is the directory to look it
+      File dir = new File(path); //the path is the directory to look in
       
       if (dir.exists())
       {

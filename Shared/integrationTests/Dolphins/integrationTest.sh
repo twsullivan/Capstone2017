@@ -1,6 +1,6 @@
 #!/bin/bash
 #This will be the path to the centralized output files from the Query tools.
-PATH_TO_FILES="../../../Devel_Dolphins/jsonTestFiles"
+PATH_TO_FILES="../../../Shared/queryResponseLists"
 #Using a temporary directory in our folder for now, which holds some test JSON files.
 
 timestamp=$( date +%m%d%H%M )
