@@ -32,12 +32,8 @@ public class OutputJSON {
         
         String savePath = outputFolder + File.separator + "domains_" + timestamp + ".json";
         
-        try {
-            
-            PrintWriter writer = new PrintWriter(savePath, "UTF-8");
-            writer.printf(output);
-            writer.close();
-            
+        try (PrintWriter writer = new PrintWriter(savePath, "UTF-8")) {
+            writer.println(output);
         } catch (IOException e) {
             
             return new String[]{"Error", "Error saving output file."};
