@@ -1,0 +1,24 @@
+{
+  "environmentId" : "GCA",
+  "domainNameListId" : "ScrapedReddit01",
+  "queriesRunBy" : "John Smith",
+  "queryResults": [
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1900",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	}
+	
+]
+
+}
+

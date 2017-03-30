@@ -43,7 +43,7 @@ public class FileWriterTest
         statTableT.get(1).add(2.3);
         statTableT.get(1).add(2.4);
         boolean expResult = true;
-        boolean result = FileWriter.writeOutputGloballyT(outputFilePath, statTableT);
+        boolean result = FileWrite.writeOutputGloballyT(outputFilePath, statTableT);
         assertEquals(expResult, result);
     }
     
@@ -65,7 +65,7 @@ public class FileWriterTest
         statTableT.get(1).add(2.3);
         statTableT.get(1).add(2.4);
         boolean expResult = true;
-        boolean result = FileWriter.writeToConsoleT(statTableT);
+        boolean result = FileWrite.writeToConsoleT(statTableT);
         assertEquals(expResult, result);
     }
     
@@ -75,7 +75,7 @@ public class FileWriterTest
         System.out.println("<<<>>> writeToCSVT_1");
         String outputFilePath = "filename.txt";       
         boolean expResult = true;
-        boolean result = FileWriter.writeToCSVT(outputFilePath);
+        boolean result = FileWrite.writeToCSVT(outputFilePath);
         assertEquals(expResult, result);
     }
     
@@ -85,7 +85,7 @@ public class FileWriterTest
         System.out.println("<<<>>> writeToCSVT_2");
         String outputFilePath = "filename.png";       
         boolean expResult = true;
-        boolean result = FileWriter.writeToCSVT(outputFilePath);
+        boolean result = FileWrite.writeToCSVT(outputFilePath);
         assertEquals(expResult, result);
     }
     
