@@ -90,6 +90,10 @@ public class JGet {
             System.err.println("Consider starting your URL with \"www.\" ,\"http://www.\", or \"https://www.\"");
                       
         }
+        catch(IllegalArgumentException e)
+        {
+            System.err.println("Oops- an Illegal Argument was made.");
+        }
         catch (IOException ioe){
             System.err.println("Oops- an IOException happened.");
         }

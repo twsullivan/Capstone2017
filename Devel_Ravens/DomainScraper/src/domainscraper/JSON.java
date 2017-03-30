@@ -24,7 +24,7 @@ import java.util.*;
 	 * <li>setUser (String passed) - Setter for user.</li>
 	 * <li>setListID () - Setter for ListID.</li>
 	 * <li>setListDescription (String filename) - sets the list description for the domain name.</li>
- * <li>setOutput(String passed) – Setter for output file</li>
+ * <li>setOutput(String passed) â€“ Setter for output file</li>
 	 * </ol>
 	 * 
 	 * The idea was found at - http://stackoverflow.com/questions/2591098/how-to-parse-json-in-java

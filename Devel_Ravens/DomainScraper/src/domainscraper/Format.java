@@ -101,10 +101,36 @@ public class Format {
             String line = (String)urls.get(i);
             String[] postSplit = line.split("/");
             
+            
+            
             if(postSplit.length > 1){
-                domains.add(postSplit[2]);
+                String newUrl = endCheck(postSplit[2]);
+                domains.add(newUrl);
             }
         }
+    }
+    
+    public String endCheck(String line)
+    {
+        boolean check = false;
+        while(check == false)
+        {
+         int len = line.length();
+         char end = line.charAt(len-1);
+         if(end == '\\')
+         {
+            String temp  = line.substring(0, len-1);
+            line = temp;
+         }
+         len = line.length();
+         end = line.charAt(len-1);
+         if(end == '\\')
+            check = false;
+         else
+            check = true;
+        }
+        
+        return line;
     }
     
     public void showURLs()
@@ -131,10 +157,6 @@ public class Format {
     public ArrayList getURLs()
     {
         return urls;
-    }
-    
-    public void setFileName(String passed){
-        inputFileName = passed;
     }
 }
 
