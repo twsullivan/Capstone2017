@@ -45,7 +45,6 @@ public class FormatTest {
     public void testRunHReF() {
         System.out.println("runHReF");
         Format instance = new Format();
-        instance.setFileName("TestDump.txt");
         instance.runHReF();
         
 //        String expResult = "https://code.jquery.com/jquery-2.2.4.js";
@@ -64,7 +63,6 @@ public class FormatTest {
     public void testRunWeblink() {
         System.out.println("runWeblink");
         Format instance = new Format();
-        instance.setFileName("TestDump.txt");
         instance.runHReF();
         instance.runWeblink();
 //        
