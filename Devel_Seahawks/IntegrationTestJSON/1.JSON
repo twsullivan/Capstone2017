@@ -1,0 +1,336 @@
+{
+  "environmentId" : "GCA",
+  "domainNameListId" : "ScrapedReddit01",
+  "queriesRunBy" : "John Smith",
+  "queryResults": [
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "243",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1745",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "400",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "555",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "604",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1888",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "845",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1515",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "128",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1800",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "133",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1110",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "145",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "705",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "1245",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "1033",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "google.com",
+  	"responseTimeMs" : "690",
+  	"queryResult" : "123.45.67.89"
+	},
+	{
+  	"domainName" : "reallybad.com",
+  	"responseTimeMs" : "338",
+  	"queryResult" : "BLOCKED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	},
+	{
+  	"domainName" : "errorout.com",
+  	"queryResult" : "UNRESOLVED"
+	}
+	]
+}
