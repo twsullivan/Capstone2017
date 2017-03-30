@@ -38,8 +38,8 @@ do
 	then
 		cat ./myBuild.sh | tr -d '\r' > temp.sh
 		mv temp.sh myBuild.sh
-		#git add ./myBuild.sh
-		#git commit -m "Replaces \r\n with \n in ${TARGET_DIR}'s build script.'"
+		git add ./myBuild.sh
+		git commit -m "Replaces \r\n with \n in ${TARGET_DIR}'s build script.'"
 		#...Execute the script...
 		if [ `stat -c %A ./myBuild.sh | sed 's/...\(.\).\+/\1/'` == "x" ] 
 		then
@@ -59,10 +59,10 @@ do
 	cd ..
 done #End of our for loop
 
-#git add .
+git add .
 
 DATE="$(date --rfc-3339='seconds')"
 
-#git commit -m "Auto-build auto-commit generated on ${DATE}"
+git commit -m "Auto-build auto-commit generated on ${DATE}"
 
-#git push
+git push
