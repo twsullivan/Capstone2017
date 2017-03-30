@@ -1,13 +1,14 @@
 Please keep this file updated with any changes to the IP addresses or names of our DNS environments
-Environment Short Name, IP Address of server
-Baseline,52.39.41.94
-GCA,52.39.31.144
-OurRPZ,52.34.46.237 (DNS1/RPZ),52.25.230.0 (DNS2),  or  35.161.58.65 (DNS3) 
-UWF-CS,
-UWF-IT,
-UWF-ResNet,
-Google,8.8.8.8
-Dyn, 216.146.35.35
-OpenDNS, 208.67.220.220
-CoxISP,
-MediaComISP,97.64.148.90/97.64.209.37
+Environment Short Name, IP Address of server, location of client, person who will run the queries
+Baseline,52.39.41.94, EC2 instance, Travis
+GCA,52.39.31.144, EC2 instance, Travis
+OurRPZ,52.34.46.237 (DNS1/RPZ),52.25.230.0 (DNS2),  or  35.161.58.65 (DNS3), EC2 instance, Travis
+UWF-CS, IP??, room 4-247, any workstation that works, Norman
+UWF-IT, IP?? possibly may be same as UWF-CS
+UWF-ResNet, IP??, Lauren's computer, Lauren
+Google,8.8.8.8, EC2 instance, Rob
+Dyn, 216.146.35.35, EC2 instance, Rob
+OpenDNS, 208.67.220.220, EC2 instance, Rob
+CoxISP, 68.105.28.13, Brian Condon's home computer, Brian Condon <== use this ip to avoid walled garden
+MediaComISP,97.64.148.90/97.64.209.37, Jacob Eskew's home computer, Jacob Eskew
+ATT Uverse, IP??, Norman Wilde's home computer, Norman Wilde

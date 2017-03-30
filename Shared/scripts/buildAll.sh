@@ -41,6 +41,15 @@ do
 		git add ./myBuild.sh
 		git commit -m "Replaces \r\n with \n in ${TARGET_DIR}'s build script.'"
 		#...Execute the script...
+		if [ `stat -c %A ./myBuild.sh | sed 's/...\(.\).\+/\1/'` == "x" ] 
+		then
+			#echo "Owner has execute permission!"
+			echo ""
+		else
+			echo "No execute permissions - Adding execute permission"
+			chmod +x ./myBuild.sh
+		fi
+		echo "Running ${TARGET_DIR}'s myBuild"
 		./myBuild.sh
 	else
 		#...Otherwise, alert that this team doesn't have an auto-build script defined.
