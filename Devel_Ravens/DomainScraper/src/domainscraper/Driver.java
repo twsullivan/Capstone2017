@@ -151,7 +151,8 @@ public class Driver
     public void usageDump(){
         System.out.println("Usage dump:");
         System.out.println("Please try the command again with the following format");
-        System.out.println("java -jar scrappertest.jar  <\"user name\"> <URL> <output filename> <listID> <\"List Description\"> <Levels of scrapping>");
+        System.out.println("java -jar domainscraper.jar  <\"user name\"> <URL> <output filename> <listID> <\"List Description\"> <Levels of scrapping>");
+        System.out.println("NOTE: Unless the output filename renamed it will amend to the same <filename>.JSON file specified in the argument.");
         System.exit(0);
     }
     
