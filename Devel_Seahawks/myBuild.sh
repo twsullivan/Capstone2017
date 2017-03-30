@@ -16,11 +16,11 @@ SOURCE_DIRECTORY="./src"
 OPTIONS="-g"
 
 #Which libraries you want to use to compile against.
-#Separate each JAR with a semicolon (;)
+#Separate each JAR with a colon (:)
 #For example: 
-#CLASSPATH="./libs/gson.jar;./libs/dns.jar"
+#CLASSPATH="./libs/gson.jar:./libs/dns.jar"
 
-CLASSPATH="./lib/commons-cli-1.3.1.jar;./lib/gson-2.8.0.jar;./lib/commons-cli-1.3.1-javadoc.jar"
+CLASSPATH="./lib/commons-cli-1.3.1.jar:./lib/gson-2.8.0.jar"
 
 #The destination directory for the .class files
 
@@ -59,13 +59,14 @@ do
 	compilationFiles="$compilationFiles $JAVA_FILE"
 done
 
-javac ${OPTIONS} -classpath ${CLASSPATH} ${compilationFiles} -d ${DESTINATION_DIRECTORY}
+javac ${OPTIONS} -classpath "${CLASSPATH}" ${compilationFiles} -d ${DESTINATION_DIRECTORY}
 
-IFS=';' read -ra LIB_PATHS <<< "$CLASSPATH"
+IFS=':' read -ra LIB_PATHS <<< "$CLASSPATH"
 declare -a LIBRARIES
 i=0
 for LIB_PATH in "${LIB_PATHS[@]}"; 
 do
+	echo ${LIB_PATH}
 	cp ${LIB_PATH} ${DESTINATION_DIRECTORY}/libs
 	IFS='/' read -ra LIB <<< "$LIB_PATH"
 	LIBRARIES[${i}]=${LIB[${#LIB[@]}-1]}
