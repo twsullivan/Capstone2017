@@ -11,4 +11,4 @@ Dyn, 216.146.35.35, EC2 instance, Rob
 OpenDNS, 208.67.220.220, EC2 instance, Rob
 CoxISP, 68.105.28.13, Brian Condon's home computer, Brian Condon <== use this ip to avoid walled garden
 MediaComISP,97.64.148.90/97.64.209.37, Jacob Eskew's home computer, Jacob Eskew
-ATT Uverse, IP??, Norman Wilde's home computer, Norman Wilde
+ATTUverse,192.168.1.254, Norman Wilde's home computer, Norman Wilde
