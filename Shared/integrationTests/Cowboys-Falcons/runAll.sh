@@ -27,7 +27,7 @@ cd ../InternetLog_IntTest/
 sh runTest.sh
 
 END_TIME=$SECONDS
-echo "\nRun Duration: $((($END_TIME / 60)/60)) hours $(($END_TIME / 60)) minutes $(($END_TIME % 60)) seconds"
+echo "\nRun Duration: $(($END_TIME / 3600)) hours $((($END_TIME / 60) % 60)) minutes $(($END_TIME % 60)) seconds"
 
 echo "==========================================="
 echo "= END COWBOY AND FALCONS INTEGRATION TEST ="

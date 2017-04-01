@@ -18,3 +18,8 @@
 #Prevent any XML files located in build folders from making it to the repository
 #This is set up in this way so that Netbeans projects still sync properly
 **/build/**/*.xml
+/Devel_Cowboys/Test Programs/JSON_Comparison/dist/
+/Devel_Cowboys/Test Programs/JSON_Comparison/nbproject/private/
+/Devel_Cowboys/Test Programs/IntegrationTest/dist/
+/Devel_Cowboys/Test Programs/IntegrationTest/nbproject/private/
+/Devel_Cowboys/Test Programs/IntegrationTest/build/

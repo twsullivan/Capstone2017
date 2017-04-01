@@ -84,6 +84,6 @@ echo "\tDomains Parsed: ${DOMAINS_TO_GET}" >> $RESULT_OUTPUT_FILE
 echo "\tThrottle Value: ${THROTTLE_VALUE}" >> $RESULT_OUTPUT_FILE
 echo "\tProgram Start Date and Time: ${START_DATE}" >> $RESULT_OUTPUT_FILE
 echo "\tTools End Date and Time: ${STOP_DATE}" >> $RESULT_OUTPUT_FILE
-echo "\tTool Run Duration: $((($STOP_TIME / 60)/60)) hours $(($STOP_TIME / 60)) minutes $(($STOP_TIME % 60)) seconds" >> $RESULT_OUTPUT_FILE
+echo "\tTool Run Duration: $(($STOP_TIME / 3600)) hour(s) $((($STOP_TIME / 60) % 60)) minute(s) $(($STOP_TIME % 60)) second(s)" >> $RESULT_OUTPUT_FILE
 
 echo "\n\n\n***** End of ${PARSE_TYPE} Test *****"

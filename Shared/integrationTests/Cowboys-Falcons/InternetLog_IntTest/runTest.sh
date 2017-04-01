@@ -29,7 +29,7 @@ OUTPUT_FOLDER_NAME='test_output'
 # Cowboy Tool Variables #
 PROGRAM_RAN_BY_1="Integration Tester"
 DESCRIPTION="This is a sample json file created for the integration test between the Cowboy and Falcon tools. Run Date and Time: `date +%Y/%m/%d-%H:%M:%S`. Parse Type: ${PARSE_TYPE}"
-DOMAINS_TO_GET=0
+DOMAINS_TO_GET=100000
 
 # Falcon Tool Variables #
 PROGRAM_RAN_BY_2=PROGRAM_RAN_BY_1
@@ -84,6 +84,6 @@ echo "\tDomains Parsed: ${DOMAINS_TO_GET}" >> $RESULT_OUTPUT_FILE
 echo "\tThrottle Value: ${THROTTLE_VALUE}" >> $RESULT_OUTPUT_FILE
 echo "\tProgram Start Date and Time: ${START_DATE}" >> $RESULT_OUTPUT_FILE
 echo "\tTools End Date and Time: ${STOP_DATE}" >> $RESULT_OUTPUT_FILE
-echo "\tTool Run Duration: $((($STOP_TIME / 60)/60)) hours $(($STOP_TIME / 60)) minutes $(($STOP_TIME % 60)) seconds" >> $RESULT_OUTPUT_FILE
+echo "\tTool Run Duration: $(($STOP_TIME / 3600)) hour(s) $((($STOP_TIME / 60) % 60)) minute(s) $(($STOP_TIME % 60)) second(s)" >> $RESULT_OUTPUT_FILE
 
 echo "\n\n\n***** End of ${PARSE_TYPE} Test *****"
