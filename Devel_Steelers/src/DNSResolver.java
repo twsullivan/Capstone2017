@@ -14,17 +14,22 @@ public class DNSResolver {
 	} catch (Exception e) {
 	    System.out.println(e.getMessage());
 	    usageMessage();
+
 	}
+
     }
 
-    private static void usageMessage() {
+    public static void usageMessage() {
 	System.out.println(
-		"\nUSAGE:  java -jar DNSResolver.jar -i <domainNames> -o <results> -e <environment> -t <queriesPerSecond> <-q>");
-	System.out.println("-i\t inputFile - The file containing the domain name list.");
-	System.out.println("-o\t outputFile - The file containing the results of the queries.");
-	System.out.println("-e\t environment - The DNS server that will be queried.");
-	System.out.println("-t\t queriesPerSecond - Max queries per second.");
-	System.out.println("-q\t quietFlag - Disables message regarding remaining queries.");
+		"\nUSAGE:  java -jar DNSResolver.jar -i <domainNames> -o <results> -e <environment>:<IP> -t <queriesPerSecond> [<-q> <-nw> [<-cip> IP]]");
+	System.out.println("-i\t Input File - The file containing the domain name list(JSON).");
+	System.out.println("-o\t Output File - The file containing the results of the queries(JSON).");
+	System.out.println("-e\t Environment and Target IP - The DNS server that will be queried:IP address.");
+	System.out.println("-t\t Queries Per Second - Max queries per second.");
+	System.out.println("-q\t Quiet - Disables messages.");
+	System.out.println("-nw\t No WGP - Disables Wall Garden Protection.");
+	System.out.println("-cip\t Set Control DNS IP - Manually sets control case DNS IP for WGP (Default is OpenDNS).");
+	
 	System.exit(1);
     }
 }

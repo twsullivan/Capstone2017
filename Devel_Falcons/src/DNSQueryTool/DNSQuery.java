@@ -95,7 +95,10 @@ public class DNSQuery implements Runnable {
                 if (message.getHeader().getFlags().getrCode() == DNSMessageHeaderFlagRCodes.NO_ERROR) {
                     for (DNSMessageCommonResourceRecord answer : message.getAnswers()) {
                         if (answer.getType() == DNSMessageRecordType.A) {
-                            result.setAddress(answer.getrData().toString());
+                            if (answer.getrData().toString() == null || answer.getrData().toString() == "")
+                                result.setAddress("UNRESOLVED");
+                            else
+                                result.setAddress(answer.getrData().toString());
                             break;
                         }
                     }

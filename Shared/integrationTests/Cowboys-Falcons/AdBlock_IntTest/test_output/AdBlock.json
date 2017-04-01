@@ -1,7 +1,7 @@
 {
-  "domainNameListId": "id_1488417571",
-  "listPreparedBy": "Cowboys",
-  "listDescription": "Test file for the falcons.",
+  "domainNameListId": "id_1490907210",
+  "listPreparedBy": "",
+  "listDescription": "This is a sample json file created for the integration test between the Cowboy and Falcon tools. Run Date and Time: 2017/03/30-15:53:30. Parse Type: AdBlock",
   "domainNames": [
     "amazon.co.uk.security-check.ga",
     "autosegurancabrasil.com",

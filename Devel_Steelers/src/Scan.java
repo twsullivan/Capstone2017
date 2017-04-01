@@ -22,45 +22,49 @@ public class Scan {
     private FileReader inputFile;
     private FileWriter outputFile;
     private String environment = "";
-    private InetAddress environmentIP;
+    private InetAddress environmentIP, controlEnvIP;
     private String name = "";
     private int queriesPerSecond = 0;
     private boolean quiet = false;
+    private boolean WGP = true;
     private SimpleResolver resolve;
     private InputJSON json;
     JSONObject finalJSON = new JSONObject();
 
     public Scan(String[] inputArgs) throws Exception {
+	if (inputArgs.length == 0)
+	    DNSResolver.usageMessage();
+
+	setControlEnvIP("138.197.25.214"); // DEFAULT
+					  // CONTROL DNS
+					  // IP FOR
+					  // WALLED
+					  // GARDENS
 
 	for (int i = 0; i < inputArgs.length; i += 2)
-	    if (inputArgs[i].equalsIgnoreCase("-i")) {
+	    if (inputArgs[i].equalsIgnoreCase("-i"))
 		setInputFile(inputArgs[i + 1]);
-	    } else if (inputArgs[i].equalsIgnoreCase("-o")) {
+	    else if (inputArgs[i].equalsIgnoreCase("-o"))
 		setOutputFile(inputArgs[i + 1]);
-	    } else if (inputArgs[i].equalsIgnoreCase("-e")) {
+	    else if (inputArgs[i].equalsIgnoreCase("-e")) {
 		setEnvironment(inputArgs[i + 1].split(":")[0]);
 		setEnvironmentIP(inputArgs[i + 1].split(":")[1]);
-	    } else if (inputArgs[i].equalsIgnoreCase("-t")) {
+	    } else if (inputArgs[i].equalsIgnoreCase("-t"))
 		setQueriesPerSecond(inputArgs[i + 1]);
-	    } else if (inputArgs[i].equalsIgnoreCase("-n")) {
+	    else if (inputArgs[i].equalsIgnoreCase("-n"))
 		setName(inputArgs[i + 1]);
-	    } else if (inputArgs[i].equalsIgnoreCase("-q")) {
+	    else if (inputArgs[i].equalsIgnoreCase("-q")) {
 		setQuiet(true);
 		i--;
+	    } else if (inputArgs[i].equalsIgnoreCase("-nw")) {
+		setWGP(false);
+		i--;
+	    } else if (inputArgs[i].equalsIgnoreCase("-cip")) {
+		setControlEnvIP(inputArgs[i + 1]);
 	    } else
 		throw new Exception("Invalid arguments provided (duplicate or unknown).");
 
-	// !!FIX TOO FEW ARGS!!
-	// if (getInputFile().equals(null) || getOutputFile().equals(null)||
-	// getEnvironment().isEmpty() || getName().isEmpty()
-	// || getEnvironmentIP().getHostAddress() == "" || getQueriesPerSecond()
-	// < 1)
-	// throw new Exception("Not enough arguments.");
 	this.json = new InputJSON(getInputFile());
-    }
-
-    @SuppressWarnings("unchecked")
-    public void run() throws Exception {
 
 	setResolve(new SimpleResolver());
 	resolve.setAddress(getEnvironmentIP());
@@ -68,6 +72,12 @@ public class Scan {
 
 	if (isQuiet())
 	    System.out.close();
+
+    }
+
+    @SuppressWarnings("unchecked")
+    public void run() throws Exception {
+
 	int queryRate = 1000 / getQueriesPerSecond();
 
 	System.out.println("Setting DNS Resolver to : " + getEnvironmentIP().getHostAddress());
@@ -98,19 +108,19 @@ public class Scan {
 	    resultObj = new JSONObject();
 	    resultObj.put("domainName", query);
 	    resultObj.put("responseTimeMs", String.valueOf(Duration.between(start, end).toMillis()));
-	    if (result == 0) {
-		System.out.println("\n\nCode 0 (SUCCESS) received from lookup of host : " + query);
-		for (Record record : records)
-		    System.out.println(
-			    "FOUND : Host " + record.getName().toString() + " has address " + record.rdataToString());
-		resultObj.put("queryResult", ((ARecord) records[0]).rdataToString());
-	    } else if (result == 1) {
-		System.out.println("\n\nCode 1 (UNRECOVERABLE / BLOCKED) received from lookup of host : " + query);
-		resultObj.put("queryResult", "BLOCKED");
 
-	    } else if (result == 3) {
-		System.out.println("\n\nCode 3 (HOST NOT FOUND) received from lookup of host : " + query);
-		resultObj.put("queryResult", "UNRESOLVED");
+	    if (result == 0 && isWGP() == true)
+		appendSuccessWGP(query, records, resultObj);
+	    else if (result == 0 && isWGP() == false)
+		appendSuccess(query, records, resultObj);
+	    else if (result == 1 || result == 2)
+		appendFailure(query, records, resultObj);
+	    else if (result == 3 || result == 4) {
+		System.out.println("\n\n(HOST NOT FOUND) received from lookup of host : " + query);
+		appendUnresolved(query, records, resultObj);
+	    } else {
+		System.out.println("\n\n(NO RESPONSE) received from lookup of host : " + query);
+		appendUnresolved(query, records, resultObj);
 	    }
 	    resultArray.add(resultObj);
 
@@ -122,6 +132,85 @@ public class Scan {
 	finalJSON.put("domainNameListId", getJSON().getDomainNameListId());
 	finalJSON.put("queriesRunBy", getName());
 	finalJSON.put("queryResults", resultArray);
+    }
+
+    @SuppressWarnings("unchecked")
+    private void appendSuccess(String query, Record[] records, JSONObject resultObj) throws Exception {
+	System.out.println("\n\n(SUCCESS) received from lookup of host : " + query);
+
+	for (Record record : records)
+	    System.out
+		    .println("FOUND : Host " + record.getName().toString() + " has address " + record.rdataToString());
+
+	resultObj.put("queryResult", ((ARecord) records[0]).rdataToString());
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void appendSuccessWGP(String query, Record[] records, JSONObject resultObj) throws Exception {
+	System.out.println("\n\n(SUCCESS) received from primary lookup of host : " + query);
+
+	// Give control to Control DNS
+	setResolve(new SimpleResolver());
+	resolve.setAddress(getControlEnvIP());
+	Lookup.setDefaultResolver(resolve);
+
+	Record[] controlRecords;
+	Lookup controlDNSJob = new Lookup(query, Type.A, DClass.IN);
+	controlRecords = controlDNSJob.run();
+	int result = controlDNSJob.getResult();
+	Boolean walled = true;
+	if (result == 0)
+	    for (Record controlRecord : controlRecords) {
+
+		for (Record record : records)
+		    if (record.rdataToString().equalsIgnoreCase(controlRecord.rdataToString())) {
+			System.out.println("FOUND : Host " + record.getName().toString() + " has address "
+				+ record.rdataToString());
+			walled = false;
+		    }
+	    }
+
+	else if (result == 1 || result == 2) {
+	    System.out.println("BAD RESPONSE FROM CONTROL DNS");
+	    appendFailure(query, records, resultObj);
+	    return;
+	} else if (result == 3 || result == 4) {
+	    appendWalled(query, records, resultObj);
+	    return;
+	} else {
+	    System.out.println("NO RESPONSE FROM CONTROL DNS");
+	    appendFailure(query, records, resultObj);
+	    return;
+	}
+	if (walled == true)
+	    appendWalled(query, records, resultObj);
+	else
+	    resultObj.put("queryResult", ((ARecord) records[0]).rdataToString());
+
+	// Return DNS to target server
+	setResolve(new SimpleResolver());
+	resolve.setAddress(getEnvironmentIP());
+	Lookup.setDefaultResolver(resolve);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void appendWalled(String query, Record[] records, JSONObject resultObj) {
+	System.out.println("WALLED GARDEN DETECTED. Marking Blocked...");
+	resultObj.put("queryResult", "BLOCKED");
+    }
+
+    @SuppressWarnings("unchecked")
+    private void appendFailure(String query, Record[] records, JSONObject resultObj) {
+	System.out.println("\n\n(UNRECOVERABLE) received from lookup of host : " + query);
+	resultObj.put("queryResult", "BLOCKED");
+    }
+
+    @SuppressWarnings("unchecked")
+    private void appendUnresolved(String query, Record[] records, JSONObject resultObj) {
+	resultObj.put("queryResult", "UNRESOLVED");
+
     }
 
     public void save() throws Exception {
@@ -200,6 +289,22 @@ public class Scan {
 
     private void setResolve(SimpleResolver resolve) {
 	this.resolve = resolve;
+    }
+
+    public InetAddress getControlEnvIP() {
+	return controlEnvIP;
+    }
+
+    public void setControlEnvIP(String controlEnvIP) throws Exception {
+	this.controlEnvIP = InetAddress.getByName(controlEnvIP);
+    }
+
+    public boolean isWGP() {
+	return WGP;
+    }
+
+    public void setWGP(boolean wGP) {
+	WGP = wGP;
     }
 
 }
