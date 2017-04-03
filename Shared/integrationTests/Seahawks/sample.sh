@@ -7,4 +7,9 @@ PATH_TO_FILES="../../../Devel_Seahawks/IntegrationTestJSON"
 timestamp=$( date +%m%d%H%M )
 
 #Goes back 3 directorys, which should place it on 201701_Capstone folder and then move into our myBuild created jar file
-java -jar ../../../Devel_Seahawks/Build/QStats.jar ${PATH_TO_FILES} > ${timestamp}.txt
+
+#This option for output to a csv file
+java -jar ../../../Devel_Seahawks/Build/QStats.jar -f ${PATH_TO_FILES} -o ${timestamp}.csv
+
+#This option for output to console, can be copy and pasted into Excel
+#java -jar ../../../Devel_Seahawks/Build/QStats.jar -f ${PATH_TO_FILES}
