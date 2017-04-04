@@ -75,7 +75,7 @@ public class JsonController
         for(String fileNames: jsonFileNames)
         {
             try{
-            File temp = new File(path + "\\" + fileNames);
+            File temp = new File(path + "/" + fileNames);
             jsonFiles.add(temp);
             }
             catch(Exception e)
