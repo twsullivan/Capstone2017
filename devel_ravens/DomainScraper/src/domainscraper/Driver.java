@@ -178,7 +178,14 @@ public class Driver
                 holder.add(nameList.get(i));
             else
                 duplicate = false;
-
+        }
+        
+        //empties and refills nameList
+        nameList = new ArrayList();
+        for(int i = 0; i < holder.size(); i++)
+        {
+            String temp = holder.get(i).toString();
+            nameList.add(temp);
         }
     }
     //**************************************************************************
