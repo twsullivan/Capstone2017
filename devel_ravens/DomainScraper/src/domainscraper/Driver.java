@@ -71,6 +71,7 @@ public class Driver
         } catch (IOException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
+        removeDuplicates();
         outputJSONFile();
         
         System.out.println("Complete");
@@ -156,6 +157,37 @@ public class Driver
         System.exit(0);
     }
     
+    //Removes duplicates from finished nameList
+    public void removeDuplicates()
+     {   
+        ArrayList holder = new ArrayList();
+        boolean duplicate = false;
+        //Determines duplicates
+        for(int i = 0; i < nameList.size(); i++)
+        {
+            String temp = nameList.get(i).toString();
+            if(i == 0)
+                holder.add(nameList.get(0));
+            for(int j = 0; j < holder.size(); j++)
+            {
+                String holdTemp = holder.get(j).toString();
+                if(temp.equalsIgnoreCase(holdTemp))
+                    duplicate = true;
+            }
+            if(duplicate == false)
+                holder.add(nameList.get(i));
+            else
+                duplicate = false;
+        }
+        
+        //empties and refills nameList
+        nameList = new ArrayList();
+        for(int i = 0; i < holder.size(); i++)
+        {
+            String temp = holder.get(i).toString();
+            nameList.add(temp);
+        }
+    }
     //**************************************************************************
     //Verification methods (Dev use only)---------------------------------------
     //**************************************************************************
