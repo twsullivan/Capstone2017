@@ -36,10 +36,10 @@ public class Scan {
 	    DNSResolver.usageMessage();
 
 	setControlEnvIP("138.197.25.214"); // DEFAULT
-					  // CONTROL DNS
-					  // IP FOR
-					  // WALLED
-					  // GARDENS
+					   // CONTROL DNS
+					   // IP FOR
+					   // WALLED
+					   // GARDENS
 
 	for (int i = 0; i < inputArgs.length; i += 2)
 	    if (inputArgs[i].equalsIgnoreCase("-i"))
@@ -85,6 +85,8 @@ public class Scan {
 	System.out.println("Domain List ID   : " + getJSON().getDomainNameListId());
 	System.out.println("List Prepared By : " + getJSON().getListPreparedBy());
 	System.out.println("List Description : " + getJSON().getListDescription());
+	if (isWGP() == true)
+	    System.out.println("\nIP of Control Case DNS Server: " + getControlEnvIP().getHostAddress());
 
 	Record[] records;
 	Lookup dnsJob;
@@ -204,7 +206,7 @@ public class Scan {
     @SuppressWarnings("unchecked")
     private void appendFailure(String query, Record[] records, JSONObject resultObj) {
 	System.out.println("\n\n(UNRECOVERABLE) received from lookup of host : " + query);
-	resultObj.put("queryResult", "BLOCKED");
+	resultObj.put("queryResult", "UNRESOLVED");
     }
 
     @SuppressWarnings("unchecked")
