@@ -27,8 +27,6 @@ public class DNSResolver {
 	System.out.println("-e\t Environment and Target IP - The DNS server that will be queried:IP address.");
 	System.out.println("-t\t Queries Per Second - Max queries per second.");
 	System.out.println("-q\t Quiet - Disables messages.");
-	System.out.println("-nw\t No WGP - Disables Wall Garden Protection.");
-	System.out.println("-cip\t Set Control DNS IP - Manually sets control case DNS IP for WGP (Default is OpenDNS).");
 	
 	System.exit(1);
     }
