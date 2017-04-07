@@ -45,55 +45,44 @@ public class FileWrite {
   
     private void writeToConsole() //changed
     {
-      JFrame frame = new JFrame("QStats.jar Results");
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
-      String column[]={"Environment ID","Count Of Domains with RT's","MeanRT","MedianRT","Standard Deviation","98th Percentile"};
-      String data[][] = new String[this.statTable.size()][this.statTable.get(0).size()+2];
       
-      for(int i = 0; i < this.statTable.size(); i++)
-       {      
-          data[i][0] = envID.get(i);   
-          data[i][1] = this.envCounts.get(i).toString();
-          for(int k = 0; k < this.statTable.get(i).size(); k++)
-          {
-             double temp = this.statTable.get(i).get(k);
-             data[i][k+2] = String.valueOf(temp);
-          }
-       }
-       
-       System.out.println("\nPrinting results...");
-       JTable table = new JTable(data, column);
-       JScrollPane scrollPane = new JScrollPane(table);
-       frame.add(scrollPane, BorderLayout.CENTER);
-       frame.setSize(1000, 200);
-       frame.setVisible(true);
-
-       /*
-       System.out.println("--------------------------------------Query Statistics------------------------------------------\n");
-       System.out.println("Env.#\t\tCount\t\tMeanRT\t\tMedianRT\tSTDV\t\t98th");
-       System.out.println("------------------------------------------------------------------------------------------------");
-       
+       int countMarker = 0;
+        
        for(int i = 0; i < this.statTable.size(); i++)
        {
-          
-          System.out.print((i+1)+"\t\t");
-          System.out.print(this.envCounts.get(i).toString() + "\t\t");
-          
+          System.out.println("--------------------------------------------Results-------------------------------------------");
+           
+          System.out.println("Env ID: " + this.envID.get(i));
+          System.out.println("Count of Normals: " + this.envCounts.get(i+countMarker));
+          System.out.println("Count of Blocked: " + this.envCounts.get(i+countMarker+1));
+          System.out.println("Count of Unresolved: " + this.envCounts.get(i+countMarker+2));
+          countMarker+=2;
           
           for(int k = 0; k < this.statTable.get(i).size(); k++)
           {
-             double temp = this.statTable.get(i).get(k);
-             System.out.printf("%3.2f",temp);
-             System.out.print("\t\t");
+            switch(k)
+            {
+                case 0:
+                    System.out.println("Mean: " + this.statTable.get(i).get(k));
+                    break;
+                case 1:
+                    System.out.println("Median: " + this.statTable.get(i).get(k));
+                    break;
+                case 2:
+                    System.out.println("Standard Deviation: " + this.statTable.get(i).get(k));
+                    break;
+                case 3:
+                    System.out.println("98th Percentile: " + this.statTable.get(i).get(k));
+                    break;
+            }
+            
           }
-          System.out.println();
-          
-
+            
+       
        }
-       System.out.println("------------------------------------------------------------------------------------------------");
+       System.out.println("----------------------------------------------------------------------------------------------");
        System.out.println();
-    */
+    
     }
     
     private void writeToCSV(String outputFilePath)
@@ -102,40 +91,45 @@ public class FileWrite {
         BufferedWriter writer = null;
         FileWriter csvFile = null;
         
+        
         try
         {
             
-          String header = "Environment ID" + "," + "Count of Domains with RT's" + "," + "MeanRT" + "," + "MedianRT" + "," + "Standard Deviation" + "," + "98th Percentile";
+          String header = "Environment ID" + "," + "Count of Normals" + "," + "Count of Blocked" + "," + "Count of Unresolved" + "," + "MeanRT" + "," + "MedianRT" + "," + "Standard Deviation" + "," + "98th Percentile";
           csvFile = new FileWriter(outputFilePath);
           writer = new BufferedWriter(csvFile);
           writer.write(header);
           
-          String data[][] = new String[this.statTable.size()][this.statTable.get(0).size()+2];
-      
+          String data[][] = new String[this.statTable.size()][this.statTable.get(0).size()+4];
+          int countMarker = 0;
+          
           for(int i = 0; i < this.statTable.size(); i++)
             {      
-            data[i][0] = envID.get(i);   
-            data[i][1] = this.envCounts.get(i).toString();
+            data[i][0] = this.envID.get(i);   
+            data[i][1] = this.envCounts.get(i+countMarker).toString();
+            data[i][2] = this.envCounts.get(i+countMarker+1).toString();
+            data[i][3] = this.envCounts.get(i+countMarker+2).toString();
+            countMarker+=2;
           
                     for(int k = 0; k < this.statTable.get(i).size(); k++)
                     {
                      double temp = this.statTable.get(i).get(k);
-                     data[i][k+2] = String.valueOf(temp);
+                     data[i][k+4] = String.valueOf(temp);
                     }
             }
-
+            System.out.println("Writing to " + outputFilePath + ".");
             for(int i = 0; i < this.statTable.size(); i++)
               {
                   //System.out.println();
                   writer.newLine();
-                  for(int k = 0; k < this.statTable.get(i).size()+2; k++)
+                  for(int k = 0; k < this.statTable.get(i).size()+4; k++)
                   {
                   //System.out.print(data[i][k] + ",");
                   writer.write(data[i][k] + ",");
 
                   }
               }
-  
+            
         } 
         catch (IOException x) 
         {

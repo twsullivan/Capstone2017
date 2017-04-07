@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -108,7 +109,7 @@ public class StatsCalculator extends Main
        else
        {
            median = ((currentLatencyValues.get(mid-1)) + (currentLatencyValues.get(mid))) / 2;
-       }   
+       }  
    }
    
     /**
@@ -150,12 +151,19 @@ public static void setStandardDeviation()
     /**
      *
      */
-    public void calculateQueryStatistics()
+    public void calculateQueryStatistics() throws IOException
    {
+      if(!currentLatencyValues.isEmpty())
+      {
        sortLatencyValues();
        setMean();
        setMedian();
        setStandardDeviation();
        setPercent98();
+       }
+       else
+       {
+           throw new IOException("One or more files has nothing to evaluate or program is ignoring all results. Please retry with other flag(s) and/or process files individually in input file directory.");
+       }
    } 
 }

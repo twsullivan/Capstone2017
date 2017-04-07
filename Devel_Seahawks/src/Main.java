@@ -31,7 +31,7 @@ public class Main {
         inputFile.setRequired(true);
         options.addOption(inputFile);
 
-        Option outputFile = new Option("o", "output", true, "Output file path (if specified) -No Quotes-");
+        Option outputFile = new Option("o", "output", true, "Output file path (if specified). Must include output file name with .csv extension. -No Quotes-");
         outputFile.setRequired(false);
         options.addOption(outputFile);
         
@@ -46,6 +46,10 @@ public class Main {
         Option ignoreBlockedFlag = new Option("b", "Ignores blocked domains");
         ignoreBlockedFlag.setRequired(false);
         options.addOption(ignoreBlockedFlag);
+        
+        Option ignoreNormalsFlag = new Option("n", "Ignores normal domains");
+        ignoreNormalsFlag.setRequired(false);
+        options.addOption(ignoreNormalsFlag);
 
         parseCmds(options, args, header, footer); 
     }
@@ -64,12 +68,14 @@ public class Main {
             boolean verboseFlagIndicator = cmd.hasOption('v');
             boolean ignoreUnresolvedIndicator = cmd.hasOption('u');
             boolean ignoreBlockedIndicator = cmd.hasOption('b');
+            boolean ignoreNormalsIndicator = cmd.hasOption('n');
             
-            FolderReader jsonReader = new FolderReader(inputFilePath, verboseFlagIndicator, ignoreBlockedIndicator, ignoreUnresolvedIndicator);
+            FolderReader jsonReader = new FolderReader(inputFilePath, verboseFlagIndicator, ignoreBlockedIndicator, ignoreUnresolvedIndicator, ignoreNormalsIndicator);
             List<List<Double>> responseTimes = jsonReader.getEnvResponseTimes();  
             List<List<Double>> statisticsForOutput = new ArrayList();
             
             System.out.println("\nProcessing data...");
+
                 for(int i = 0; i < responseTimes.size(); i++)
                 {
                     ArrayList<Double> parsedTempVals = new ArrayList();
@@ -91,6 +97,7 @@ public class Main {
                 List<Integer> tempObjs = jsonReader.getEnvCounts();
                 List<String> tempEnvID = jsonReader.getEnvID();
                 FileWrite writeObj = new FileWrite(statisticsForOutput,outputFilePath,tempObjs,tempEnvID);
+     
                 
         }
         catch (IOException | ParseException | ArithmeticException | NumberFormatException | JsonSyntaxException e)

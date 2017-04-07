@@ -14,10 +14,10 @@ public final class FolderReader //changed
         //Empty
     }
     
-    public FolderReader(String filePath, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved) throws IOException, NumberFormatException //changed
+    public FolderReader(String filePath, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved, boolean ignoreNormals) throws IOException, NumberFormatException //changed
     {
         fileList = getJSONSInDir(filePath); //fileList is a file array
-        setEnvResponseTimes(this.fileList, verbose, ignoreBlocked, ignoreUnresolved);
+        setEnvResponseTimes(this.fileList, verbose, ignoreBlocked, ignoreUnresolved, ignoreNormals);
     }
 
     public List<Integer> getEnvCounts() {
@@ -37,9 +37,10 @@ public final class FolderReader //changed
     {
       File dir = new File(path); //the path is the directory to look in
       
-      if (dir.exists())
+      if (dir.exists() && dir.list().length > 0)
       {
-          File[] tempFileList = dir.listFiles(new FilenameFilter() //this filter finds all jsons in folder and puts in a file array
+          
+            File[] tempFileList = dir.listFiles(new FilenameFilter() //this filter finds all jsons in folder and puts in a file array
                   {
                       @Override
                       public boolean accept(File dir, String name)
@@ -47,11 +48,12 @@ public final class FolderReader //changed
                           return name.endsWith(".JSON") || name.endsWith(".json");
                       }
                   });
-          return tempFileList; //returns tempFileList array to fileList array
+            return tempFileList; //returns tempFileList array to fileList array
+          
       }
       else
       {
-          throw new IOException("Error: Directory not found.");
+          throw new IOException("Directory not found.");
       }
     }
     
@@ -79,7 +81,7 @@ public final class FolderReader //changed
         return true;
     }
     
-    public void setEnvResponseTimes(File[] filelist, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved) throws FileNotFoundException, NumberFormatException, JsonSyntaxException
+    public void setEnvResponseTimes(File[] filelist, boolean verbose, boolean ignoreBlocked, boolean ignoreUnresolved, boolean ignoreNormals) throws FileNotFoundException, NumberFormatException, JsonSyntaxException
     {  //changed
        List<List<Double>> queryEnvironments = new ArrayList<>();
         
@@ -108,7 +110,9 @@ public final class FolderReader //changed
             ArrayList<String[]> queryResultElements = new ArrayList<>();
             
             List<Double> responseTimes = new ArrayList<>();
-            int countOfDomains = 0;
+            int countOfNormalDomains = 0;
+            int countOfBlocked = 0;
+            int countOfUnresolved = 0;
             
             for(int i = 0; i < tempArr.length; i++)
             {
@@ -127,11 +131,19 @@ public final class FolderReader //changed
                 
                 if(validIp)
                 {
+                    if(ignoreNormals)
+                    {
+                        if(verbose == true)
+                        {
+                            System.out.println("IgnoreN: " + stringOfJsonObjectsArr1);
+                        }
+                    }
+                    else
+                    {
                     
-                    if(verbose == true)
+                        if(verbose == true)
                         {
                             System.out.println("Reading: " + stringOfJsonObjectsArr1);
-                            
                         }
                         
                          buff = new StringBuffer(splitElement[1]);
@@ -145,7 +157,8 @@ public final class FolderReader //changed
                          
                          
                          responseTimes.add(val);
-                         countOfDomains++;
+                         countOfNormalDomains++;
+                    }
                 }
                 else if((tempQueryResult.substring(12).equals("BLOCKED}")))
                 {
@@ -173,7 +186,7 @@ public final class FolderReader //changed
                              throw new ArithmeticException("Negative value(s) in query data.");
                          }
                          responseTimes.add(val);
-                         countOfDomains++;
+                         countOfBlocked++;
                     }
                 }
                 else if((tempQueryResult.substring(12).equals("UNRESOLVED}")))
@@ -191,7 +204,7 @@ public final class FolderReader //changed
                         {
                             System.out.println("Reading: " + stringOfJsonObjectsArr1);
                         }
-                        countOfDomains++;
+                        countOfUnresolved++;
                     }
                 }
                 else
@@ -199,10 +212,16 @@ public final class FolderReader //changed
                     throw new NumberFormatException("One or more .JSON file(s) are not formatted correctly. Please see documentation for correct format.");
                 }
             }
-            Integer intObjOfCounts = countOfDomains;
+            Integer intObjOfNormalCounts = countOfNormalDomains;
+            Integer intObjOfBlockedCounts = countOfBlocked;
+            Integer intObjOfUnresolvedCounts = countOfUnresolved;
+            
+            
             
             queryEnvironments.add(responseTimes);
-            envCounts.add(intObjOfCounts);
+            envCounts.add(intObjOfNormalCounts);
+            envCounts.add(intObjOfBlockedCounts);
+            envCounts.add(intObjOfUnresolvedCounts);
             
         }
         this.envResponseTimes = queryEnvironments;
