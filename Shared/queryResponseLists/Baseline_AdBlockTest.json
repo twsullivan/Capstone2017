@@ -1,1503 +1,2505 @@
-{"environmentId":"Baseline"
-,"queriesRunBy":"Travis Vaughn"
-,"queryResults":[{"domainName":"system32-errors.xyz"
-,"responseTimeMs":"2751"
-,"queryResult":"BLOCKED"}
-,{"domainName":"amazon.co.uk.security-check.ga"
-,"responseTimeMs":"342"
-,"queryResult":"BLOCKED"}
-,{"domainName":"eng-jimexpert.com"
-,"responseTimeMs":"271"
-,"queryResult":"99.198.101.234"}
-,{"domainName":"english.battlefield.ru"
-,"responseTimeMs":"1979"
-,"queryResult":"178.210.75.104"}
-,{"domainName":"ughletarrew.com"
-,"responseTimeMs":"439"
-,"queryResult":"BLOCKED"}
-,{"domainName":"zdravets.org"
-,"responseTimeMs":"7637"
-,"queryResult":"195.189.82.66"}
-,{"domainName":"env-1291101.jelasticlw.com.br"
-,"responseTimeMs":"2007"
-,"queryResult":"186.202.173.196"}
-,{"domainName":"env-2642105.jelasticlw.com.br"
-,"responseTimeMs":"289"
-,"queryResult":"177.153.20.101"}
-,{"domainName":"healwithbill.com"
-,"responseTimeMs":"2671"
-,"queryResult":"198.54.114.249"}
-,{"domainName":"maruthorvattomsrianjaneyatemple.org"
-,"responseTimeMs":"3924"
-,"queryResult":"184.168.221.48"}
-,{"domainName":"spaceconstruction.com.au"
-,"responseTimeMs":"521"
-,"queryResult":"185.17.252.202"}
-,{"domainName":"tei.portal.crockerandwestridge.com"
-,"responseTimeMs":"668"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"update-apple.com.betawihosting.net"
-,"responseTimeMs":"298"
-,"queryResult":"BLOCKED"}
-,{"domainName":"usaa.com-sec-inet-auth-logon-ent-logon-logon-redirectjsp.chrischadwick.com.au"
-,"responseTimeMs":"1597"
-,"queryResult":"BLOCKED"}
-,{"domainName":"etda.tl"
-,"responseTimeMs":"4407"
-,"queryResult":"192.185.102.166"}
-,{"domainName":"www.meleather.com"
-,"responseTimeMs":"181"
-,"queryResult":"216.130.168.167"}
-,{"domainName":"dicrophani.com"
-,"responseTimeMs":"153"
-,"queryResult":"67.205.14.183"}
-,{"domainName":"canidtrove.net"
-,"responseTimeMs":"7562"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"euro-forest.ml"
-,"responseTimeMs":"229"
-,"queryResult":"195.20.50.97"}
-,{"domainName":"evangelinestore.com.br"
-,"responseTimeMs":"10126"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"jobgroup.it"
-,"responseTimeMs":"136"
-,"queryResult":"151.1.48.10"}
-,{"domainName":"gov.f3322.net"
-,"responseTimeMs":"351"
-,"queryResult":"101.121.193.196"}
-,{"domainName":"events-amz.tk"
-,"responseTimeMs":"355"
-,"queryResult":"BLOCKED"}
-,{"domainName":"lingyuanbbs.com"
-,"responseTimeMs":"1573"
-,"queryResult":"115.28.241.40"}
-,{"domainName":"faceb00k.ca"
-,"responseTimeMs":"364"
-,"queryResult":"BLOCKED"}
-,{"domainName":"minglian.ca"
-,"responseTimeMs":"206"
-,"queryResult":"160.153.59.199"}
-,{"domainName":"fakematic.com"
-,"responseTimeMs":"217"
-,"queryResult":"66.33.221.92"}
-,{"domainName":"familles-nombreuses.fr"
-,"responseTimeMs":"10153"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"fargocontrols.com"
-,"responseTimeMs":"276"
-,"queryResult":"67.20.74.179"}
-,{"domainName":"globalnursesonline.com"
-,"responseTimeMs":"298"
-,"queryResult":"96.9.58.145"}
-,{"domainName":"fbclowrys.com"
-,"responseTimeMs":"224"
-,"queryResult":"50.97.161.230"}
-,{"domainName":"gsiworld.neostrada.pl"
-,"responseTimeMs":"704"
-,"queryResult":"BLOCKED"}
-,{"domainName":"johnfoxphotography.com"
-,"responseTimeMs":"1419"
-,"queryResult":"45.40.165.15"}
-,{"domainName":"joojin.com"
-,"responseTimeMs":"158"
-,"queryResult":"218.145.65.105"}
-,{"domainName":"fenc.daewonit.com"
-,"responseTimeMs":"2780"
-,"queryResult":"112.217.208.42"}
-,{"domainName":"jculley.com"
-,"responseTimeMs":"379"
-,"queryResult":"192.40.112.211"}
-,{"domainName":"jorpe.co.za"
-,"responseTimeMs":"551"
-,"queryResult":"213.247.0.44"}
-,{"domainName":"festgeld-blogger.de"
-,"responseTimeMs":"1635"
-,"queryResult":"173.193.192.224"}
-,{"domainName":"mundiversial.com"
-,"responseTimeMs":"356"
-,"queryResult":"86.109.162.160"}
-,{"domainName":"fibersoftware.com"
-,"responseTimeMs":"203"
-,"queryResult":"141.8.226.19"}
-,{"domainName":"nsrcconsulting.com"
-,"responseTimeMs":"158"
-,"queryResult":"113.197.39.189"}
-,{"domainName":"oatloyd.com"
-,"responseTimeMs":"280"
-,"queryResult":"BLOCKED"}
-,{"domainName":"putidwipe.com"
-,"responseTimeMs":"10144"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"filewitme.com"
-,"responseTimeMs":"1445"
-,"queryResult":"50.63.202.61"}
-,{"domainName":"e-taekwang.com"
-,"responseTimeMs":"404"
-,"queryResult":"222.239.223.71"}
-,{"domainName":"sport-grace.by"
-,"responseTimeMs":"2971"
-,"queryResult":"86.57.246.177"}
-,{"domainName":"perugemstones.com"
-,"responseTimeMs":"1752"
-,"queryResult":"204.11.56.48"}
-,{"domainName":"fishingevolution.com"
-,"responseTimeMs":"442"
-,"queryResult":"95.110.198.138"}
-,{"domainName":"czgtgj.com"
-,"responseTimeMs":"378"
-,"queryResult":"104.217.122.212"}
-,{"domainName":"calsal.com"
-,"responseTimeMs":"144"
-,"queryResult":"162.144.181.28"}
-,{"domainName":"felthigh.net"
-,"responseTimeMs":"329"
-,"queryResult":"BLOCKED"}
-,{"domainName":"flyingwishpaper.com"
-,"responseTimeMs":"1482"
-,"queryResult":"198.49.23.145"}
-,{"domainName":"ksjdkeuviecro.us"
-,"responseTimeMs":"5010"
-,"queryResult":"202.29.28.255"}
-,{"domainName":"skottles.com"
-,"responseTimeMs":"215"
-,"queryResult":"127.0.0.11"}
-,{"domainName":"fosnab.w.interiowo.pl"
-,"responseTimeMs":"413"
-,"queryResult":"217.74.66.161"}
-,{"domainName":"mbvdjxpsrgnw.us"
-,"responseTimeMs":"6218"
-,"queryResult":"203.61.19.60"}
-,{"domainName":"vyohacxzoue32vvk.5i0ukv.bid"
-,"responseTimeMs":"8785"
-,"queryResult":"BLOCKED"}
-,{"domainName":"freetre.co.uk"
-,"responseTimeMs":"10141"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"cpi-istanbul.com"
-,"responseTimeMs":"1664"
-,"queryResult":"121.83.217.66"}
-,{"domainName":"liliaflowers.com"
-,"responseTimeMs":"283"
-,"queryResult":"205.234.200.31"}
-,{"domainName":"frontagegfbw.com"
-,"responseTimeMs":"495"
-,"queryResult":"203.88.170.59"}
-,{"domainName":"pizzotti.net"
-,"responseTimeMs":"1577"
-,"queryResult":"62.149.128.163"}
-,{"domainName":"fts.com.pk"
-,"responseTimeMs":"137"
-,"queryResult":"69.160.32.60"}
-,{"domainName":"functional-strength-training.com"
-,"responseTimeMs":"8754"
-,"queryResult":"104.198.58.45"}
-,{"domainName":"ghidneamt.ro"
-,"responseTimeMs":"215"
-,"queryResult":"89.42.223.221"}
-,{"domainName":"fyod14.com"
-,"responseTimeMs":"181"
-,"queryResult":"50.63.202.32"}
-,{"domainName":"galactic.digital"
-,"responseTimeMs":"1491"
-,"queryResult":"72.47.244.103"}
-,{"domainName":"gangsterenergy.com"
-,"responseTimeMs":"1509"
-,"queryResult":"37.148.205.1"}
-,{"domainName":"gdtfs.co.uk"
-,"responseTimeMs":"10134"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"songthank.net"
-,"responseTimeMs":"438"
-,"queryResult":"BLOCKED"}
-,{"domainName":"gettothegoose.com"
-,"responseTimeMs":"467"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"ghantol.huntedhunter.com"
-,"responseTimeMs":"4453"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mqtos.com"
-,"responseTimeMs":"273"
-,"queryResult":"BLOCKED"}
-,{"domainName":"ougeorsevice.com"
-,"responseTimeMs":"3420"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"gladysgarcete.com"
-,"responseTimeMs":"360"
-,"queryResult":"192.185.168.57"}
-,{"domainName":"globalsolutionmarketing.com"
-,"responseTimeMs":"186"
-,"queryResult":"107.180.98.222"}
-,{"domainName":"k-techgroup.com"
-,"responseTimeMs":"187"
-,"queryResult":"BLOCKED"}
-,{"domainName":"trafficexchange.ml"
-,"responseTimeMs":"318"
-,"queryResult":"BLOCKED"}
-,{"domainName":"valvolacoporation.com"
-,"responseTimeMs":"273"
-,"queryResult":"172.93.106.18"}
-,{"domainName":"ahuqfrqk54v3vnzj.8kiec2.top"
-,"responseTimeMs":"1520"
-,"queryResult":"BLOCKED"}
-,{"domainName":"glowingholidays.info"
-,"responseTimeMs":"1542"
-,"queryResult":"104.153.45.242"}
-,{"domainName":"gmai.masoto.com.tr"
-,"responseTimeMs":"622"
-,"queryResult":"BLOCKED"}
-,{"domainName":"gopropest.com"
-,"responseTimeMs":"1495"
-,"queryResult":"192.185.77.196"}
-,{"domainName":"lfdachijzuwx4bc4.vrgdrs.top"
-,"responseTimeMs":"289"
-,"queryResult":"BLOCKED"}
-,{"domainName":"gradinitaallegria.ro"
-,"responseTimeMs":"1127"
-,"queryResult":"176.223.122.174"}
-,{"domainName":"accesappuserinfo.from-oh.com"
-,"responseTimeMs":"1759"
-,"queryResult":"BLOCKED"}
-,{"domainName":"grandslamintl.com"
-,"responseTimeMs":"146"
-,"queryResult":"195.191.24.158"}
-,{"domainName":"actyres.ie"
-,"responseTimeMs":"397"
-,"queryResult":"78.153.214.55"}
-,{"domainName":"shema.firstcom.co.kr"
-,"responseTimeMs":"7818"
-,"queryResult":"218.38.29.67"}
-,{"domainName":"gravorskilt.no"
-,"responseTimeMs":"427"
-,"queryResult":"193.107.29.102"}
-,{"domainName":"sinopengelleriasma.com"
-,"responseTimeMs":"411"
-,"queryResult":"BLOCKED"}
-,{"domainName":"adfrut.cl"
-,"responseTimeMs":"1429"
-,"queryResult":"201.148.104.116"}
-,{"domainName":"bonnieerwin11.com"
-,"responseTimeMs":"215"
-,"queryResult":"184.168.221.62"}
-,{"domainName":"grocerbell.com"
-,"responseTimeMs":"551"
-,"queryResult":"192.185.129.133"}
-,{"domainName":"zotasinc.com"
-,"responseTimeMs":"298"
-,"queryResult":"213.247.47.190"}
-,{"domainName":"gskindia.co.in"
-,"responseTimeMs":"543"
-,"queryResult":"192.151.150.194"}
-,{"domainName":"www.yntscp.com"
-,"responseTimeMs":"10132"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"wesleymedia.com"
-,"responseTimeMs":"425"
-,"queryResult":"66.96.149.20"}
-,{"domainName":"gtcyber.com"
-,"responseTimeMs":"230"
-,"queryResult":"209.99.17.27"}
-,{"domainName":"cibc-onlines.igg.biz"
-,"responseTimeMs":"323"
-,"queryResult":"78.46.211.158"}
-,{"domainName":"d24.0772it.net"
-,"responseTimeMs":"2785"
-,"queryResult":"BLOCKED"}
-,{"domainName":"gul.de"
-,"responseTimeMs":"2985"
-,"queryResult":"69.175.127.34"}
-,{"domainName":"damagedchargers.com"
-,"responseTimeMs":"274"
-,"queryResult":"192.185.168.141"}
-,{"domainName":"iiidown.com"
-,"responseTimeMs":"2673"
-,"queryResult":"204.11.56.48"}
-,{"domainName":"werbeagentur-ruhrwerk.de"
-,"responseTimeMs":"1642"
-,"queryResult":"91.250.102.46"}
-,{"domainName":"everythingwakeboard.com"
-,"responseTimeMs":"205"
-,"queryResult":"192.185.168.158"}
-,{"domainName":"haanikaarak.com"
-,"responseTimeMs":"10132"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"xinyitaoci.com"
-,"responseTimeMs":"310"
-,"queryResult":"BLOCKED"}
-,{"domainName":"valetik.ru"
-,"responseTimeMs":"514"
-,"queryResult":"62.210.170.33"}
-,{"domainName":"firstandlaststeps.org"
-,"responseTimeMs":"2723"
-,"queryResult":"184.168.221.47"}
-,{"domainName":"frankfisherfamily.com"
-,"responseTimeMs":"256"
-,"queryResult":"74.50.7.45"}
-,{"domainName":"hawestechnologies.com"
-,"responseTimeMs":"183"
-,"queryResult":"192.185.96.55"}
-,{"domainName":"gyermekneurologia.hu"
-,"responseTimeMs":"1179"
-,"queryResult":"89.107.249.65"}
-,{"domainName":"institutocj.com"
-,"responseTimeMs":"305"
-,"queryResult":"209.99.40.222"}
-,{"domainName":"www.gdzjco.com"
-,"responseTimeMs":"381"
-,"queryResult":"122.224.11.143"}
-,{"domainName":"samwooind.co.kr"
-,"responseTimeMs":"10150"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"technosfera-nsk.ru"
-,"responseTimeMs":"1720"
-,"queryResult":"195.208.0.111"}
-,{"domainName":"malibumadam.com"
-,"responseTimeMs":"288"
-,"queryResult":"162.144.143.157"}
-,{"domainName":"hitechprint.co.uk"
-,"responseTimeMs":"293"
-,"queryResult":"173.254.28.89"}
-,{"domainName":"oferta-air-bnb-pisos.com"
-,"responseTimeMs":"1610"
-,"queryResult":"69.172.201.153"}
-,{"domainName":"ohappyhome.co"
-,"responseTimeMs":"225"
-,"queryResult":"50.87.249.65"}
-,{"domainName":"ets-grup.com"
-,"responseTimeMs":"226"
-,"queryResult":"94.73.145.184"}
-,{"domainName":"orange-portal.com"
-,"responseTimeMs":"1554"
-,"queryResult":"166.78.238.48"}
-,{"domainName":"paramounthotelmeru.com"
-,"responseTimeMs":"244"
-,"queryResult":"192.185.31.77"}
-,{"domainName":"paypal.limitedremoved.culinae.no"
-,"responseTimeMs":"516"
-,"queryResult":"BLOCKED"}
-,{"domainName":"piscinaspremier.com"
-,"responseTimeMs":"324"
-,"queryResult":"94.23.45.174"}
-,{"domainName":"hossa-skory.pl"
-,"responseTimeMs":"1754"
-,"queryResult":"188.116.9.94"}
-,{"domainName":"postbank.s73228gxs3z0qgs3b0d4.ru"
-,"responseTimeMs":"10141"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"qhhxzny.gov.cn"
-,"responseTimeMs":"1068"
-,"queryResult":"BLOCKED"}
-,{"domainName":"hotel-dona-ines.pt"
-,"responseTimeMs":"1792"
-,"queryResult":"188.93.230.35"}
-,{"domainName":"hounslowmission.org.uk"
-,"responseTimeMs":"6511"
-,"queryResult":"89.249.71.4"}
-,{"domainName":"sebyc.es"
-,"responseTimeMs":"2725"
-,"queryResult":"217.160.131.183"}
-,{"domainName":"sgmgroupsac.com"
-,"responseTimeMs":"268"
-,"queryResult":"192.69.235.9"}
-,{"domainName":"teomarketing.com"
-,"responseTimeMs":"2729"
-,"queryResult":"50.31.99.167"}
-,{"domainName":"hundeschule-lechner.at"
-,"responseTimeMs":"1701"
-,"queryResult":"80.67.28.98"}
-,{"domainName":"hussaintextiles.com"
-,"responseTimeMs":"1521"
-,"queryResult":"69.160.32.60"}
-,{"domainName":"thergroupinc.com"
-,"responseTimeMs":"532"
-,"queryResult":"192.185.35.67"}
-,{"domainName":"thetake5method.com"
-,"responseTimeMs":"254"
-,"queryResult":"162.144.143.157"}
-,{"domainName":"hytorc.ro"
-,"responseTimeMs":"419"
-,"queryResult":"85.9.61.183"}
-,{"domainName":"gunibox.com"
-,"responseTimeMs":"1541"
-,"queryResult":"BLOCKED"}
-,{"domainName":"users-freemob.com"
-,"responseTimeMs":"1719"
-,"queryResult":"166.78.238.48"}
-,{"domainName":"victorelectronics.com"
-,"responseTimeMs":"264"
-,"queryResult":"72.1.252.140"}
-,{"domainName":"webm896-orange.com"
-,"responseTimeMs":"319"
-,"queryResult":"BLOCKED"}
-,{"domainName":"csbjkj.com"
-,"responseTimeMs":"1574"
-,"queryResult":"198.56.207.51"}
-,{"domainName":"recyclo.com.ar"
-,"responseTimeMs":"258"
-,"queryResult":"192.185.189.89"}
-,{"domainName":"iglesiacreci.org"
-,"responseTimeMs":"474"
-,"queryResult":"213.239.232.149"}
-,{"domainName":"imiue.polsl.pl"
-,"responseTimeMs":"381"
-,"queryResult":"157.158.64.5"}
-,{"domainName":"www.vvpan.com"
-,"responseTimeMs":"469"
-,"queryResult":"166.62.95.212"}
-,{"domainName":"alert-324error.xyz"
-,"responseTimeMs":"1598"
-,"queryResult":"BLOCKED"}
-,{"domainName":"yserch.com"
-,"responseTimeMs":"254"
-,"queryResult":"50.63.92.1"}
-,{"domainName":"seqsixxx.com"
-,"responseTimeMs":"1480"
-,"queryResult":"141.8.224.183"}
-,{"domainName":"stisa.org.cn"
-,"responseTimeMs":"2239"
-,"queryResult":"121.11.76.123"}
-,{"domainName":"test.gaxtoa.com"
-,"responseTimeMs":"361"
-,"queryResult":"BLOCKED"}
-,{"domainName":"bestwebq.su"
-,"responseTimeMs":"10117"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"billing.netflix.info.confirm.mem.auth.37476232.webnew01.com"
-,"responseTimeMs":"319"
-,"queryResult":"BLOCKED"}
-,{"domainName":"error-found.xyz"
-,"responseTimeMs":"335"
-,"queryResult":"BLOCKED"}
-,{"domainName":"ingperu.com"
-,"responseTimeMs":"216"
-,"queryResult":"192.185.74.167"}
-,{"domainName":"inno-leader.com"
-,"responseTimeMs":"4328"
-,"queryResult":"60.199.166.113"}
-,{"domainName":"mediagura.com"
-,"responseTimeMs":"205"
-,"queryResult":"78.140.190.86"}
-,{"domainName":"movelady.net"
-,"responseTimeMs":"1433"
-,"queryResult":"50.63.202.7"}
-,{"domainName":"internalrevenueservicevalidation.tripod.com"
-,"responseTimeMs":"384"
-,"queryResult":"209.202.252.50"}
-,{"domainName":"notice-macerror-505aq.com"
-,"responseTimeMs":"181"
-,"queryResult":"104.28.20.56"}
-,{"domainName":"oktits.com"
-,"responseTimeMs":"288"
-,"queryResult":"208.91.197.46"}
-,{"domainName":"inventionsports.com"
-,"responseTimeMs":"274"
-,"queryResult":"141.8.226.19"}
-,{"domainName":"stroyeq.ru"
-,"responseTimeMs":"10141"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"yixingim.com"
-,"responseTimeMs":"1513"
-,"queryResult":"BLOCKED"}
-,{"domainName":"riddenready.net"
-,"responseTimeMs":"2783"
-,"queryResult":"BLOCKED"}
-,{"domainName":"support.paypal.com-id.form-2830032603.pregnantalternatives.com.au"
-,"responseTimeMs":"2944"
-,"queryResult":"116.0.23.216"}
-,{"domainName":"www.jwdn.net"
-,"responseTimeMs":"426"
-,"queryResult":"BLOCKED"}
-,{"domainName":"stabroom.cn"
-,"responseTimeMs":"1606"
-,"queryResult":"50.117.113.222"}
-,{"domainName":"support.paypal.com-id.form-7116460280.pregnantalternatives.com.au"
-,"responseTimeMs":"4046"
-,"queryResult":"116.0.23.216"}
-,{"domainName":"support.paypal.com-id.form-898470393.pregnantalternatives.com.au"
-,"responseTimeMs":"302"
-,"queryResult":"116.0.23.216"}
-,{"domainName":"j634516.myjino.ru"
-,"responseTimeMs":"2889"
-,"queryResult":"81.177.141.71"}
-,{"domainName":"jaguariaiva.pr.gov.br"
-,"responseTimeMs":"779"
-,"queryResult":"179.189.29.2"}
-,{"domainName":"supports-payments-centre.com"
-,"responseTimeMs":"421"
-,"queryResult":"BLOCKED"}
-,{"domainName":"clancommission.us"
-,"responseTimeMs":"2592"
-,"queryResult":"74.124.194.99"}
-,{"domainName":"embedor.com"
-,"responseTimeMs":"359"
-,"queryResult":"43.225.127.2"}
-,{"domainName":"jeita.biz"
-,"responseTimeMs":"258"
-,"queryResult":"173.254.51.84"}
-,{"domainName":"assexyas.com"
-,"responseTimeMs":"1445"
-,"queryResult":"67.208.74.71"}
-,{"domainName":"acd.com.vn"
-,"responseTimeMs":"1574"
-,"queryResult":"103.48.81.11"}
-,{"domainName":"qobpjxy.eu"
-,"responseTimeMs":"488"
-,"queryResult":"BLOCKED"}
-,{"domainName":"eloyed.com"
-,"responseTimeMs":"4284"
-,"queryResult":"89.31.143.16"}
-,{"domainName":"account.service.update.mysoundmaster.com.my"
-,"responseTimeMs":"2444"
-,"queryResult":"BLOCKED"}
-,{"domainName":"activedigitalstrategy.com"
-,"responseTimeMs":"273"
-,"queryResult":"162.243.139.154"}
-,{"domainName":"jmjservicesinc.com"
-,"responseTimeMs":"2614"
-,"queryResult":"77.104.161.234"}
-,{"domainName":"bcpzonaseguraelinea.org"
-,"responseTimeMs":"423"
-,"queryResult":"31.15.10.79"}
-,{"domainName":"brainingenieria.com.co"
-,"responseTimeMs":"4226"
-,"queryResult":"104.131.200.41"}
-,{"domainName":"jmteam.com.my"
-,"responseTimeMs":"920"
-,"queryResult":"111.90.134.139"}
-,{"domainName":"porn-girls-nude-and-horny.com"
-,"responseTimeMs":"1490"
-,"queryResult":"184.94.154.148"}
-,{"domainName":"clientchaseonline.com"
-,"responseTimeMs":"357"
-,"queryResult":"184.168.221.52"}
-,{"domainName":"coessentialoils.com"
-,"responseTimeMs":"2788"
-,"queryResult":"69.172.201.153"}
-,{"domainName":"specialistups.com"
-,"responseTimeMs":"415"
-,"queryResult":"174.120.70.216"}
-,{"domainName":"juancarlosalvarezdelvalle.com"
-,"responseTimeMs":"296"
-,"queryResult":"143.95.252.252"}
-,{"domainName":"3years.lethanon.net"
-,"responseTimeMs":"211"
-,"queryResult":"69.163.153.4"}
-,{"domainName":"acriformiacrilicos.com.br"
-,"responseTimeMs":"8391"
-,"queryResult":"192.185.214.192"}
-,{"domainName":"agwoan.com"
-,"responseTimeMs":"1473"
-,"queryResult":"72.167.131.153"}
-,{"domainName":"appleid-support-login.richbeing.com"
-,"responseTimeMs":"218"
-,"queryResult":"159.100.181.26"}
-,{"domainName":"blog.3kingsclothing.com"
-,"responseTimeMs":"274"
-,"queryResult":"BLOCKED"}
-,{"domainName":"karmaplus.org"
-,"responseTimeMs":"1411"
-,"queryResult":"107.180.28.183"}
-,{"domainName":"boisterousmx.top"
-,"responseTimeMs":"1823"
-,"queryResult":"BLOCKED"}
-,{"domainName":"caminhosdosertao.com.br"
-,"responseTimeMs":"3570"
-,"queryResult":"192.185.210.39"}
-,{"domainName":"kartupintar.com"
-,"responseTimeMs":"186"
-,"queryResult":"219.83.68.69"}
-,{"domainName":"canadiantabletshop.ru"
-,"responseTimeMs":"328"
-,"queryResult":"BLOCKED"}
-,{"domainName":"yesteam.org.in"
-,"responseTimeMs":"6876"
-,"queryResult":"162.220.58.211"}
-,{"domainName":"psy-ufa.ru"
-,"responseTimeMs":"7532"
-,"queryResult":"BLOCKED"}
-,{"domainName":"sznaucer-figa.nd.e-wro.pl"
-,"responseTimeMs":"4204"
-,"queryResult":"217.30.152.177"}
-,{"domainName":"youknownow.ru"
-,"responseTimeMs":"3007"
-,"queryResult":"178.208.83.55"}
-,{"domainName":"kerteszetihulladek.hu"
-,"responseTimeMs":"1468"
-,"queryResult":"87.229.73.63"}
-,{"domainName":"fideln.com"
-,"responseTimeMs":"286"
-,"queryResult":"198.27.75.46"}
-,{"domainName":"hirighdabet.com"
-,"responseTimeMs":"278"
-,"queryResult":"BLOCKED"}
-,{"domainName":"shuangying163.com"
-,"responseTimeMs":"189"
-,"queryResult":"118.145.6.217"}
-,{"domainName":"iiaoannnayabbbaggasssajko.com"
-,"responseTimeMs":"1429"
-,"queryResult":"184.168.221.58"}
-,{"domainName":"simplequiltmaking.com"
-,"responseTimeMs":"198"
-,"queryResult":"192.185.15.101"}
-,{"domainName":"kloshpro.com"
-,"responseTimeMs":"141"
-,"queryResult":"220.158.164.119"}
-,{"domainName":"asess.com.mx"
-,"responseTimeMs":"1706"
-,"queryResult":"50.28.39.49"}
-,{"domainName":"kombitamirbakim.com"
-,"responseTimeMs":"415"
-,"queryResult":"185.92.1.122"}
-,{"domainName":"asiaok.net"
-,"responseTimeMs":"382"
-,"queryResult":"138.201.187.241"}
-,{"domainName":"myherbsstore.ru"
-,"responseTimeMs":"373"
-,"queryResult":"BLOCKED"}
-,{"domainName":"bordobank.net"
-,"responseTimeMs":"158"
-,"queryResult":"77.245.148.3"}
-,{"domainName":"newpharmaceuticmall.ru"
-,"responseTimeMs":"267"
-,"queryResult":"BLOCKED"}
-,{"domainName":"kriator2.com"
-,"responseTimeMs":"1506"
-,"queryResult":"143.95.32.52"}
-,{"domainName":"origin.cdnflash.com"
-,"responseTimeMs":"165"
-,"queryResult":"104.238.97.229"}
-,{"domainName":"pishroanformatic.com"
-,"responseTimeMs":"1673"
-,"queryResult":"158.58.186.189"}
-,{"domainName":"prosistech.net"
-,"responseTimeMs":"211"
-,"queryResult":"23.229.155.226"}
-,{"domainName":"lamarwilliams.net"
-,"responseTimeMs":"342"
-,"queryResult":"157.7.188.151"}
-,{"domainName":"samithsirimanna.lk"
-,"responseTimeMs":"1328"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"laposadadelaermita.com"
-,"responseTimeMs":"436"
-,"queryResult":"88.198.24.90"}
-,{"domainName":"wtracy.free.fr"
-,"responseTimeMs":"1661"
-,"queryResult":"212.27.63.113"}
-,{"domainName":"sup-international-service-details.information.settings.center.appdatasecr.com"
-,"responseTimeMs":"199"
-,"queryResult":"208.91.197.160"}
-,{"domainName":"viajarte.com.br"
-,"responseTimeMs":"4469"
-,"queryResult":"200.201.178.198"}
-,{"domainName":"leatherforgay.co.uk"
-,"responseTimeMs":"2353"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"ledlife.com.ua"
-,"responseTimeMs":"356"
-,"queryResult":"31.131.18.89"}
-,{"domainName":"herbaveda.ru"
-,"responseTimeMs":"1701"
-,"queryResult":"77.221.130.11"}
-,{"domainName":"leostamps.net"
-,"responseTimeMs":"357"
-,"queryResult":"62.75.251.79"}
-,{"domainName":"recordinclude.net"
-,"responseTimeMs":"321"
-,"queryResult":"BLOCKED"}
-,{"domainName":"life2forbag.com"
-,"responseTimeMs":"263"
-,"queryResult":"208.113.173.23"}
-,{"domainName":"ffoqr3ug7m726zou.735giv.top"
-,"responseTimeMs":"498"
-,"queryResult":"BLOCKED"}
-,{"domainName":"lifestylehill.com"
-,"responseTimeMs":"356"
-,"queryResult":"192.185.5.229"}
-,{"domainName":"bbpama.com"
-,"responseTimeMs":"304"
-,"queryResult":"210.245.164.74"}
-,{"domainName":"lions-leonberg.de"
-,"responseTimeMs":"734"
-,"queryResult":"212.77.224.82"}
-,{"domainName":"catgruop.net"
-,"responseTimeMs":"1568"
-,"queryResult":"69.172.201.153"}
-,{"domainName":"login.com.assoc.sinergy.com.gloedge.com.subsystem.org.webpepper.aws-anazon.com.weddingsplanner.co.in"
-,"responseTimeMs":"2973"
-,"queryResult":"BLOCKED"}
-,{"domainName":"dxipo.com"
-,"responseTimeMs":"2129"
-,"queryResult":"103.24.251.10"}
-,{"domainName":"52flz.com"
-,"responseTimeMs":"544"
-,"queryResult":"61.142.253.205"}
-,{"domainName":"loginet.gr"
-,"responseTimeMs":"566"
-,"queryResult":"5.172.198.178"}
-,{"domainName":"edhadary.co.il"
-,"responseTimeMs":"2864"
-,"queryResult":"213.8.196.154"}
-,{"domainName":"rokobon.com"
-,"responseTimeMs":"311"
-,"queryResult":"BLOCKED"}
-,{"domainName":"lucinformaticaesolucoes.com.br"
-,"responseTimeMs":"3456"
-,"queryResult":"66.55.153.230"}
-,{"domainName":"fishum.com"
-,"responseTimeMs":"2594"
-,"queryResult":"208.91.197.27"}
-,{"domainName":"zeroclan.net"
-,"responseTimeMs":"2731"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mainnetsoll.com"
-,"responseTimeMs":"202"
-,"queryResult":"185.53.178.6"}
-,{"domainName":"lvision.lk"
-,"responseTimeMs":"3140"
-,"queryResult":"107.154.163.193"}
-,{"domainName":"pharmind.net"
-,"responseTimeMs":"184"
-,"queryResult":"192.185.42.97"}
-,{"domainName":"gstats.cn"
-,"responseTimeMs":"246"
-,"queryResult":"103.51.144.81"}
-,{"domainName":"habrion.cn"
-,"responseTimeMs":"357"
-,"queryResult":"103.51.144.81"}
-,{"domainName":"malabarexports.com"
-,"responseTimeMs":"1539"
-,"queryResult":"204.11.58.144"}
-,{"domainName":"transinternationalaircouriern.allalla.com"
-,"responseTimeMs":"178"
-,"queryResult":"31.170.160.57"}
-,{"domainName":"trofeoseconomicos.es"
-,"responseTimeMs":"333"
-,"queryResult":"69.175.96.220"}
-,{"domainName":"verfer.com"
-,"responseTimeMs":"10131"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"mamatsave.com"
-,"responseTimeMs":"210"
-,"queryResult":"184.168.221.60"}
-,{"domainName":"volunteerbackgroundchecks.net"
-,"responseTimeMs":"208"
-,"queryResult":"23.235.214.114"}
-,{"domainName":"mnogobab.com"
-,"responseTimeMs":"10142"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"mangarosaboipeba.com"
-,"responseTimeMs":"295"
-,"queryResult":"50.116.112.167"}
-,{"domainName":"hockeysubnantais.free.fr"
-,"responseTimeMs":"454"
-,"queryResult":"212.27.63.112"}
-,{"domainName":"marampops.net"
-,"responseTimeMs":"1532"
-,"queryResult":"BLOCKED"}
-,{"domainName":"emmajackmagazine.com"
-,"responseTimeMs":"214"
-,"queryResult":"104.154.214.46"}
-,{"domainName":"mardoeis.at"
-,"responseTimeMs":"288"
-,"queryResult":"217.160.231.185"}
-,{"domainName":"marksimpson.co.uk"
-,"responseTimeMs":"2945"
-,"queryResult":"85.233.160.151"}
-,{"domainName":"marrrchi.altervista.org"
-,"responseTimeMs":"4058"
-,"queryResult":"BLOCKED"}
-,{"domainName":"matterofmanner.com"
-,"responseTimeMs":"295"
-,"queryResult":"209.99.40.222"}
-,{"domainName":"mcdinformatica.com.br"
-,"responseTimeMs":"7679"
-,"queryResult":"192.185.214.95"}
-,{"domainName":"lekarzdan.com"
-,"responseTimeMs":"1660"
-,"queryResult":"72.52.4.122"}
-,{"domainName":"blacksheepatlanta.com"
-,"responseTimeMs":"154"
-,"queryResult":"97.74.182.128"}
-,{"domainName":"mcdowelllandscape.com"
-,"responseTimeMs":"210"
-,"queryResult":"198.57.149.246"}
-,{"domainName":"mckenziegalleries.com"
-,"responseTimeMs":"308"
-,"queryResult":"199.101.243.205"}
-,{"domainName":"bilbords.com"
-,"responseTimeMs":"2707"
-,"queryResult":"BLOCKED"}
-,{"domainName":"meghalomania.com"
-,"responseTimeMs":"195"
-,"queryResult":"69.89.18.32"}
-,{"domainName":"medannapoleon.com"
-,"responseTimeMs":"406"
-,"queryResult":"45.64.1.112"}
-,{"domainName":"moontag.com"
-,"responseTimeMs":"226"
-,"queryResult":"66.96.149.17"}
-,{"domainName":"ehaaranen.com"
-,"responseTimeMs":"156"
-,"queryResult":"143.95.79.207"}
-,{"domainName":"megasol.com.do"
-,"responseTimeMs":"215"
-,"queryResult":"192.185.76.2"}
-,{"domainName":"mehmetcimen.tk"
-,"responseTimeMs":"586"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mer.myjino.ru"
-,"responseTimeMs":"413"
-,"queryResult":"81.177.6.233"}
-,{"domainName":"mangetsudo.net"
-,"responseTimeMs":"373"
-,"queryResult":"219.118.71.133"}
-,{"domainName":"markand.ro"
-,"responseTimeMs":"524"
-,"queryResult":"89.36.25.216"}
-,{"domainName":"moffia.nl"
-,"responseTimeMs":"10148"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"mindfulleadershipsymposium.ch"
-,"responseTimeMs":"1587"
-,"queryResult":"85.92.78.184"}
-,{"domainName":"nitay.com"
-,"responseTimeMs":"4025"
-,"queryResult":"188.116.19.36"}
-,{"domainName":"ulmicsulfa.net"
-,"responseTimeMs":"10140"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"anamol.net"
-,"responseTimeMs":"2668"
-,"queryResult":"119.252.152.154"}
-,{"domainName":"wpthemesense.com"
-,"responseTimeMs":"247"
-,"queryResult":"182.253.238.11"}
-,{"domainName":"mkeme.altervista.org"
-,"responseTimeMs":"421"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mobiactif.es"
-,"responseTimeMs":"2975"
-,"queryResult":"31.24.124.135"}
-,{"domainName":"805678.com"
-,"responseTimeMs":"4413"
-,"queryResult":"115.42.60.76"}
-,{"domainName":"www.montostroj.eu"
-,"responseTimeMs":"2106"
-,"queryResult":"195.168.1.32"}
-,{"domainName":"mobilecontentplace.com"
-,"responseTimeMs":"1408"
-,"queryResult":"35.156.217.59"}
-,{"domainName":"bbnwl.cn"
-,"responseTimeMs":"623"
-,"queryResult":"192.151.152.150"}
-,{"domainName":"co3corp.com"
-,"responseTimeMs":"1431"
-,"queryResult":"54.148.24.218"}
-,{"domainName":"feenode.net"
-,"responseTimeMs":"1546"
-,"queryResult":"193.200.42.162"}
-,{"domainName":"ipwhrtmla.epac.to"
-,"responseTimeMs":"123"
-,"queryResult":"69.6.223.30"}
-,{"domainName":"outlook-excell.com"
-,"responseTimeMs":"930"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"mobuna.com"
-,"responseTimeMs":"313"
-,"queryResult":"BLOCKED"}
-,{"domainName":"combinaparts.com"
-,"responseTimeMs":"283"
-,"queryResult":"BLOCKED"}
-,{"domainName":"movimientociudadanozac.org.mx"
-,"responseTimeMs":"392"
-,"queryResult":"BLOCKED"}
-,{"domainName":"fuel-science-technology.com"
-,"responseTimeMs":"530"
-,"queryResult":"109.237.211.66"}
-,{"domainName":"downloadscanning.com"
-,"responseTimeMs":"2658"
-,"queryResult":"BLOCKED"}
-,{"domainName":"kiy-carbon.com"
-,"responseTimeMs":"976"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"fcssqw.com"
-,"responseTimeMs":"526"
-,"queryResult":"50.93.205.153"}
-,{"domainName":"5780.com"
-,"responseTimeMs":"10136"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"mydlozfarmy.sk"
-,"responseTimeMs":"311"
-,"queryResult":"37.9.175.16"}
-,{"domainName":"annengdl.com"
-,"responseTimeMs":"1532"
-,"queryResult":"BLOCKED"}
-,{"domainName":"victorialmpex.com"
-,"responseTimeMs":"927"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"downloadadvisory.com"
-,"responseTimeMs":"281"
-,"queryResult":"208.91.197.46"}
-,{"domainName":"lindner-stofftiere.com"
-,"responseTimeMs":"1284"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"downloaddash.com"
-,"responseTimeMs":"237"
-,"queryResult":"208.91.197.46"}
-,{"domainName":"nakinaindustries.com"
-,"responseTimeMs":"1485"
-,"queryResult":"107.181.179.9"}
-,{"domainName":"downloadespe.com"
-,"responseTimeMs":"325"
-,"queryResult":"BLOCKED"}
-,{"domainName":"narkoclinics.ru"
-,"responseTimeMs":"624"
-,"queryResult":"178.210.84.155"}
-,{"domainName":"nashdah.by"
-,"responseTimeMs":"1707"
-,"queryResult":"93.125.99.78"}
-,{"domainName":"ciaeco.com"
-,"responseTimeMs":"2718"
-,"queryResult":"185.53.179.6"}
-,{"domainName":"garden-court.com"
-,"responseTimeMs":"1486"
-,"queryResult":"162.210.101.150"}
-,{"domainName":"mobile-safety.org"
-,"responseTimeMs":"255"
-,"queryResult":"8.29.128.136"}
-,{"domainName":"nhahangkhoai.com"
-,"responseTimeMs":"8084"
-,"queryResult":"103.27.239.216"}
-,{"domainName":"lizhis.com"
-,"responseTimeMs":"210"
-,"queryResult":"45.33.248.135"}
-,{"domainName":"phwdaogtjny.us"
-,"responseTimeMs":"173"
-,"queryResult":"206.189.185.221"}
-,{"domainName":"flipsphere.ru"
-,"responseTimeMs":"4430"
-,"queryResult":"BLOCKED"}
-,{"domainName":"noradgroup.com"
-,"responseTimeMs":"368"
-,"queryResult":"72.34.44.128"}
-,{"domainName":"kogirlsnotcryz.ru"
-,"responseTimeMs":"3881"
-,"queryResult":"BLOCKED"}
-,{"domainName":"brubitcoin.com"
-,"responseTimeMs":"526"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"sicredifacilidade.com"
-,"responseTimeMs":"332"
-,"queryResult":"BLOCKED"}
-,{"domainName":"aaa520.izlinix.com"
-,"responseTimeMs":"351"
-,"queryResult":"116.204.13.31"}
-,{"domainName":"zonaseguras1u-bn.pe.hu"
-,"responseTimeMs":"1357"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"obtimaledecouvertesasses.it"
-,"responseTimeMs":"457"
-,"queryResult":"166.78.238.48"}
-,{"domainName":"aliipage.hostingsiteforfree.com"
-,"responseTimeMs":"214"
-,"queryResult":"31.170.160.57"}
-,{"domainName":"allegrocatclub.com.br"
-,"responseTimeMs":"3297"
-,"queryResult":"192.185.176.15"}
-,{"domainName":"bleachkon.net"
-,"responseTimeMs":"213"
-,"queryResult":"203.191.144.204"}
-,{"domainName":"chadandmonique.com"
-,"responseTimeMs":"2629"
-,"queryResult":"129.232.170.74"}
-,{"domainName":"cheap-sports-jerseys.com"
-,"responseTimeMs":"168"
-,"queryResult":"68.65.122.221"}
-,{"domainName":"cooper.mylftv.com"
-,"responseTimeMs":"175"
-,"queryResult":"23.19.122.212"}
-,{"domainName":"ohomemeamudanca.com.br"
-,"responseTimeMs":"5829"
-,"queryResult":"177.11.50.101"}
-,{"domainName":"gdzjco.com"
-,"responseTimeMs":"1415"
-,"queryResult":"122.224.11.143"}
-,{"domainName":"online-chase.myjino.ru"
-,"responseTimeMs":"1587"
-,"queryResult":"81.177.141.73"}
-,{"domainName":"online.well.sfargo.eniyitemelliseler.com"
-,"responseTimeMs":"1559"
-,"queryResult":"BLOCKED"}
-,{"domainName":"itspecialist.ro"
-,"responseTimeMs":"1608"
-,"queryResult":"86.106.30.115"}
-,{"domainName":"ifstusa.org"
-,"responseTimeMs":"1439"
-,"queryResult":"185.28.23.130"}
-,{"domainName":"jc-c.com"
-,"responseTimeMs":"3922"
-,"queryResult":"BLOCKED"}
-,{"domainName":"opinno.com"
-,"responseTimeMs":"215"
-,"queryResult":"149.202.188.83"}
-,{"domainName":"jfdyw.com"
-,"responseTimeMs":"10151"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"impobg.eu"
-,"responseTimeMs":"2340"
-,"queryResult":"91.215.216.17"}
-,{"domainName":"innovationcircle.com"
-,"responseTimeMs":"10142"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"ortaokultestleri.net"
-,"responseTimeMs":"382"
-,"queryResult":"79.137.97.68"}
-,{"domainName":"intertaller.eu"
-,"responseTimeMs":"1464"
-,"queryResult":"91.195.240.70"}
-,{"domainName":"m1d.ru"
-,"responseTimeMs":"519"
-,"queryResult":"185.53.178.7"}
-,{"domainName":"invisplast.ru"
-,"responseTimeMs":"577"
-,"queryResult":"91.218.231.50"}
-,{"domainName":"osoindesoi.com"
-,"responseTimeMs":"536"
-,"queryResult":"213.186.33.4"}
-,{"domainName":"maszcjc.com"
-,"responseTimeMs":"1275"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"metameets.eu"
-,"responseTimeMs":"485"
-,"queryResult":"91.142.252.190"}
-,{"domainName":"jellybaby.org.uk"
-,"responseTimeMs":"403"
-,"queryResult":"78.33.15.234"}
-,{"domainName":"coffee4u.pl"
-,"responseTimeMs":"349"
-,"queryResult":"87.98.239.48"}
-,{"domainName":"panelfollowersindo.ga"
-,"responseTimeMs":"319"
-,"queryResult":"BLOCKED"}
-,{"domainName":"3fgt.com"
-,"responseTimeMs":"2648"
-,"queryResult":"23.245.86.241"}
-,{"domainName":"parkellis.com"
-,"responseTimeMs":"165"
-,"queryResult":"107.180.40.34"}
-,{"domainName":"img.securesoft.info"
-,"responseTimeMs":"322"
-,"queryResult":"BLOCKED"}
-,{"domainName":"pasa.org.pk"
-,"responseTimeMs":"1165"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"install.securesoft.info"
-,"responseTimeMs":"2749"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mpif.eu"
-,"responseTimeMs":"319"
-,"queryResult":"BLOCKED"}
-,{"domainName":"kirillpryadukhin.ru"
-,"responseTimeMs":"192"
-,"queryResult":"185.105.224.243"}
-,{"domainName":"mynetav.net"
-,"responseTimeMs":"1472"
-,"queryResult":"209.208.4.62"}
-,{"domainName":"barbaros.com"
-,"responseTimeMs":"199"
-,"queryResult":"94.73.149.80"}
-,{"domainName":"blueendless.com"
-,"responseTimeMs":"5711"
-,"queryResult":"52.37.0.233"}
-,{"domainName":"paypal.comservice.cf"
-,"responseTimeMs":"329"
-,"queryResult":"BLOCKED"}
-,{"domainName":"kalinston.com"
-,"responseTimeMs":"494"
-,"queryResult":"BLOCKED"}
-,{"domainName":"paypinfoservi.it"
-,"responseTimeMs":"475"
-,"queryResult":"166.78.238.48"}
-,{"domainName":"2ndzenith.com"
-,"responseTimeMs":"218"
-,"queryResult":"208.113.180.237"}
-,{"domainName":"pepinieresgaurrat.com"
-,"responseTimeMs":"317"
-,"queryResult":"87.98.160.36"}
-,{"domainName":"demodomain.cz"
-,"responseTimeMs":"621"
-,"queryResult":"BLOCKED"}
-,{"domainName":"periexomenanet.gr"
-,"responseTimeMs":"348"
-,"queryResult":"192.145.236.224"}
-,{"domainName":"personnalisationdescomptes.it"
-,"responseTimeMs":"442"
-,"queryResult":"166.78.238.48"}
-,{"domainName":"tvandsportstreams.com"
-,"responseTimeMs":"234"
-,"queryResult":"45.33.9.234"}
-,{"domainName":"mmmkouzhao.com"
-,"responseTimeMs":"411"
-,"queryResult":"122.114.90.203"}
-,{"domainName":"pettybaby.com.br"
-,"responseTimeMs":"871"
-,"queryResult":"192.185.217.117"}
-,{"domainName":"banner.ringofon.com"
-,"responseTimeMs":"1620"
-,"queryResult":"54.72.9.51"}
-,{"domainName":"postbank-3524550197.ru"
-,"responseTimeMs":"10151"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"philmasolicitors.com.ng"
-,"responseTimeMs":"123"
-,"queryResult":"67.220.182.242"}
-,{"domainName":"psouutarnow.org"
-,"responseTimeMs":"1142"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"sharfiles.com"
-,"responseTimeMs":"554"
-,"queryResult":"146.148.34.125"}
-,{"domainName":"qbqoxfujlbetfrjfh.com"
-,"responseTimeMs":"165"
-,"queryResult":"89.223.109.60"}
-,{"domainName":"308888.com"
-,"responseTimeMs":"811"
-,"queryResult":"66.79.179.218"}
-,{"domainName":"picassohotel.es"
-,"responseTimeMs":"2596"
-,"queryResult":"31.24.124.135"}
-,{"domainName":"pnsolco.com"
-,"responseTimeMs":"287"
-,"queryResult":"192.254.234.118"}
-,{"domainName":"sillasderuedascali.com"
-,"responseTimeMs":"224"
-,"queryResult":"192.185.73.152"}
-,{"domainName":"animeonline.net"
-,"responseTimeMs":"211"
-,"queryResult":"104.31.86.191"}
-,{"domainName":"portal.escop.at"
-,"responseTimeMs":"695"
-,"queryResult":"81.19.147.210"}
-,{"domainName":"portaleverest.com.br"
-,"responseTimeMs":"4498"
-,"queryResult":"192.185.223.131"}
-,{"domainName":"95kd.com"
-,"responseTimeMs":"1713"
-,"queryResult":"BLOCKED"}
-,{"domainName":"powertechnik.co.uk"
-,"responseTimeMs":"8816"
-,"queryResult":"192.185.128.19"}
-,{"domainName":"wangxiaorong.com"
-,"responseTimeMs":"10144"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"pp-support-service.gq"
-,"responseTimeMs":"325"
-,"queryResult":"BLOCKED"}
-,{"domainName":"gxaiq.com"
-,"responseTimeMs":"10153"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"precisetraining.com.au"
-,"responseTimeMs":"629"
-,"queryResult":"27.121.64.178"}
-,{"domainName":"hairchinadirect.com"
-,"responseTimeMs":"1586"
-,"queryResult":"94.231.103.127"}
-,{"domainName":"presskitaquat.com"
-,"responseTimeMs":"264"
-,"queryResult":"BLOCKED"}
-,{"domainName":"otdacham.ru"
-,"responseTimeMs":"4394"
-,"queryResult":"BLOCKED"}
-,{"domainName":"nminmobiliaria.com"
-,"responseTimeMs":"2693"
-,"queryResult":"173.254.28.24"}
-,{"domainName":"princebakery.id"
-,"responseTimeMs":"3466"
-,"queryResult":"103.24.13.91"}
-,{"domainName":"lauiatraps.net"
-,"responseTimeMs":"324"
-,"queryResult":"BLOCKED"}
-,{"domainName":"propertybuyerfiles.us"
-,"responseTimeMs":"210"
-,"queryResult":"68.65.122.209"}
-,{"domainName":"protectivegloves.co.in"
-,"responseTimeMs":"451"
-,"queryResult":"81.19.186.216"}
-,{"domainName":"www.tourindia.in"
-,"responseTimeMs":"382"
-,"queryResult":"68.178.254.126"}
-,{"domainName":"pattumalamatha.com"
-,"responseTimeMs":"202"
-,"queryResult":"166.62.30.149"}
-,{"domainName":"poltec.com.au"
-,"responseTimeMs":"3881"
-,"queryResult":"27.54.86.236"}
-,{"domainName":"playerflv.com"
-,"responseTimeMs":"304"
-,"queryResult":"52.204.129.22"}
-,{"domainName":"www.p3322.com"
-,"responseTimeMs":"324"
-,"queryResult":"50.63.202.60"}
-,{"domainName":"putbabytosleep.net"
-,"responseTimeMs":"2675"
-,"queryResult":"67.227.198.72"}
-,{"domainName":"shouwangstudio.com"
-,"responseTimeMs":"266"
-,"queryResult":"45.78.89.19"}
-,{"domainName":"radicalspot.it"
-,"responseTimeMs":"283"
-,"queryResult":"213.186.33.82"}
-,{"domainName":"rajabahadur.com"
-,"responseTimeMs":"249"
-,"queryResult":"72.9.109.203"}
-,{"domainName":"updatenowpro.com"
-,"responseTimeMs":"219"
-,"queryResult":"45.33.9.234"}
-,{"domainName":"ulmustway.com"
-,"responseTimeMs":"371"
-,"queryResult":"BLOCKED"}
-,{"domainName":"rcm4ie.com"
-,"responseTimeMs":"220"
-,"queryResult":"198.27.103.128"}
-,{"domainName":"redirect1.return128appl.com"
-,"responseTimeMs":"10139"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"reglements-generals.com"
-,"responseTimeMs":"1533"
-,"queryResult":"74.220.207.183"}
-,{"domainName":"thomashobbs.com"
-,"responseTimeMs":"2617"
-,"queryResult":"69.161.143.29"}
-,{"domainName":"houseller.eu"
-,"responseTimeMs":"225"
-,"queryResult":"62.212.76.142"}
-,{"domainName":"hardpornoizle.net"
-,"responseTimeMs":"2653"
-,"queryResult":"104.27.164.158"}
-,{"domainName":"illinoisnavhda.org"
-,"responseTimeMs":"3954"
-,"queryResult":"209.35.112.216"}
-,{"domainName":"interdean.hu"
-,"responseTimeMs":"338"
-,"queryResult":"95.131.66.24"}
-,{"domainName":"rijschooltommie.nl"
-,"responseTimeMs":"781"
-,"queryResult":"185.104.29.60"}
-,{"domainName":"aaa.77xxmm.cn"
-,"responseTimeMs":"414"
-,"queryResult":"BLOCKED"}
-,{"domainName":"dancecourt.com"
-,"responseTimeMs":"212"
-,"queryResult":"216.139.218.10"}
-,{"domainName":"obdeskfyou.ru"
-,"responseTimeMs":"1553"
-,"queryResult":"BLOCKED"}
-,{"domainName":"kstm.or.th"
-,"responseTimeMs":"5319"
-,"queryResult":"103.7.56.217"}
-,{"domainName":"roomairbnbnet.altervista.org"
-,"responseTimeMs":"316"
-,"queryResult":"BLOCKED"}
-,{"domainName":"roomsiarbab.altervista.org"
-,"responseTimeMs":"369"
-,"queryResult":"BLOCKED"}
-,{"domainName":"blackfalcon3.net"
-,"responseTimeMs":"271"
-,"queryResult":"BLOCKED"}
-,{"domainName":"ruangmakna.net"
-,"responseTimeMs":"221"
-,"queryResult":"74.63.248.218"}
-,{"domainName":"lomtalay.com"
-,"responseTimeMs":"413"
-,"queryResult":"119.59.99.30"}
-,{"domainName":"ltinvest.de"
-,"responseTimeMs":"733"
-,"queryResult":"212.40.179.95"}
-,{"domainName":"ifindwholesale.com"
-,"responseTimeMs":"273"
-,"queryResult":"BLOCKED"}
-,{"domainName":"losalseehijos.es"
-,"responseTimeMs":"279"
-,"queryResult":"BLOCKED"}
-,{"domainName":"nwhomecare.co.uk"
-,"responseTimeMs":"2886"
-,"queryResult":"217.149.108.240"}
-,{"domainName":"megalingeriemall.com"
-,"responseTimeMs":"542"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"melzer-casting.de"
-,"responseTimeMs":"1838"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"sminmin.in"
-,"responseTimeMs":"289"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mooymedia.nl"
-,"responseTimeMs":"429"
-,"queryResult":"188.227.200.134"}
-,{"domainName":"ajarixusuqux.com"
-,"responseTimeMs":"2721"
-,"queryResult":"BLOCKED"}
-,{"domainName":"mysolosource.com"
-,"responseTimeMs":"245"
-,"queryResult":"BLOCKED"}
-,{"domainName":"natalija.ru"
-,"responseTimeMs":"583"
-,"queryResult":"217.112.42.86"}
-,{"domainName":"karaszkiewicz.neostrada.pl"
-,"responseTimeMs":"174"
-,"queryResult":"217.97.216.17"}
-,{"domainName":"fazendacristal.com"
-,"responseTimeMs":"2613"
-,"queryResult":"186.202.153.198"}
-,{"domainName":"0377.wang"
-,"responseTimeMs":"2749"
-,"queryResult":"BLOCKED"}
-,{"domainName":"seasidebohol.com"
-,"responseTimeMs":"2653"
-,"queryResult":"192.163.255.186"}
-,{"domainName":"314151.com"
-,"responseTimeMs":"178"
-,"queryResult":"183.131.217.30"}
-,{"domainName":"www.2003xx.com"
-,"responseTimeMs":"187"
-,"queryResult":"122.9.161.215"}
-,{"domainName":"www3.32hy.com"
-,"responseTimeMs":"811"
-,"queryResult":"70.39.84.241"}
-,{"domainName":"sedelargodoscampeoes.com.br"
-,"responseTimeMs":"2061"
-,"queryResult":"108.179.192.190"}
-,{"domainName":"konto1.cal24.pl"
-,"responseTimeMs":"216"
-,"queryResult":"144.76.114.199"}
-,{"domainName":"addonnet.com"
-,"responseTimeMs":"214"
-,"queryResult":"178.236.77.142"}
-,{"domainName":"select-server.net"
-,"responseTimeMs":"580"
-,"queryResult":"212.7.216.192"}
-,{"domainName":"agenciabbi.com.br"
-,"responseTimeMs":"9318"
-,"queryResult":"192.185.220.149"}
-,{"domainName":"link2me.ru"
-,"responseTimeMs":"321"
-,"queryResult":"85.25.195.18"}
-,{"domainName":"airbnb.com-listing.eu"
-,"responseTimeMs":"554"
-,"queryResult":"BLOCKED"}
-,{"domainName":"serole.com"
-,"responseTimeMs":"1415"
-,"queryResult":"107.170.193.6"}
-,{"domainName":"aredaclubes.org.ar"
-,"responseTimeMs":"481"
-,"queryResult":"190.210.204.185"}
-,{"domainName":"lpmxp2024.com"
-,"responseTimeMs":"3910"
-,"queryResult":"BLOCKED"}
-,{"domainName":"lpmxp2026.com"
-,"responseTimeMs":"1536"
-,"queryResult":"BLOCKED"}
-,{"domainName":"avosos.org.br"
-,"responseTimeMs":"4467"
-,"queryResult":"177.47.187.20"}
-,{"domainName":"lpmxp2027.com"
-,"responseTimeMs":"1519"
-,"queryResult":"BLOCKED"}
-,{"domainName":"sh209035.website.pl"
-,"responseTimeMs":"361"
-,"queryResult":"195.114.1.126"}
-,{"domainName":"cmpcheck.net"
-,"responseTimeMs":"1557"
-,"queryResult":"49.212.159.218"}
-,{"domainName":"contoterzisti.it"
-,"responseTimeMs":"481"
-,"queryResult":"149.13.148.65"}
-,{"domainName":"shoeloungeatl.com"
-,"responseTimeMs":"2526"
-,"queryResult":"107.180.50.220"}
-,{"domainName":"profileawareness.com"
-,"responseTimeMs":"198"
-,"queryResult":"204.11.56.48"}
-,{"domainName":"shriamarnathsevatrust.com"
-,"responseTimeMs":"245"
-,"queryResult":"192.185.115.65"}
-,{"domainName":"rimakaram.net"
-,"responseTimeMs":"445"
-,"queryResult":"BLOCKED"}
-,{"domainName":"spunkyvids.com"
-,"responseTimeMs":"274"
-,"queryResult":"208.91.197.46"}
-,{"domainName":"thxhb.com"
-,"responseTimeMs":"347"
-,"queryResult":"103.56.100.73"}
-,{"domainName":"silk69.in"
-,"responseTimeMs":"7472"
-,"queryResult":"49.50.67.247"}
-,{"domainName":"etic-eu.net"
-,"responseTimeMs":"229"
-,"queryResult":"217.160.231.254"}
-,{"domainName":"xigushan.com"
-,"responseTimeMs":"1589"
-,"queryResult":"103.71.152.13"}
-,{"domainName":"singularcakes.com"
-,"responseTimeMs":"332"
-,"queryResult":"134.0.10.243"}
-,{"domainName":"yueqi360.com"
-,"responseTimeMs":"263"
-,"queryResult":"BLOCKED"}
-,{"domainName":"istanbulhairtrans.com"
-,"responseTimeMs":"1243"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"skimstone.com.au"
-,"responseTimeMs":"10496"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"lla-bayreuth.de"
-,"responseTimeMs":"1533"
-,"queryResult":"212.227.1.211"}
-,{"domainName":"33nn.com"
-,"responseTimeMs":"1327"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"skywalker.onesite.co"
-,"responseTimeMs":"324"
-,"queryResult":"BLOCKED"}
-,{"domainName":"777txt.com"
-,"responseTimeMs":"1672"
-,"queryResult":"103.37.1.53"}
-,{"domainName":"lux.rootmedia.ru"
-,"responseTimeMs":"467"
-,"queryResult":"5.101.152.53"}
-,{"domainName":"autosloansonlines.com"
-,"responseTimeMs":"196"
-,"queryResult":"BLOCKED"}
-,{"domainName":"smikkelhoekje.nl"
-,"responseTimeMs":"1558"
-,"queryResult":"77.75.254.74"}
-,{"domainName":"hotslotpot.cn"
-,"responseTimeMs":"259"
-,"queryResult":"50.117.113.222"}
-,{"domainName":"sob4u.com"
-,"responseTimeMs":"192"
-,"queryResult":"107.189.3.207"}
-,{"domainName":"readytonikah.com"
-,"responseTimeMs":"239"
-,"queryResult":"103.224.212.222"}
-,{"domainName":"serviceguard-sicherungid12011.tk"
-,"responseTimeMs":"312"
-,"queryResult":"BLOCKED"}
-,{"domainName":"soranai-001-site1.1tempurl.com"
-,"responseTimeMs":"344"
-,"queryResult":"BLOCKED"}
-,{"domainName":"adserver.ads.com.ph"
-,"responseTimeMs":"287"
-,"queryResult":"72.32.203.131"}
-,{"domainName":"evodownload.com"
-,"responseTimeMs":"10222"
-,"queryResult":"UNRESOLVED"}
-,{"domainName":"splashro.com"
-,"responseTimeMs":"405"
-,"queryResult":"45.64.1.111"}
-,{"domainName":"sportking.co.in"
-,"responseTimeMs":"3092"
-,"queryResult":"192.185.146.64"}]
-,"domainNameListId":"id_1490900240"}
+{
+	"environmentId": "Baseline",
+	"queriesRunBy": "Travis Vaughn April 5 2017",
+	"queryResults": [{
+		"domainName": "system32-errors.xyz",
+		"responseTimeMs": "2751",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "amazon.co.uk.security-check.ga",
+		"responseTimeMs": "342",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "eng-jimexpert.com",
+		"responseTimeMs": "271",
+		"queryResult": "99.198.101.234"
+	},
+	{
+		"domainName": "english.battlefield.ru",
+		"responseTimeMs": "1979",
+		"queryResult": "178.210.75.104"
+	},
+	{
+		"domainName": "ughletarrew.com",
+		"responseTimeMs": "439",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "zdravets.org",
+		"responseTimeMs": "7637",
+		"queryResult": "195.189.82.66"
+	},
+	{
+		"domainName": "env-1291101.jelasticlw.com.br",
+		"responseTimeMs": "2007",
+		"queryResult": "186.202.173.196"
+	},
+	{
+		"domainName": "env-2642105.jelasticlw.com.br",
+		"responseTimeMs": "289",
+		"queryResult": "177.153.20.101"
+	},
+	{
+		"domainName": "healwithbill.com",
+		"responseTimeMs": "2671",
+		"queryResult": "198.54.114.249"
+	},
+	{
+		"domainName": "maruthorvattomsrianjaneyatemple.org",
+		"responseTimeMs": "3924",
+		"queryResult": "184.168.221.48"
+	},
+	{
+		"domainName": "spaceconstruction.com.au",
+		"responseTimeMs": "521",
+		"queryResult": "185.17.252.202"
+	},
+	{
+		"domainName": "tei.portal.crockerandwestridge.com",
+		"responseTimeMs": "668",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "update-apple.com.betawihosting.net",
+		"responseTimeMs": "298",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "usaa.com-sec-inet-auth-logon-ent-logon-logon-redirectjsp.chrischadwick.com.au",
+		"responseTimeMs": "1597",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "etda.tl",
+		"responseTimeMs": "4407",
+		"queryResult": "192.185.102.166"
+	},
+	{
+		"domainName": "www.meleather.com",
+		"responseTimeMs": "181",
+		"queryResult": "216.130.168.167"
+	},
+	{
+		"domainName": "dicrophani.com",
+		"responseTimeMs": "153",
+		"queryResult": "67.205.14.183"
+	},
+	{
+		"domainName": "canidtrove.net",
+		"responseTimeMs": "7562",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "euro-forest.ml",
+		"responseTimeMs": "229",
+		"queryResult": "195.20.50.97"
+	},
+	{
+		"domainName": "evangelinestore.com.br",
+		"responseTimeMs": "10126",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "jobgroup.it",
+		"responseTimeMs": "136",
+		"queryResult": "151.1.48.10"
+	},
+	{
+		"domainName": "gov.f3322.net",
+		"responseTimeMs": "351",
+		"queryResult": "101.121.193.196"
+	},
+	{
+		"domainName": "events-amz.tk",
+		"responseTimeMs": "355",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "lingyuanbbs.com",
+		"responseTimeMs": "1573",
+		"queryResult": "115.28.241.40"
+	},
+	{
+		"domainName": "faceb00k.ca",
+		"responseTimeMs": "364",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "minglian.ca",
+		"responseTimeMs": "206",
+		"queryResult": "160.153.59.199"
+	},
+	{
+		"domainName": "fakematic.com",
+		"responseTimeMs": "217",
+		"queryResult": "66.33.221.92"
+	},
+	{
+		"domainName": "familles-nombreuses.fr",
+		"responseTimeMs": "10153",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "fargocontrols.com",
+		"responseTimeMs": "276",
+		"queryResult": "67.20.74.179"
+	},
+	{
+		"domainName": "globalnursesonline.com",
+		"responseTimeMs": "298",
+		"queryResult": "96.9.58.145"
+	},
+	{
+		"domainName": "fbclowrys.com",
+		"responseTimeMs": "224",
+		"queryResult": "50.97.161.230"
+	},
+	{
+		"domainName": "gsiworld.neostrada.pl",
+		"responseTimeMs": "704",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "johnfoxphotography.com",
+		"responseTimeMs": "1419",
+		"queryResult": "45.40.165.15"
+	},
+	{
+		"domainName": "joojin.com",
+		"responseTimeMs": "158",
+		"queryResult": "218.145.65.105"
+	},
+	{
+		"domainName": "fenc.daewonit.com",
+		"responseTimeMs": "2780",
+		"queryResult": "112.217.208.42"
+	},
+	{
+		"domainName": "jculley.com",
+		"responseTimeMs": "379",
+		"queryResult": "192.40.112.211"
+	},
+	{
+		"domainName": "jorpe.co.za",
+		"responseTimeMs": "551",
+		"queryResult": "213.247.0.44"
+	},
+	{
+		"domainName": "festgeld-blogger.de",
+		"responseTimeMs": "1635",
+		"queryResult": "173.193.192.224"
+	},
+	{
+		"domainName": "mundiversial.com",
+		"responseTimeMs": "356",
+		"queryResult": "86.109.162.160"
+	},
+	{
+		"domainName": "fibersoftware.com",
+		"responseTimeMs": "203",
+		"queryResult": "141.8.226.19"
+	},
+	{
+		"domainName": "nsrcconsulting.com",
+		"responseTimeMs": "158",
+		"queryResult": "113.197.39.189"
+	},
+	{
+		"domainName": "oatloyd.com",
+		"responseTimeMs": "280",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "putidwipe.com",
+		"responseTimeMs": "10144",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "filewitme.com",
+		"responseTimeMs": "1445",
+		"queryResult": "50.63.202.61"
+	},
+	{
+		"domainName": "e-taekwang.com",
+		"responseTimeMs": "404",
+		"queryResult": "222.239.223.71"
+	},
+	{
+		"domainName": "sport-grace.by",
+		"responseTimeMs": "2971",
+		"queryResult": "86.57.246.177"
+	},
+	{
+		"domainName": "perugemstones.com",
+		"responseTimeMs": "1752",
+		"queryResult": "204.11.56.48"
+	},
+	{
+		"domainName": "fishingevolution.com",
+		"responseTimeMs": "442",
+		"queryResult": "95.110.198.138"
+	},
+	{
+		"domainName": "czgtgj.com",
+		"responseTimeMs": "378",
+		"queryResult": "104.217.122.212"
+	},
+	{
+		"domainName": "calsal.com",
+		"responseTimeMs": "144",
+		"queryResult": "162.144.181.28"
+	},
+	{
+		"domainName": "felthigh.net",
+		"responseTimeMs": "329",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "flyingwishpaper.com",
+		"responseTimeMs": "1482",
+		"queryResult": "198.49.23.145"
+	},
+	{
+		"domainName": "ksjdkeuviecro.us",
+		"responseTimeMs": "5010",
+		"queryResult": "202.29.28.255"
+	},
+	{
+		"domainName": "skottles.com",
+		"responseTimeMs": "215",
+		"queryResult": "127.0.0.11"
+	},
+	{
+		"domainName": "fosnab.w.interiowo.pl",
+		"responseTimeMs": "413",
+		"queryResult": "217.74.66.161"
+	},
+	{
+		"domainName": "mbvdjxpsrgnw.us",
+		"responseTimeMs": "6218",
+		"queryResult": "203.61.19.60"
+	},
+	{
+		"domainName": "vyohacxzoue32vvk.5i0ukv.bid",
+		"responseTimeMs": "8785",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "freetre.co.uk",
+		"responseTimeMs": "10141",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "cpi-istanbul.com",
+		"responseTimeMs": "1664",
+		"queryResult": "121.83.217.66"
+	},
+	{
+		"domainName": "liliaflowers.com",
+		"responseTimeMs": "283",
+		"queryResult": "205.234.200.31"
+	},
+	{
+		"domainName": "frontagegfbw.com",
+		"responseTimeMs": "495",
+		"queryResult": "203.88.170.59"
+	},
+	{
+		"domainName": "pizzotti.net",
+		"responseTimeMs": "1577",
+		"queryResult": "62.149.128.163"
+	},
+	{
+		"domainName": "fts.com.pk",
+		"responseTimeMs": "137",
+		"queryResult": "69.160.32.60"
+	},
+	{
+		"domainName": "functional-strength-training.com",
+		"responseTimeMs": "8754",
+		"queryResult": "104.198.58.45"
+	},
+	{
+		"domainName": "ghidneamt.ro",
+		"responseTimeMs": "215",
+		"queryResult": "89.42.223.221"
+	},
+	{
+		"domainName": "fyod14.com",
+		"responseTimeMs": "181",
+		"queryResult": "50.63.202.32"
+	},
+	{
+		"domainName": "galactic.digital",
+		"responseTimeMs": "1491",
+		"queryResult": "72.47.244.103"
+	},
+	{
+		"domainName": "gangsterenergy.com",
+		"responseTimeMs": "1509",
+		"queryResult": "37.148.205.1"
+	},
+	{
+		"domainName": "gdtfs.co.uk",
+		"responseTimeMs": "10134",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "songthank.net",
+		"responseTimeMs": "438",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "gettothegoose.com",
+		"responseTimeMs": "467",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "ghantol.huntedhunter.com",
+		"responseTimeMs": "4453",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mqtos.com",
+		"responseTimeMs": "273",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "ougeorsevice.com",
+		"responseTimeMs": "3420",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "gladysgarcete.com",
+		"responseTimeMs": "360",
+		"queryResult": "192.185.168.57"
+	},
+	{
+		"domainName": "globalsolutionmarketing.com",
+		"responseTimeMs": "186",
+		"queryResult": "107.180.98.222"
+	},
+	{
+		"domainName": "k-techgroup.com",
+		"responseTimeMs": "187",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "trafficexchange.ml",
+		"responseTimeMs": "318",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "valvolacoporation.com",
+		"responseTimeMs": "273",
+		"queryResult": "172.93.106.18"
+	},
+	{
+		"domainName": "ahuqfrqk54v3vnzj.8kiec2.top",
+		"responseTimeMs": "1520",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "glowingholidays.info",
+		"responseTimeMs": "1542",
+		"queryResult": "104.153.45.242"
+	},
+	{
+		"domainName": "gmai.masoto.com.tr",
+		"responseTimeMs": "622",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "gopropest.com",
+		"responseTimeMs": "1495",
+		"queryResult": "192.185.77.196"
+	},
+	{
+		"domainName": "lfdachijzuwx4bc4.vrgdrs.top",
+		"responseTimeMs": "289",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "gradinitaallegria.ro",
+		"responseTimeMs": "1127",
+		"queryResult": "176.223.122.174"
+	},
+	{
+		"domainName": "accesappuserinfo.from-oh.com",
+		"responseTimeMs": "1759",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "grandslamintl.com",
+		"responseTimeMs": "146",
+		"queryResult": "195.191.24.158"
+	},
+	{
+		"domainName": "actyres.ie",
+		"responseTimeMs": "397",
+		"queryResult": "78.153.214.55"
+	},
+	{
+		"domainName": "shema.firstcom.co.kr",
+		"responseTimeMs": "7818",
+		"queryResult": "218.38.29.67"
+	},
+	{
+		"domainName": "gravorskilt.no",
+		"responseTimeMs": "427",
+		"queryResult": "193.107.29.102"
+	},
+	{
+		"domainName": "sinopengelleriasma.com",
+		"responseTimeMs": "411",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "adfrut.cl",
+		"responseTimeMs": "1429",
+		"queryResult": "201.148.104.116"
+	},
+	{
+		"domainName": "bonnieerwin11.com",
+		"responseTimeMs": "215",
+		"queryResult": "184.168.221.62"
+	},
+	{
+		"domainName": "grocerbell.com",
+		"responseTimeMs": "551",
+		"queryResult": "192.185.129.133"
+	},
+	{
+		"domainName": "zotasinc.com",
+		"responseTimeMs": "298",
+		"queryResult": "213.247.47.190"
+	},
+	{
+		"domainName": "gskindia.co.in",
+		"responseTimeMs": "543",
+		"queryResult": "192.151.150.194"
+	},
+	{
+		"domainName": "www.yntscp.com",
+		"responseTimeMs": "10132",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "wesleymedia.com",
+		"responseTimeMs": "425",
+		"queryResult": "66.96.149.20"
+	},
+	{
+		"domainName": "gtcyber.com",
+		"responseTimeMs": "230",
+		"queryResult": "209.99.17.27"
+	},
+	{
+		"domainName": "cibc-onlines.igg.biz",
+		"responseTimeMs": "323",
+		"queryResult": "78.46.211.158"
+	},
+	{
+		"domainName": "d24.0772it.net",
+		"responseTimeMs": "2785",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "gul.de",
+		"responseTimeMs": "2985",
+		"queryResult": "69.175.127.34"
+	},
+	{
+		"domainName": "damagedchargers.com",
+		"responseTimeMs": "274",
+		"queryResult": "192.185.168.141"
+	},
+	{
+		"domainName": "iiidown.com",
+		"responseTimeMs": "2673",
+		"queryResult": "204.11.56.48"
+	},
+	{
+		"domainName": "werbeagentur-ruhrwerk.de",
+		"responseTimeMs": "1642",
+		"queryResult": "91.250.102.46"
+	},
+	{
+		"domainName": "everythingwakeboard.com",
+		"responseTimeMs": "205",
+		"queryResult": "192.185.168.158"
+	},
+	{
+		"domainName": "haanikaarak.com",
+		"responseTimeMs": "10132",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "xinyitaoci.com",
+		"responseTimeMs": "310",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "valetik.ru",
+		"responseTimeMs": "514",
+		"queryResult": "62.210.170.33"
+	},
+	{
+		"domainName": "firstandlaststeps.org",
+		"responseTimeMs": "2723",
+		"queryResult": "184.168.221.47"
+	},
+	{
+		"domainName": "frankfisherfamily.com",
+		"responseTimeMs": "256",
+		"queryResult": "74.50.7.45"
+	},
+	{
+		"domainName": "hawestechnologies.com",
+		"responseTimeMs": "183",
+		"queryResult": "192.185.96.55"
+	},
+	{
+		"domainName": "gyermekneurologia.hu",
+		"responseTimeMs": "1179",
+		"queryResult": "89.107.249.65"
+	},
+	{
+		"domainName": "institutocj.com",
+		"responseTimeMs": "305",
+		"queryResult": "209.99.40.222"
+	},
+	{
+		"domainName": "www.gdzjco.com",
+		"responseTimeMs": "381",
+		"queryResult": "122.224.11.143"
+	},
+	{
+		"domainName": "samwooind.co.kr",
+		"responseTimeMs": "10150",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "technosfera-nsk.ru",
+		"responseTimeMs": "1720",
+		"queryResult": "195.208.0.111"
+	},
+	{
+		"domainName": "malibumadam.com",
+		"responseTimeMs": "288",
+		"queryResult": "162.144.143.157"
+	},
+	{
+		"domainName": "hitechprint.co.uk",
+		"responseTimeMs": "293",
+		"queryResult": "173.254.28.89"
+	},
+	{
+		"domainName": "oferta-air-bnb-pisos.com",
+		"responseTimeMs": "1610",
+		"queryResult": "69.172.201.153"
+	},
+	{
+		"domainName": "ohappyhome.co",
+		"responseTimeMs": "225",
+		"queryResult": "50.87.249.65"
+	},
+	{
+		"domainName": "ets-grup.com",
+		"responseTimeMs": "226",
+		"queryResult": "94.73.145.184"
+	},
+	{
+		"domainName": "orange-portal.com",
+		"responseTimeMs": "1554",
+		"queryResult": "166.78.238.48"
+	},
+	{
+		"domainName": "paramounthotelmeru.com",
+		"responseTimeMs": "244",
+		"queryResult": "192.185.31.77"
+	},
+	{
+		"domainName": "paypal.limitedremoved.culinae.no",
+		"responseTimeMs": "516",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "piscinaspremier.com",
+		"responseTimeMs": "324",
+		"queryResult": "94.23.45.174"
+	},
+	{
+		"domainName": "hossa-skory.pl",
+		"responseTimeMs": "1754",
+		"queryResult": "188.116.9.94"
+	},
+	{
+		"domainName": "postbank.s73228gxs3z0qgs3b0d4.ru",
+		"responseTimeMs": "10141",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "qhhxzny.gov.cn",
+		"responseTimeMs": "1068",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "hotel-dona-ines.pt",
+		"responseTimeMs": "1792",
+		"queryResult": "188.93.230.35"
+	},
+	{
+		"domainName": "hounslowmission.org.uk",
+		"responseTimeMs": "6511",
+		"queryResult": "89.249.71.4"
+	},
+	{
+		"domainName": "sebyc.es",
+		"responseTimeMs": "2725",
+		"queryResult": "217.160.131.183"
+	},
+	{
+		"domainName": "sgmgroupsac.com",
+		"responseTimeMs": "268",
+		"queryResult": "192.69.235.9"
+	},
+	{
+		"domainName": "teomarketing.com",
+		"responseTimeMs": "2729",
+		"queryResult": "50.31.99.167"
+	},
+	{
+		"domainName": "hundeschule-lechner.at",
+		"responseTimeMs": "1701",
+		"queryResult": "80.67.28.98"
+	},
+	{
+		"domainName": "hussaintextiles.com",
+		"responseTimeMs": "1521",
+		"queryResult": "69.160.32.60"
+	},
+	{
+		"domainName": "thergroupinc.com",
+		"responseTimeMs": "532",
+		"queryResult": "192.185.35.67"
+	},
+	{
+		"domainName": "thetake5method.com",
+		"responseTimeMs": "254",
+		"queryResult": "162.144.143.157"
+	},
+	{
+		"domainName": "hytorc.ro",
+		"responseTimeMs": "419",
+		"queryResult": "85.9.61.183"
+	},
+	{
+		"domainName": "gunibox.com",
+		"responseTimeMs": "1541",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "users-freemob.com",
+		"responseTimeMs": "1719",
+		"queryResult": "166.78.238.48"
+	},
+	{
+		"domainName": "victorelectronics.com",
+		"responseTimeMs": "264",
+		"queryResult": "72.1.252.140"
+	},
+	{
+		"domainName": "webm896-orange.com",
+		"responseTimeMs": "319",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "csbjkj.com",
+		"responseTimeMs": "1574",
+		"queryResult": "198.56.207.51"
+	},
+	{
+		"domainName": "recyclo.com.ar",
+		"responseTimeMs": "258",
+		"queryResult": "192.185.189.89"
+	},
+	{
+		"domainName": "iglesiacreci.org",
+		"responseTimeMs": "474",
+		"queryResult": "213.239.232.149"
+	},
+	{
+		"domainName": "imiue.polsl.pl",
+		"responseTimeMs": "381",
+		"queryResult": "157.158.64.5"
+	},
+	{
+		"domainName": "www.vvpan.com",
+		"responseTimeMs": "469",
+		"queryResult": "166.62.95.212"
+	},
+	{
+		"domainName": "alert-324error.xyz",
+		"responseTimeMs": "1598",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "yserch.com",
+		"responseTimeMs": "254",
+		"queryResult": "50.63.92.1"
+	},
+	{
+		"domainName": "seqsixxx.com",
+		"responseTimeMs": "1480",
+		"queryResult": "141.8.224.183"
+	},
+	{
+		"domainName": "stisa.org.cn",
+		"responseTimeMs": "2239",
+		"queryResult": "121.11.76.123"
+	},
+	{
+		"domainName": "test.gaxtoa.com",
+		"responseTimeMs": "361",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "bestwebq.su",
+		"responseTimeMs": "10117",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "billing.netflix.info.confirm.mem.auth.37476232.webnew01.com",
+		"responseTimeMs": "319",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "error-found.xyz",
+		"responseTimeMs": "335",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "ingperu.com",
+		"responseTimeMs": "216",
+		"queryResult": "192.185.74.167"
+	},
+	{
+		"domainName": "inno-leader.com",
+		"responseTimeMs": "4328",
+		"queryResult": "60.199.166.113"
+	},
+	{
+		"domainName": "mediagura.com",
+		"responseTimeMs": "205",
+		"queryResult": "78.140.190.86"
+	},
+	{
+		"domainName": "movelady.net",
+		"responseTimeMs": "1433",
+		"queryResult": "50.63.202.7"
+	},
+	{
+		"domainName": "internalrevenueservicevalidation.tripod.com",
+		"responseTimeMs": "384",
+		"queryResult": "209.202.252.50"
+	},
+	{
+		"domainName": "notice-macerror-505aq.com",
+		"responseTimeMs": "181",
+		"queryResult": "104.28.20.56"
+	},
+	{
+		"domainName": "oktits.com",
+		"responseTimeMs": "288",
+		"queryResult": "208.91.197.46"
+	},
+	{
+		"domainName": "inventionsports.com",
+		"responseTimeMs": "274",
+		"queryResult": "141.8.226.19"
+	},
+	{
+		"domainName": "stroyeq.ru",
+		"responseTimeMs": "10141",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "yixingim.com",
+		"responseTimeMs": "1513",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "riddenready.net",
+		"responseTimeMs": "2783",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "support.paypal.com-id.form-2830032603.pregnantalternatives.com.au",
+		"responseTimeMs": "2944",
+		"queryResult": "116.0.23.216"
+	},
+	{
+		"domainName": "www.jwdn.net",
+		"responseTimeMs": "426",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "stabroom.cn",
+		"responseTimeMs": "1606",
+		"queryResult": "50.117.113.222"
+	},
+	{
+		"domainName": "support.paypal.com-id.form-7116460280.pregnantalternatives.com.au",
+		"responseTimeMs": "4046",
+		"queryResult": "116.0.23.216"
+	},
+	{
+		"domainName": "support.paypal.com-id.form-898470393.pregnantalternatives.com.au",
+		"responseTimeMs": "302",
+		"queryResult": "116.0.23.216"
+	},
+	{
+		"domainName": "j634516.myjino.ru",
+		"responseTimeMs": "2889",
+		"queryResult": "81.177.141.71"
+	},
+	{
+		"domainName": "jaguariaiva.pr.gov.br",
+		"responseTimeMs": "779",
+		"queryResult": "179.189.29.2"
+	},
+	{
+		"domainName": "supports-payments-centre.com",
+		"responseTimeMs": "421",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "clancommission.us",
+		"responseTimeMs": "2592",
+		"queryResult": "74.124.194.99"
+	},
+	{
+		"domainName": "embedor.com",
+		"responseTimeMs": "359",
+		"queryResult": "43.225.127.2"
+	},
+	{
+		"domainName": "jeita.biz",
+		"responseTimeMs": "258",
+		"queryResult": "173.254.51.84"
+	},
+	{
+		"domainName": "assexyas.com",
+		"responseTimeMs": "1445",
+		"queryResult": "67.208.74.71"
+	},
+	{
+		"domainName": "acd.com.vn",
+		"responseTimeMs": "1574",
+		"queryResult": "103.48.81.11"
+	},
+	{
+		"domainName": "qobpjxy.eu",
+		"responseTimeMs": "488",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "eloyed.com",
+		"responseTimeMs": "4284",
+		"queryResult": "89.31.143.16"
+	},
+	{
+		"domainName": "account.service.update.mysoundmaster.com.my",
+		"responseTimeMs": "2444",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "activedigitalstrategy.com",
+		"responseTimeMs": "273",
+		"queryResult": "162.243.139.154"
+	},
+	{
+		"domainName": "jmjservicesinc.com",
+		"responseTimeMs": "2614",
+		"queryResult": "77.104.161.234"
+	},
+	{
+		"domainName": "bcpzonaseguraelinea.org",
+		"responseTimeMs": "423",
+		"queryResult": "31.15.10.79"
+	},
+	{
+		"domainName": "brainingenieria.com.co",
+		"responseTimeMs": "4226",
+		"queryResult": "104.131.200.41"
+	},
+	{
+		"domainName": "jmteam.com.my",
+		"responseTimeMs": "920",
+		"queryResult": "111.90.134.139"
+	},
+	{
+		"domainName": "porn-girls-nude-and-horny.com",
+		"responseTimeMs": "1490",
+		"queryResult": "184.94.154.148"
+	},
+	{
+		"domainName": "clientchaseonline.com",
+		"responseTimeMs": "357",
+		"queryResult": "184.168.221.52"
+	},
+	{
+		"domainName": "coessentialoils.com",
+		"responseTimeMs": "2788",
+		"queryResult": "69.172.201.153"
+	},
+	{
+		"domainName": "specialistups.com",
+		"responseTimeMs": "415",
+		"queryResult": "174.120.70.216"
+	},
+	{
+		"domainName": "juancarlosalvarezdelvalle.com",
+		"responseTimeMs": "296",
+		"queryResult": "143.95.252.252"
+	},
+	{
+		"domainName": "3years.lethanon.net",
+		"responseTimeMs": "211",
+		"queryResult": "69.163.153.4"
+	},
+	{
+		"domainName": "acriformiacrilicos.com.br",
+		"responseTimeMs": "8391",
+		"queryResult": "192.185.214.192"
+	},
+	{
+		"domainName": "agwoan.com",
+		"responseTimeMs": "1473",
+		"queryResult": "72.167.131.153"
+	},
+	{
+		"domainName": "appleid-support-login.richbeing.com",
+		"responseTimeMs": "218",
+		"queryResult": "159.100.181.26"
+	},
+	{
+		"domainName": "blog.3kingsclothing.com",
+		"responseTimeMs": "274",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "karmaplus.org",
+		"responseTimeMs": "1411",
+		"queryResult": "107.180.28.183"
+	},
+	{
+		"domainName": "boisterousmx.top",
+		"responseTimeMs": "1823",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "caminhosdosertao.com.br",
+		"responseTimeMs": "3570",
+		"queryResult": "192.185.210.39"
+	},
+	{
+		"domainName": "kartupintar.com",
+		"responseTimeMs": "186",
+		"queryResult": "219.83.68.69"
+	},
+	{
+		"domainName": "canadiantabletshop.ru",
+		"responseTimeMs": "328",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "yesteam.org.in",
+		"responseTimeMs": "6876",
+		"queryResult": "162.220.58.211"
+	},
+	{
+		"domainName": "psy-ufa.ru",
+		"responseTimeMs": "7532",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "sznaucer-figa.nd.e-wro.pl",
+		"responseTimeMs": "4204",
+		"queryResult": "217.30.152.177"
+	},
+	{
+		"domainName": "youknownow.ru",
+		"responseTimeMs": "3007",
+		"queryResult": "178.208.83.55"
+	},
+	{
+		"domainName": "kerteszetihulladek.hu",
+		"responseTimeMs": "1468",
+		"queryResult": "87.229.73.63"
+	},
+	{
+		"domainName": "fideln.com",
+		"responseTimeMs": "286",
+		"queryResult": "198.27.75.46"
+	},
+	{
+		"domainName": "hirighdabet.com",
+		"responseTimeMs": "278",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "shuangying163.com",
+		"responseTimeMs": "189",
+		"queryResult": "118.145.6.217"
+	},
+	{
+		"domainName": "iiaoannnayabbbaggasssajko.com",
+		"responseTimeMs": "1429",
+		"queryResult": "184.168.221.58"
+	},
+	{
+		"domainName": "simplequiltmaking.com",
+		"responseTimeMs": "198",
+		"queryResult": "192.185.15.101"
+	},
+	{
+		"domainName": "kloshpro.com",
+		"responseTimeMs": "141",
+		"queryResult": "220.158.164.119"
+	},
+	{
+		"domainName": "asess.com.mx",
+		"responseTimeMs": "1706",
+		"queryResult": "50.28.39.49"
+	},
+	{
+		"domainName": "kombitamirbakim.com",
+		"responseTimeMs": "415",
+		"queryResult": "185.92.1.122"
+	},
+	{
+		"domainName": "asiaok.net",
+		"responseTimeMs": "382",
+		"queryResult": "138.201.187.241"
+	},
+	{
+		"domainName": "myherbsstore.ru",
+		"responseTimeMs": "373",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "bordobank.net",
+		"responseTimeMs": "158",
+		"queryResult": "77.245.148.3"
+	},
+	{
+		"domainName": "newpharmaceuticmall.ru",
+		"responseTimeMs": "267",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "kriator2.com",
+		"responseTimeMs": "1506",
+		"queryResult": "143.95.32.52"
+	},
+	{
+		"domainName": "origin.cdnflash.com",
+		"responseTimeMs": "165",
+		"queryResult": "104.238.97.229"
+	},
+	{
+		"domainName": "pishroanformatic.com",
+		"responseTimeMs": "1673",
+		"queryResult": "158.58.186.189"
+	},
+	{
+		"domainName": "prosistech.net",
+		"responseTimeMs": "211",
+		"queryResult": "23.229.155.226"
+	},
+	{
+		"domainName": "lamarwilliams.net",
+		"responseTimeMs": "342",
+		"queryResult": "157.7.188.151"
+	},
+	{
+		"domainName": "samithsirimanna.lk",
+		"responseTimeMs": "1328",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "laposadadelaermita.com",
+		"responseTimeMs": "436",
+		"queryResult": "88.198.24.90"
+	},
+	{
+		"domainName": "wtracy.free.fr",
+		"responseTimeMs": "1661",
+		"queryResult": "212.27.63.113"
+	},
+	{
+		"domainName": "sup-international-service-details.information.settings.center.appdatasecr.com",
+		"responseTimeMs": "199",
+		"queryResult": "208.91.197.160"
+	},
+	{
+		"domainName": "viajarte.com.br",
+		"responseTimeMs": "4469",
+		"queryResult": "200.201.178.198"
+	},
+	{
+		"domainName": "leatherforgay.co.uk",
+		"responseTimeMs": "2353",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "ledlife.com.ua",
+		"responseTimeMs": "356",
+		"queryResult": "31.131.18.89"
+	},
+	{
+		"domainName": "herbaveda.ru",
+		"responseTimeMs": "1701",
+		"queryResult": "77.221.130.11"
+	},
+	{
+		"domainName": "leostamps.net",
+		"responseTimeMs": "357",
+		"queryResult": "62.75.251.79"
+	},
+	{
+		"domainName": "recordinclude.net",
+		"responseTimeMs": "321",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "life2forbag.com",
+		"responseTimeMs": "263",
+		"queryResult": "208.113.173.23"
+	},
+	{
+		"domainName": "ffoqr3ug7m726zou.735giv.top",
+		"responseTimeMs": "498",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "lifestylehill.com",
+		"responseTimeMs": "356",
+		"queryResult": "192.185.5.229"
+	},
+	{
+		"domainName": "bbpama.com",
+		"responseTimeMs": "304",
+		"queryResult": "210.245.164.74"
+	},
+	{
+		"domainName": "lions-leonberg.de",
+		"responseTimeMs": "734",
+		"queryResult": "212.77.224.82"
+	},
+	{
+		"domainName": "catgruop.net",
+		"responseTimeMs": "1568",
+		"queryResult": "69.172.201.153"
+	},
+	{
+		"domainName": "login.com.assoc.sinergy.com.gloedge.com.subsystem.org.webpepper.aws-anazon.com.weddingsplanner.co.in",
+		"responseTimeMs": "2973",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "dxipo.com",
+		"responseTimeMs": "2129",
+		"queryResult": "103.24.251.10"
+	},
+	{
+		"domainName": "52flz.com",
+		"responseTimeMs": "544",
+		"queryResult": "61.142.253.205"
+	},
+	{
+		"domainName": "loginet.gr",
+		"responseTimeMs": "566",
+		"queryResult": "5.172.198.178"
+	},
+	{
+		"domainName": "edhadary.co.il",
+		"responseTimeMs": "2864",
+		"queryResult": "213.8.196.154"
+	},
+	{
+		"domainName": "rokobon.com",
+		"responseTimeMs": "311",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "lucinformaticaesolucoes.com.br",
+		"responseTimeMs": "3456",
+		"queryResult": "66.55.153.230"
+	},
+	{
+		"domainName": "fishum.com",
+		"responseTimeMs": "2594",
+		"queryResult": "208.91.197.27"
+	},
+	{
+		"domainName": "zeroclan.net",
+		"responseTimeMs": "2731",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mainnetsoll.com",
+		"responseTimeMs": "202",
+		"queryResult": "185.53.178.6"
+	},
+	{
+		"domainName": "lvision.lk",
+		"responseTimeMs": "3140",
+		"queryResult": "107.154.163.193"
+	},
+	{
+		"domainName": "pharmind.net",
+		"responseTimeMs": "184",
+		"queryResult": "192.185.42.97"
+	},
+	{
+		"domainName": "gstats.cn",
+		"responseTimeMs": "246",
+		"queryResult": "103.51.144.81"
+	},
+	{
+		"domainName": "habrion.cn",
+		"responseTimeMs": "357",
+		"queryResult": "103.51.144.81"
+	},
+	{
+		"domainName": "malabarexports.com",
+		"responseTimeMs": "1539",
+		"queryResult": "204.11.58.144"
+	},
+	{
+		"domainName": "transinternationalaircouriern.allalla.com",
+		"responseTimeMs": "178",
+		"queryResult": "31.170.160.57"
+	},
+	{
+		"domainName": "trofeoseconomicos.es",
+		"responseTimeMs": "333",
+		"queryResult": "69.175.96.220"
+	},
+	{
+		"domainName": "verfer.com",
+		"responseTimeMs": "10131",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "mamatsave.com",
+		"responseTimeMs": "210",
+		"queryResult": "184.168.221.60"
+	},
+	{
+		"domainName": "volunteerbackgroundchecks.net",
+		"responseTimeMs": "208",
+		"queryResult": "23.235.214.114"
+	},
+	{
+		"domainName": "mnogobab.com",
+		"responseTimeMs": "10142",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "mangarosaboipeba.com",
+		"responseTimeMs": "295",
+		"queryResult": "50.116.112.167"
+	},
+	{
+		"domainName": "hockeysubnantais.free.fr",
+		"responseTimeMs": "454",
+		"queryResult": "212.27.63.112"
+	},
+	{
+		"domainName": "marampops.net",
+		"responseTimeMs": "1532",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "emmajackmagazine.com",
+		"responseTimeMs": "214",
+		"queryResult": "104.154.214.46"
+	},
+	{
+		"domainName": "mardoeis.at",
+		"responseTimeMs": "288",
+		"queryResult": "217.160.231.185"
+	},
+	{
+		"domainName": "marksimpson.co.uk",
+		"responseTimeMs": "2945",
+		"queryResult": "85.233.160.151"
+	},
+	{
+		"domainName": "marrrchi.altervista.org",
+		"responseTimeMs": "4058",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "matterofmanner.com",
+		"responseTimeMs": "295",
+		"queryResult": "209.99.40.222"
+	},
+	{
+		"domainName": "mcdinformatica.com.br",
+		"responseTimeMs": "7679",
+		"queryResult": "192.185.214.95"
+	},
+	{
+		"domainName": "lekarzdan.com",
+		"responseTimeMs": "1660",
+		"queryResult": "72.52.4.122"
+	},
+	{
+		"domainName": "blacksheepatlanta.com",
+		"responseTimeMs": "154",
+		"queryResult": "97.74.182.128"
+	},
+	{
+		"domainName": "mcdowelllandscape.com",
+		"responseTimeMs": "210",
+		"queryResult": "198.57.149.246"
+	},
+	{
+		"domainName": "mckenziegalleries.com",
+		"responseTimeMs": "308",
+		"queryResult": "199.101.243.205"
+	},
+	{
+		"domainName": "bilbords.com",
+		"responseTimeMs": "2707",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "meghalomania.com",
+		"responseTimeMs": "195",
+		"queryResult": "69.89.18.32"
+	},
+	{
+		"domainName": "medannapoleon.com",
+		"responseTimeMs": "406",
+		"queryResult": "45.64.1.112"
+	},
+	{
+		"domainName": "moontag.com",
+		"responseTimeMs": "226",
+		"queryResult": "66.96.149.17"
+	},
+	{
+		"domainName": "ehaaranen.com",
+		"responseTimeMs": "156",
+		"queryResult": "143.95.79.207"
+	},
+	{
+		"domainName": "megasol.com.do",
+		"responseTimeMs": "215",
+		"queryResult": "192.185.76.2"
+	},
+	{
+		"domainName": "mehmetcimen.tk",
+		"responseTimeMs": "586",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mer.myjino.ru",
+		"responseTimeMs": "413",
+		"queryResult": "81.177.6.233"
+	},
+	{
+		"domainName": "mangetsudo.net",
+		"responseTimeMs": "373",
+		"queryResult": "219.118.71.133"
+	},
+	{
+		"domainName": "markand.ro",
+		"responseTimeMs": "524",
+		"queryResult": "89.36.25.216"
+	},
+	{
+		"domainName": "moffia.nl",
+		"responseTimeMs": "10148",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "mindfulleadershipsymposium.ch",
+		"responseTimeMs": "1587",
+		"queryResult": "85.92.78.184"
+	},
+	{
+		"domainName": "nitay.com",
+		"responseTimeMs": "4025",
+		"queryResult": "188.116.19.36"
+	},
+	{
+		"domainName": "ulmicsulfa.net",
+		"responseTimeMs": "10140",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "anamol.net",
+		"responseTimeMs": "2668",
+		"queryResult": "119.252.152.154"
+	},
+	{
+		"domainName": "wpthemesense.com",
+		"responseTimeMs": "247",
+		"queryResult": "182.253.238.11"
+	},
+	{
+		"domainName": "mkeme.altervista.org",
+		"responseTimeMs": "421",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mobiactif.es",
+		"responseTimeMs": "2975",
+		"queryResult": "31.24.124.135"
+	},
+	{
+		"domainName": "805678.com",
+		"responseTimeMs": "4413",
+		"queryResult": "115.42.60.76"
+	},
+	{
+		"domainName": "www.montostroj.eu",
+		"responseTimeMs": "2106",
+		"queryResult": "195.168.1.32"
+	},
+	{
+		"domainName": "mobilecontentplace.com",
+		"responseTimeMs": "1408",
+		"queryResult": "35.156.217.59"
+	},
+	{
+		"domainName": "bbnwl.cn",
+		"responseTimeMs": "623",
+		"queryResult": "192.151.152.150"
+	},
+	{
+		"domainName": "co3corp.com",
+		"responseTimeMs": "1431",
+		"queryResult": "54.148.24.218"
+	},
+	{
+		"domainName": "feenode.net",
+		"responseTimeMs": "1546",
+		"queryResult": "193.200.42.162"
+	},
+	{
+		"domainName": "ipwhrtmla.epac.to",
+		"responseTimeMs": "123",
+		"queryResult": "69.6.223.30"
+	},
+	{
+		"domainName": "outlook-excell.com",
+		"responseTimeMs": "930",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "mobuna.com",
+		"responseTimeMs": "313",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "combinaparts.com",
+		"responseTimeMs": "283",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "movimientociudadanozac.org.mx",
+		"responseTimeMs": "392",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "fuel-science-technology.com",
+		"responseTimeMs": "530",
+		"queryResult": "109.237.211.66"
+	},
+	{
+		"domainName": "downloadscanning.com",
+		"responseTimeMs": "2658",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "kiy-carbon.com",
+		"responseTimeMs": "976",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "fcssqw.com",
+		"responseTimeMs": "526",
+		"queryResult": "50.93.205.153"
+	},
+	{
+		"domainName": "5780.com",
+		"responseTimeMs": "10136",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "mydlozfarmy.sk",
+		"responseTimeMs": "311",
+		"queryResult": "37.9.175.16"
+	},
+	{
+		"domainName": "annengdl.com",
+		"responseTimeMs": "1532",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "victorialmpex.com",
+		"responseTimeMs": "927",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "downloadadvisory.com",
+		"responseTimeMs": "281",
+		"queryResult": "208.91.197.46"
+	},
+	{
+		"domainName": "lindner-stofftiere.com",
+		"responseTimeMs": "1284",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "downloaddash.com",
+		"responseTimeMs": "237",
+		"queryResult": "208.91.197.46"
+	},
+	{
+		"domainName": "nakinaindustries.com",
+		"responseTimeMs": "1485",
+		"queryResult": "107.181.179.9"
+	},
+	{
+		"domainName": "downloadespe.com",
+		"responseTimeMs": "325",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "narkoclinics.ru",
+		"responseTimeMs": "624",
+		"queryResult": "178.210.84.155"
+	},
+	{
+		"domainName": "nashdah.by",
+		"responseTimeMs": "1707",
+		"queryResult": "93.125.99.78"
+	},
+	{
+		"domainName": "ciaeco.com",
+		"responseTimeMs": "2718",
+		"queryResult": "185.53.179.6"
+	},
+	{
+		"domainName": "garden-court.com",
+		"responseTimeMs": "1486",
+		"queryResult": "162.210.101.150"
+	},
+	{
+		"domainName": "mobile-safety.org",
+		"responseTimeMs": "255",
+		"queryResult": "8.29.128.136"
+	},
+	{
+		"domainName": "nhahangkhoai.com",
+		"responseTimeMs": "8084",
+		"queryResult": "103.27.239.216"
+	},
+	{
+		"domainName": "lizhis.com",
+		"responseTimeMs": "210",
+		"queryResult": "45.33.248.135"
+	},
+	{
+		"domainName": "phwdaogtjny.us",
+		"responseTimeMs": "173",
+		"queryResult": "206.189.185.221"
+	},
+	{
+		"domainName": "flipsphere.ru",
+		"responseTimeMs": "4430",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "noradgroup.com",
+		"responseTimeMs": "368",
+		"queryResult": "72.34.44.128"
+	},
+	{
+		"domainName": "kogirlsnotcryz.ru",
+		"responseTimeMs": "3881",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "brubitcoin.com",
+		"responseTimeMs": "526",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "sicredifacilidade.com",
+		"responseTimeMs": "332",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "aaa520.izlinix.com",
+		"responseTimeMs": "351",
+		"queryResult": "116.204.13.31"
+	},
+	{
+		"domainName": "zonaseguras1u-bn.pe.hu",
+		"responseTimeMs": "1357",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "obtimaledecouvertesasses.it",
+		"responseTimeMs": "457",
+		"queryResult": "166.78.238.48"
+	},
+	{
+		"domainName": "aliipage.hostingsiteforfree.com",
+		"responseTimeMs": "214",
+		"queryResult": "31.170.160.57"
+	},
+	{
+		"domainName": "allegrocatclub.com.br",
+		"responseTimeMs": "3297",
+		"queryResult": "192.185.176.15"
+	},
+	{
+		"domainName": "bleachkon.net",
+		"responseTimeMs": "213",
+		"queryResult": "203.191.144.204"
+	},
+	{
+		"domainName": "chadandmonique.com",
+		"responseTimeMs": "2629",
+		"queryResult": "129.232.170.74"
+	},
+	{
+		"domainName": "cheap-sports-jerseys.com",
+		"responseTimeMs": "168",
+		"queryResult": "68.65.122.221"
+	},
+	{
+		"domainName": "cooper.mylftv.com",
+		"responseTimeMs": "175",
+		"queryResult": "23.19.122.212"
+	},
+	{
+		"domainName": "ohomemeamudanca.com.br",
+		"responseTimeMs": "5829",
+		"queryResult": "177.11.50.101"
+	},
+	{
+		"domainName": "gdzjco.com",
+		"responseTimeMs": "1415",
+		"queryResult": "122.224.11.143"
+	},
+	{
+		"domainName": "online-chase.myjino.ru",
+		"responseTimeMs": "1587",
+		"queryResult": "81.177.141.73"
+	},
+	{
+		"domainName": "online.well.sfargo.eniyitemelliseler.com",
+		"responseTimeMs": "1559",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "itspecialist.ro",
+		"responseTimeMs": "1608",
+		"queryResult": "86.106.30.115"
+	},
+	{
+		"domainName": "ifstusa.org",
+		"responseTimeMs": "1439",
+		"queryResult": "185.28.23.130"
+	},
+	{
+		"domainName": "jc-c.com",
+		"responseTimeMs": "3922",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "opinno.com",
+		"responseTimeMs": "215",
+		"queryResult": "149.202.188.83"
+	},
+	{
+		"domainName": "jfdyw.com",
+		"responseTimeMs": "10151",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "impobg.eu",
+		"responseTimeMs": "2340",
+		"queryResult": "91.215.216.17"
+	},
+	{
+		"domainName": "innovationcircle.com",
+		"responseTimeMs": "10142",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "ortaokultestleri.net",
+		"responseTimeMs": "382",
+		"queryResult": "79.137.97.68"
+	},
+	{
+		"domainName": "intertaller.eu",
+		"responseTimeMs": "1464",
+		"queryResult": "91.195.240.70"
+	},
+	{
+		"domainName": "m1d.ru",
+		"responseTimeMs": "519",
+		"queryResult": "185.53.178.7"
+	},
+	{
+		"domainName": "invisplast.ru",
+		"responseTimeMs": "577",
+		"queryResult": "91.218.231.50"
+	},
+	{
+		"domainName": "osoindesoi.com",
+		"responseTimeMs": "536",
+		"queryResult": "213.186.33.4"
+	},
+	{
+		"domainName": "maszcjc.com",
+		"responseTimeMs": "1275",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "metameets.eu",
+		"responseTimeMs": "485",
+		"queryResult": "91.142.252.190"
+	},
+	{
+		"domainName": "jellybaby.org.uk",
+		"responseTimeMs": "403",
+		"queryResult": "78.33.15.234"
+	},
+	{
+		"domainName": "coffee4u.pl",
+		"responseTimeMs": "349",
+		"queryResult": "87.98.239.48"
+	},
+	{
+		"domainName": "panelfollowersindo.ga",
+		"responseTimeMs": "319",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "3fgt.com",
+		"responseTimeMs": "2648",
+		"queryResult": "23.245.86.241"
+	},
+	{
+		"domainName": "parkellis.com",
+		"responseTimeMs": "165",
+		"queryResult": "107.180.40.34"
+	},
+	{
+		"domainName": "img.securesoft.info",
+		"responseTimeMs": "322",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "pasa.org.pk",
+		"responseTimeMs": "1165",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "install.securesoft.info",
+		"responseTimeMs": "2749",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mpif.eu",
+		"responseTimeMs": "319",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "kirillpryadukhin.ru",
+		"responseTimeMs": "192",
+		"queryResult": "185.105.224.243"
+	},
+	{
+		"domainName": "mynetav.net",
+		"responseTimeMs": "1472",
+		"queryResult": "209.208.4.62"
+	},
+	{
+		"domainName": "barbaros.com",
+		"responseTimeMs": "199",
+		"queryResult": "94.73.149.80"
+	},
+	{
+		"domainName": "blueendless.com",
+		"responseTimeMs": "5711",
+		"queryResult": "52.37.0.233"
+	},
+	{
+		"domainName": "paypal.comservice.cf",
+		"responseTimeMs": "329",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "kalinston.com",
+		"responseTimeMs": "494",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "paypinfoservi.it",
+		"responseTimeMs": "475",
+		"queryResult": "166.78.238.48"
+	},
+	{
+		"domainName": "2ndzenith.com",
+		"responseTimeMs": "218",
+		"queryResult": "208.113.180.237"
+	},
+	{
+		"domainName": "pepinieresgaurrat.com",
+		"responseTimeMs": "317",
+		"queryResult": "87.98.160.36"
+	},
+	{
+		"domainName": "demodomain.cz",
+		"responseTimeMs": "621",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "periexomenanet.gr",
+		"responseTimeMs": "348",
+		"queryResult": "192.145.236.224"
+	},
+	{
+		"domainName": "personnalisationdescomptes.it",
+		"responseTimeMs": "442",
+		"queryResult": "166.78.238.48"
+	},
+	{
+		"domainName": "tvandsportstreams.com",
+		"responseTimeMs": "234",
+		"queryResult": "45.33.9.234"
+	},
+	{
+		"domainName": "mmmkouzhao.com",
+		"responseTimeMs": "411",
+		"queryResult": "122.114.90.203"
+	},
+	{
+		"domainName": "pettybaby.com.br",
+		"responseTimeMs": "871",
+		"queryResult": "192.185.217.117"
+	},
+	{
+		"domainName": "banner.ringofon.com",
+		"responseTimeMs": "1620",
+		"queryResult": "54.72.9.51"
+	},
+	{
+		"domainName": "postbank-3524550197.ru",
+		"responseTimeMs": "10151",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "philmasolicitors.com.ng",
+		"responseTimeMs": "123",
+		"queryResult": "67.220.182.242"
+	},
+	{
+		"domainName": "psouutarnow.org",
+		"responseTimeMs": "1142",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "sharfiles.com",
+		"responseTimeMs": "554",
+		"queryResult": "146.148.34.125"
+	},
+	{
+		"domainName": "qbqoxfujlbetfrjfh.com",
+		"responseTimeMs": "165",
+		"queryResult": "89.223.109.60"
+	},
+	{
+		"domainName": "308888.com",
+		"responseTimeMs": "811",
+		"queryResult": "66.79.179.218"
+	},
+	{
+		"domainName": "picassohotel.es",
+		"responseTimeMs": "2596",
+		"queryResult": "31.24.124.135"
+	},
+	{
+		"domainName": "pnsolco.com",
+		"responseTimeMs": "287",
+		"queryResult": "192.254.234.118"
+	},
+	{
+		"domainName": "sillasderuedascali.com",
+		"responseTimeMs": "224",
+		"queryResult": "192.185.73.152"
+	},
+	{
+		"domainName": "animeonline.net",
+		"responseTimeMs": "211",
+		"queryResult": "104.31.86.191"
+	},
+	{
+		"domainName": "portal.escop.at",
+		"responseTimeMs": "695",
+		"queryResult": "81.19.147.210"
+	},
+	{
+		"domainName": "portaleverest.com.br",
+		"responseTimeMs": "4498",
+		"queryResult": "192.185.223.131"
+	},
+	{
+		"domainName": "95kd.com",
+		"responseTimeMs": "1713",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "powertechnik.co.uk",
+		"responseTimeMs": "8816",
+		"queryResult": "192.185.128.19"
+	},
+	{
+		"domainName": "wangxiaorong.com",
+		"responseTimeMs": "10144",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "pp-support-service.gq",
+		"responseTimeMs": "325",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "gxaiq.com",
+		"responseTimeMs": "10153",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "precisetraining.com.au",
+		"responseTimeMs": "629",
+		"queryResult": "27.121.64.178"
+	},
+	{
+		"domainName": "hairchinadirect.com",
+		"responseTimeMs": "1586",
+		"queryResult": "94.231.103.127"
+	},
+	{
+		"domainName": "presskitaquat.com",
+		"responseTimeMs": "264",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "otdacham.ru",
+		"responseTimeMs": "4394",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "nminmobiliaria.com",
+		"responseTimeMs": "2693",
+		"queryResult": "173.254.28.24"
+	},
+	{
+		"domainName": "princebakery.id",
+		"responseTimeMs": "3466",
+		"queryResult": "103.24.13.91"
+	},
+	{
+		"domainName": "lauiatraps.net",
+		"responseTimeMs": "324",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "propertybuyerfiles.us",
+		"responseTimeMs": "210",
+		"queryResult": "68.65.122.209"
+	},
+	{
+		"domainName": "protectivegloves.co.in",
+		"responseTimeMs": "451",
+		"queryResult": "81.19.186.216"
+	},
+	{
+		"domainName": "www.tourindia.in",
+		"responseTimeMs": "382",
+		"queryResult": "68.178.254.126"
+	},
+	{
+		"domainName": "pattumalamatha.com",
+		"responseTimeMs": "202",
+		"queryResult": "166.62.30.149"
+	},
+	{
+		"domainName": "poltec.com.au",
+		"responseTimeMs": "3881",
+		"queryResult": "27.54.86.236"
+	},
+	{
+		"domainName": "playerflv.com",
+		"responseTimeMs": "304",
+		"queryResult": "52.204.129.22"
+	},
+	{
+		"domainName": "www.p3322.com",
+		"responseTimeMs": "324",
+		"queryResult": "50.63.202.60"
+	},
+	{
+		"domainName": "putbabytosleep.net",
+		"responseTimeMs": "2675",
+		"queryResult": "67.227.198.72"
+	},
+	{
+		"domainName": "shouwangstudio.com",
+		"responseTimeMs": "266",
+		"queryResult": "45.78.89.19"
+	},
+	{
+		"domainName": "radicalspot.it",
+		"responseTimeMs": "283",
+		"queryResult": "213.186.33.82"
+	},
+	{
+		"domainName": "rajabahadur.com",
+		"responseTimeMs": "249",
+		"queryResult": "72.9.109.203"
+	},
+	{
+		"domainName": "updatenowpro.com",
+		"responseTimeMs": "219",
+		"queryResult": "45.33.9.234"
+	},
+	{
+		"domainName": "ulmustway.com",
+		"responseTimeMs": "371",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "rcm4ie.com",
+		"responseTimeMs": "220",
+		"queryResult": "198.27.103.128"
+	},
+	{
+		"domainName": "redirect1.return128appl.com",
+		"responseTimeMs": "10139",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "reglements-generals.com",
+		"responseTimeMs": "1533",
+		"queryResult": "74.220.207.183"
+	},
+	{
+		"domainName": "thomashobbs.com",
+		"responseTimeMs": "2617",
+		"queryResult": "69.161.143.29"
+	},
+	{
+		"domainName": "houseller.eu",
+		"responseTimeMs": "225",
+		"queryResult": "62.212.76.142"
+	},
+	{
+		"domainName": "hardpornoizle.net",
+		"responseTimeMs": "2653",
+		"queryResult": "104.27.164.158"
+	},
+	{
+		"domainName": "illinoisnavhda.org",
+		"responseTimeMs": "3954",
+		"queryResult": "209.35.112.216"
+	},
+	{
+		"domainName": "interdean.hu",
+		"responseTimeMs": "338",
+		"queryResult": "95.131.66.24"
+	},
+	{
+		"domainName": "rijschooltommie.nl",
+		"responseTimeMs": "781",
+		"queryResult": "185.104.29.60"
+	},
+	{
+		"domainName": "aaa.77xxmm.cn",
+		"responseTimeMs": "414",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "dancecourt.com",
+		"responseTimeMs": "212",
+		"queryResult": "216.139.218.10"
+	},
+	{
+		"domainName": "obdeskfyou.ru",
+		"responseTimeMs": "1553",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "kstm.or.th",
+		"responseTimeMs": "5319",
+		"queryResult": "103.7.56.217"
+	},
+	{
+		"domainName": "roomairbnbnet.altervista.org",
+		"responseTimeMs": "316",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "roomsiarbab.altervista.org",
+		"responseTimeMs": "369",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "blackfalcon3.net",
+		"responseTimeMs": "271",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "ruangmakna.net",
+		"responseTimeMs": "221",
+		"queryResult": "74.63.248.218"
+	},
+	{
+		"domainName": "lomtalay.com",
+		"responseTimeMs": "413",
+		"queryResult": "119.59.99.30"
+	},
+	{
+		"domainName": "ltinvest.de",
+		"responseTimeMs": "733",
+		"queryResult": "212.40.179.95"
+	},
+	{
+		"domainName": "ifindwholesale.com",
+		"responseTimeMs": "273",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "losalseehijos.es",
+		"responseTimeMs": "279",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "nwhomecare.co.uk",
+		"responseTimeMs": "2886",
+		"queryResult": "217.149.108.240"
+	},
+	{
+		"domainName": "megalingeriemall.com",
+		"responseTimeMs": "542",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "melzer-casting.de",
+		"responseTimeMs": "1838",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "sminmin.in",
+		"responseTimeMs": "289",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mooymedia.nl",
+		"responseTimeMs": "429",
+		"queryResult": "188.227.200.134"
+	},
+	{
+		"domainName": "ajarixusuqux.com",
+		"responseTimeMs": "2721",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "mysolosource.com",
+		"responseTimeMs": "245",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "natalija.ru",
+		"responseTimeMs": "583",
+		"queryResult": "217.112.42.86"
+	},
+	{
+		"domainName": "karaszkiewicz.neostrada.pl",
+		"responseTimeMs": "174",
+		"queryResult": "217.97.216.17"
+	},
+	{
+		"domainName": "fazendacristal.com",
+		"responseTimeMs": "2613",
+		"queryResult": "186.202.153.198"
+	},
+	{
+		"domainName": "0377.wang",
+		"responseTimeMs": "2749",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "seasidebohol.com",
+		"responseTimeMs": "2653",
+		"queryResult": "192.163.255.186"
+	},
+	{
+		"domainName": "314151.com",
+		"responseTimeMs": "178",
+		"queryResult": "183.131.217.30"
+	},
+	{
+		"domainName": "www.2003xx.com",
+		"responseTimeMs": "187",
+		"queryResult": "122.9.161.215"
+	},
+	{
+		"domainName": "www3.32hy.com",
+		"responseTimeMs": "811",
+		"queryResult": "70.39.84.241"
+	},
+	{
+		"domainName": "sedelargodoscampeoes.com.br",
+		"responseTimeMs": "2061",
+		"queryResult": "108.179.192.190"
+	},
+	{
+		"domainName": "konto1.cal24.pl",
+		"responseTimeMs": "216",
+		"queryResult": "144.76.114.199"
+	},
+	{
+		"domainName": "addonnet.com",
+		"responseTimeMs": "214",
+		"queryResult": "178.236.77.142"
+	},
+	{
+		"domainName": "select-server.net",
+		"responseTimeMs": "580",
+		"queryResult": "212.7.216.192"
+	},
+	{
+		"domainName": "agenciabbi.com.br",
+		"responseTimeMs": "9318",
+		"queryResult": "192.185.220.149"
+	},
+	{
+		"domainName": "link2me.ru",
+		"responseTimeMs": "321",
+		"queryResult": "85.25.195.18"
+	},
+	{
+		"domainName": "airbnb.com-listing.eu",
+		"responseTimeMs": "554",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "serole.com",
+		"responseTimeMs": "1415",
+		"queryResult": "107.170.193.6"
+	},
+	{
+		"domainName": "aredaclubes.org.ar",
+		"responseTimeMs": "481",
+		"queryResult": "190.210.204.185"
+	},
+	{
+		"domainName": "lpmxp2024.com",
+		"responseTimeMs": "3910",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "lpmxp2026.com",
+		"responseTimeMs": "1536",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "avosos.org.br",
+		"responseTimeMs": "4467",
+		"queryResult": "177.47.187.20"
+	},
+	{
+		"domainName": "lpmxp2027.com",
+		"responseTimeMs": "1519",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "sh209035.website.pl",
+		"responseTimeMs": "361",
+		"queryResult": "195.114.1.126"
+	},
+	{
+		"domainName": "cmpcheck.net",
+		"responseTimeMs": "1557",
+		"queryResult": "49.212.159.218"
+	},
+	{
+		"domainName": "contoterzisti.it",
+		"responseTimeMs": "481",
+		"queryResult": "149.13.148.65"
+	},
+	{
+		"domainName": "shoeloungeatl.com",
+		"responseTimeMs": "2526",
+		"queryResult": "107.180.50.220"
+	},
+	{
+		"domainName": "profileawareness.com",
+		"responseTimeMs": "198",
+		"queryResult": "204.11.56.48"
+	},
+	{
+		"domainName": "shriamarnathsevatrust.com",
+		"responseTimeMs": "245",
+		"queryResult": "192.185.115.65"
+	},
+	{
+		"domainName": "rimakaram.net",
+		"responseTimeMs": "445",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "spunkyvids.com",
+		"responseTimeMs": "274",
+		"queryResult": "208.91.197.46"
+	},
+	{
+		"domainName": "thxhb.com",
+		"responseTimeMs": "347",
+		"queryResult": "103.56.100.73"
+	},
+	{
+		"domainName": "silk69.in",
+		"responseTimeMs": "7472",
+		"queryResult": "49.50.67.247"
+	},
+	{
+		"domainName": "etic-eu.net",
+		"responseTimeMs": "229",
+		"queryResult": "217.160.231.254"
+	},
+	{
+		"domainName": "xigushan.com",
+		"responseTimeMs": "1589",
+		"queryResult": "103.71.152.13"
+	},
+	{
+		"domainName": "singularcakes.com",
+		"responseTimeMs": "332",
+		"queryResult": "134.0.10.243"
+	},
+	{
+		"domainName": "yueqi360.com",
+		"responseTimeMs": "263",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "istanbulhairtrans.com",
+		"responseTimeMs": "1243",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "skimstone.com.au",
+		"responseTimeMs": "10496",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "lla-bayreuth.de",
+		"responseTimeMs": "1533",
+		"queryResult": "212.227.1.211"
+	},
+	{
+		"domainName": "33nn.com",
+		"responseTimeMs": "1327",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "skywalker.onesite.co",
+		"responseTimeMs": "324",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "777txt.com",
+		"responseTimeMs": "1672",
+		"queryResult": "103.37.1.53"
+	},
+	{
+		"domainName": "lux.rootmedia.ru",
+		"responseTimeMs": "467",
+		"queryResult": "5.101.152.53"
+	},
+	{
+		"domainName": "autosloansonlines.com",
+		"responseTimeMs": "196",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "smikkelhoekje.nl",
+		"responseTimeMs": "1558",
+		"queryResult": "77.75.254.74"
+	},
+	{
+		"domainName": "hotslotpot.cn",
+		"responseTimeMs": "259",
+		"queryResult": "50.117.113.222"
+	},
+	{
+		"domainName": "sob4u.com",
+		"responseTimeMs": "192",
+		"queryResult": "107.189.3.207"
+	},
+	{
+		"domainName": "readytonikah.com",
+		"responseTimeMs": "239",
+		"queryResult": "103.224.212.222"
+	},
+	{
+		"domainName": "serviceguard-sicherungid12011.tk",
+		"responseTimeMs": "312",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "soranai-001-site1.1tempurl.com",
+		"responseTimeMs": "344",
+		"queryResult": "BLOCKED"
+	},
+	{
+		"domainName": "adserver.ads.com.ph",
+		"responseTimeMs": "287",
+		"queryResult": "72.32.203.131"
+	},
+	{
+		"domainName": "evodownload.com",
+		"responseTimeMs": "10222",
+		"queryResult": "UNRESOLVED"
+	},
+	{
+		"domainName": "splashro.com",
+		"responseTimeMs": "405",
+		"queryResult": "45.64.1.111"
+	},
+	{
+		"domainName": "sportking.co.in",
+		"responseTimeMs": "3092",
+		"queryResult": "192.185.146.64"
+	}],
+	"domainNameListId": "id_1490900240"
+}
