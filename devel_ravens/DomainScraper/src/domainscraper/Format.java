@@ -13,7 +13,7 @@ package domainscraper;
 import java.io.*;
 import java.util.*;
 
-public class Format {
+public class Format{
 
     private String inputFileName;
     private ArrayList urls = new ArrayList();
@@ -39,16 +39,18 @@ public class Format {
                 checkLine(line);
                 count++;
             }
-  
+ 
             //Deletes the contents of the HTMLDump.txt file
             currentFile.delete();
             FileWriter out = new FileWriter(currentFile);
             out.write("");
             out.close();
         }
+        
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
         }
+        
         catch(IOException e){
             System.out.println("IOException caught");
         }
@@ -96,27 +98,42 @@ public class Format {
     }
     
     public void runWeblink()
-    {   
+    {  
+        try
+        {
         for(int i=0; i < urls.size(); i++){
             String line = (String)urls.get(i);
             String[] postSplit = line.split("/");
-            
-            
-            
+
+            try
+            {
             if(postSplit.length > 1){
                 String newUrl = endCheck(postSplit[2]);
                 domains.add(newUrl);
             }
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.err.println("Opps - Improper HTML Link");
+            }
+
+        }
+        }
+        catch(java.lang.StringIndexOutOfBoundsException e)
+        {
+            System.err.println("Domain extraction error");
         }
     }
     
     public String endCheck(String line)
     {
         boolean check = false;
+        
         while(check == false)
         {
          int len = line.length();
          char end = line.charAt(len-1);
+        
          if(end == '\\')
          {
             String temp  = line.substring(0, len-1);
@@ -124,12 +141,12 @@ public class Format {
          }
          len = line.length();
          end = line.charAt(len-1);
+         
          if(end == '\\')
             check = false;
          else
             check = true;
         }
-        
         return line;
     }
     
