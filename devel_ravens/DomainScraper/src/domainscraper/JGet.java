@@ -50,9 +50,8 @@ public class JGet {
     public void runJGet() throws IOException{
         //Variables the website's datastreams.
         URL u;
-        InputStream is;
-        DataInputStream dis;
         String site;
+        BufferedReader reader;
         
         boolean goodUrl = checkURL();
         if (goodUrl == false)
@@ -68,23 +67,31 @@ public class JGet {
         buildInput(getURL());
         
         try{
-            u = new URL(url);
-            is = u.openStream();
-            dis = new DataInputStream(new BufferedInputStream(is));
-           
-            //Reading in the datastream.
-            while ((site = dis.readLine()) != null){
+            //Building connection
+            u = new URL(url);            
+            HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+            huc.setConnectTimeout(15 * 1000);
+            huc.setReadTimeout(15 * 1000);
+            huc.setRequestMethod("GET");
+            huc.connect();
+            
+            //Making the stream and writing it to the file.
+            reader = new BufferedReader(new InputStreamReader(huc.getInputStream()));
+            while (((site = reader.readLine()) != null)){
                 pWriter.println(site);
             }
+            
             
             pWriter.println("------------ END OF DUMP ----------------------------");
             System.out.println(getURL() + " HTML code has been added to the dump file.");
             
+            
             //Closing datastreams.
-            dis.close();
+            reader.close();
             pWriter.close();
-            is.close();
+            
         }
+        
         catch (MalformedURLException mue){
             System.err.println("Ouch - a MalformedURLException happened with \"" + getURL() + "\"");
             System.err.println("Consider starting your URL with \"www.\" ,\"http://www.\", or \"https://www.\"");
@@ -94,9 +101,11 @@ public class JGet {
         {
             System.err.println("Oops- an Illegal Argument was made.");
         }
+        
         catch (IOException ioe){
             System.err.println("Oops- an IOException happened.");
         }
+        
     }
         
     //Getters and Setters
