@@ -1,22 +1,29 @@
-
-
 import java.util.ArrayList;
 
-public class QResults 
+/**
+ * QResults is the overall results setting class, in conjuction with InputFile,
+ * QResults sets the variables for each element of the JSON query results file.
+ * InputFile holds the JSON array object elements that are unique to each environmentID.
+ */
+
+/**
+ *
+ * @author UWF Capstone, Team Seahawks, Frank Moss, Chase Green, Paul Gartner
+ */
+public class QResults
 {
 
-	private String environmentId;
-	private String domainNameListId;
-	private String queriesRunBy;
-	private ArrayList<InputFile> queryResults;
-
+    private String environmentId;
+    private String domainNameListId;
+    private String queriesRunBy;
+    private ArrayList<InputFile> queryResults;
 
     public QResults()
     {
-        
+
     }
 
-    public QResults(String environmentID, String domainNameListId, String queriesRunBy, ArrayList<InputFile> queryResults) //List<List<String>> qResults
+    public QResults(String environmentID, String domainNameListId, String queriesRunBy, ArrayList<InputFile> queryResults)
     {
         this.environmentId = environmentID;
         this.domainNameListId = domainNameListId;
@@ -54,8 +61,6 @@ public class QResults
         this.queriesRunBy = queriesRunBy;
     }
 
-//Setting the Query results object Array list below this
-
     public ArrayList<InputFile> getQueryResults()
     {
         return queryResults;
@@ -65,5 +70,5 @@ public class QResults
     {
         this.queryResults = queryResults;
     }
-       
+
 }

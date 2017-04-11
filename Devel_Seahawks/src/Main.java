@@ -2,25 +2,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.*;
-
 import org.apache.commons.cli.*;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+/**
+ * This is the main class of the Qstats program. This tool takes in DNS query results
+ * in a JSON file and sorts the data based on return status': blocked, unresolved, and
+ * normal. The tool then calculates statistical data through the StatsCalculator
+ * class and outputs to the screen or file output.
  */
 
 /**
  *
- * @author Chase Green
+ * @author UWF Capstone, Team Seahawks, Frank Moss, Chase Green, Paul Gartner
  */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) { // changed
+    public static void main(String[] args) { 
          
         final String header = "----------------------------QStats----------------------------";
         final String footer = "--------------------------Version 1.6-------------------------";
@@ -107,7 +104,7 @@ public class Main {
         }
     }
     
-    private static void displayHelp(String header, Options options, String footer) //changed
+    private static void displayHelp(String header, Options options, String footer)
     {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("java -jar qstats.jar [-f] <FILEPATH> [-v]", header, options, footer);

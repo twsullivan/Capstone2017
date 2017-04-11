@@ -1,15 +1,19 @@
-import java.awt.BorderLayout;
-import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.File;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.*;
 
+/**
+ * This class is responsible for how data from the QStats class is presented.
+ * When no output specification is made, this class will present the data to the 
+ * console. FileWrite will create and output to a file name when specified in the input
+ * parameters.
+ */
+
+/**
+ *
+ * @author UWF Capstone, Team Seahawks, Frank Moss, Chase Green, Paul Gartner
+ */
 public class FileWrite {
 
     List<List<Double>> statTable;
@@ -19,10 +23,10 @@ public class FileWrite {
     
     public FileWrite() 
     {
-        //Default Constructor
+     
     }
     
-    public FileWrite(List<List<Double>> statTable, String outputFilePath, List<Integer> envCounts, List<String> envID) //changed
+    public FileWrite(List<List<Double>> statTable, String outputFilePath, List<Integer> envCounts, List<String> envID)
     {
         this.statTable = statTable;
         this.outputFilePath = outputFilePath;
@@ -43,7 +47,7 @@ public class FileWrite {
         }
     }
   
-    private void writeToConsole() //changed
+    private void writeToConsole()
     {
       
        int countMarker = 0;
@@ -120,11 +124,9 @@ public class FileWrite {
             System.out.println("Writing to " + outputFilePath + ".");
             for(int i = 0; i < this.statTable.size(); i++)
               {
-                  //System.out.println();
                   writer.newLine();
                   for(int k = 0; k < this.statTable.get(i).size()+4; k++)
                   {
-                  //System.out.print(data[i][k] + ",");
                   writer.write(data[i][k] + ",");
 
                   }
@@ -133,7 +135,6 @@ public class FileWrite {
         } 
         catch (IOException x) 
         {
-        x.printStackTrace();
         }
         finally
         {
@@ -150,7 +151,6 @@ public class FileWrite {
             }
             catch (IOException ex)
                     {
-                        ex.printStackTrace();
                     }
         }
         
