@@ -100,15 +100,14 @@ public class Driver {
         int count = 0;    
         while (count < nLevels) {
             if (count != 0) {
-                linkList = tempList;
+                linkList = testRemoveDuplicates(tempList);
+                tempList = new ArrayList();
+                
             }
-            /*
-           for (int i = 0; i < linkList.size(); i++) {
-                     System.out.println("Number " + i + " with a value of " + linkList.get(i));
-           }*/
+            
+           
            for (int i = 0; i < linkList.size(); i++) {
                 String tempURL = linkList.get(i).toString();
-                //System.out.println(tempURL);
                 
                 if((!visited.contains(tempURL)) && (visited.size() <= maxNum)){
                     visited.add(tempURL);
@@ -131,8 +130,9 @@ public class Driver {
                         String temp = tList.get(j).toString();
                         tempList.add(temp);
                     }
-
+                 
                 }
+                
             }
 
            count++;
