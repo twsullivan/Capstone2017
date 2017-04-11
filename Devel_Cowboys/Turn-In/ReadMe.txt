@@ -24,6 +24,6 @@ How to Run Tool:
 	        - Max Results (required): Maximum number of results to output. If set to 0, the result set is unlimited.
         
         Examples:
-	        Example (Windows): java -jar DomainFileParser.jar "C:\Users\bob\Desktop\\domains.txt" C:\Users\bob\Desktop\" "Bob Smith" "Domains from AdBlock on 02Feb17" AdBlock 100
+	        Example (Windows): java -jar DomainFileParser.jar "C:\Users\bob\Desktop\domains.txt" "C:\Users\bob\Desktop\" "Bob Smith" "Domains from AdBlock on 02Feb17" AdBlock 100
 	        
 	        Example (Mac): java -jar DomainFileParser.jar "/Users/bob/Desktop/domains.txt" "/Users/bob/Desktop" "Bob Smith" "Domains from AdBlock on 02Feb17" AdBlock 100
