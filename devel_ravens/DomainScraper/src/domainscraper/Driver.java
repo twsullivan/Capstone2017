@@ -128,9 +128,9 @@ public class Driver {
         get.runJGet();
         //creates new istance of Format class
         Format format = new Format();
-        //
+        //collects urls from HTML dump file
         format.runHReF();
-        //
+        //extracts domain names from urls
         format.runWeblink();
         //collects domains found and adds them to nameList
         setNameList(format.getDomains());
