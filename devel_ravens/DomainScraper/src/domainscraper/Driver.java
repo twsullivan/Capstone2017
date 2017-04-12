@@ -10,9 +10,48 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
+/**Driver is an attempt to organize class and method calls, manage transportion of
+ * needed data to and from classes and manage the repition of classes and 
+ * methods as required.
+ * <p>
+ * Manages the order of calls to classes and methods, gains and sends information
+ * between classes, and determines repition of JGet and Format classes based on command
+ * input. 
+ * <p>
+ * Public methods:
+ * <ol>
+ * <li>Constructors:</li>
+    * <li>Driver() -  empty constructor</li>
+    * <li>Driver(String use, String iDNS, String list, String desc, int n, String fileN) - constructor</li>
+ * <li>Core Methods:</li>
+    * <li>runDriver() - manages the flow of the tool. Is the start and stop of the tool</li>
+    * <li>gainDomainNames() - Collects the domains and links through JGet and format classes.
+        * Begins repition as needed</li>
+    * <li>continueDomainNames() - Manages repetition of JGet and Format classes</li>
+    * <li>outputJSONFile() - Outputs nameList, user, listId, listDesc and fileName to JSON class</li>
+    * <li>usageDump() - usage dump message to be printed if error occurs</li>
+    * <li>removeDuplicates() - removes duplicates found in nameList</li>
+    * <li>continuedRemoveDuplicates(List in) - Removes duplicates from various lists used in repeated runs</li>
+ * <li>Verification Methods:</li>
+    * <li>showList() - prints to screen the entire nameList</li>
+    * <li>getNameList() - returns the entire nameList</li>
+ * <li>Setters and Getters:</li>
+    * <li>setUser(String user) - sets User</li>
+    * <li>setInitialDNS(String initialDNS) - Sets intial DNS</li>
+    * <li>setListId(String listId) - sets list ID</li>
+    * <li>setListDesc(String listDesc) - sets list description</li>
+    * <li>setLinkList(ArrayList linkList) - sets linkList</li>
+    * <li>setNameList(ArrayList nameList) - sets nameList</li>
+    * <li>setnLevels(int nLevels) - sets levels of search</li>
+    * <li>setFileName(String fileName) - sets output file name</li>
+    * <li>setMaxNum(int n) - sets maximum number of sites visited</li> 
+ * </ol>
+ * 
+ * 
  * @author Cody Grogan
+ * Capstone Systems Project - 10215 CIS4595C 201701
+ * Team - Devel_Ravens
+ * 
  */
 public class Driver {
 
@@ -66,66 +105,89 @@ public class Driver {
     //Main layout for class
     public void runDriver() {
         try {
+            //collects domains and links through JGet and Format classes
             gainDomainNames();
         }
         catch (IOException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //removes duplicates from nameList which holds the domains
         removeDuplicates();
+        //calls method for outputing to JSON
         outputJSONFile();
-
-        //System.out.println("Complete");
     }
 
     //Uses the JGet and Format classes
     public void gainDomainNames() throws IOException {
+        //creates instance of JGet class
         JGet get = new JGet();
+        //sets initial DNS in JGet and tracks the url
         get.setURL(initialDNS);
         visited.add(initialDNS);
+        //runs JGet
         get.runJGet();
-
+        //creates new istance of Format class
         Format format = new Format();
+        //
         format.runHReF();
+        //
         format.runWeblink();
+        //collects domains found and adds them to nameList
         setNameList(format.getDomains());
         
+        //checks if repition is needed
         if (nLevels > 0) {
-            linkList.addAll(testRemoveDuplicates(format.getURLs()));
+            //collects non duplicate urls from Format class for continued use
+            linkList.addAll(continuedRemoveDuplicates(format.getURLs()));
+            //manages proper repetition control
             continueDomainNames();
         }
 
     }
-
+    
+    //Manages repition of JGet and Format classes as needed
     public void continueDomainNames() throws IOException {
-        int count = 0;    
+        //begins count for continued use that stops at levels designated
+        int count = 0;
+        
         while (count < nLevels) {
+            //if this is not the first time the loop has gone
             if (count != 0) {
-                linkList = testRemoveDuplicates(tempList);
+                //linkList now contains non-duplicated links from tempList
+                linkList = continuedRemoveDuplicates(tempList);
+                //empties tempList
                 tempList = new ArrayList();
                 
             }
             
-           
+           //travels through linkList
            for (int i = 0; i < linkList.size(); i++) {
+               //collects url from linkList
                 String tempURL = linkList.get(i).toString();
-                
+                //if the url has not been visited nor has the maximum number of site been visited
                 if((!visited.contains(tempURL)) && (visited.size() <= maxNum)){
+                    //add url to visited urls
                     visited.add(tempURL);
+                    
+                    //run through Jget
                     JGet get = new JGet();
                     get.setURL(tempURL);
                     get.runJGet();
-                    
+                   
+                    //run through Format
                     Format format = new Format();
                     format.runHReF();
                     format.runWeblink();
-
-                    List tList  = new ArrayList(testRemoveDuplicates(format.getDomains()));
+                    
+                    //collect domain names, remove duplicates and add them to nameList
+                    List tList  = new ArrayList(continuedRemoveDuplicates(format.getDomains()));
                     for (int j = 0; j < tList.size(); j++) {
                         String temp = tList.get(j).toString();
                         nameList.add(temp);
                     }
                     
-                    tList = testRemoveDuplicates(format.getURLs());
+                    //collect urls, remove duplicates and add them to tempList
+                    tList = continuedRemoveDuplicates(format.getURLs());
                     for (int j = 0; j < tList.size(); j++) {
                         String temp = tList.get(j).toString();
                         tempList.add(temp);
@@ -141,13 +203,17 @@ public class Driver {
 
     //Uses JSON class
     public void outputJSONFile() {
+        //creates instance of JSON class
         JSON j = new JSON();
-
+        
+        //sets variable in instance
         j.setNameList(nameList);
         j.setUser(user);
         j.setListID(listId);
         j.setListDescription(listDesc);
         j.setOutput(fileName);
+        
+        //runs method to output file
         j.makeJSON();
     }
 
@@ -160,7 +226,7 @@ public class Driver {
         System.exit(0);
     }
 
-    //Removes duplicates from finished nameList
+    //Removes duplicates from nameList
     public void removeDuplicates() {
         ArrayList holder = new ArrayList();
         boolean duplicate = false;
@@ -190,8 +256,9 @@ public class Driver {
             nameList.add(temp);
         }
     }
-
-    public List testRemoveDuplicates(List in) {
+    
+    //removes duplicates from list in repeated runs
+    public List continuedRemoveDuplicates(List in) {
         List<String> out = in;
         Set<String> hs = new HashSet<>();
         hs.addAll(out);
@@ -202,13 +269,14 @@ public class Driver {
     //**************************************************************************
     //Verification methods (Dev use only)---------------------------------------
     //**************************************************************************
-
+    //Shows entire nameList
     public void showList() {
         for (int i = 0; i < nameList.size(); i++) {
             System.out.println(nameList.get(i));
         }
     }
-
+    
+    //collects entire nameList
     public List getNameList() {
         return nameList;
     }
@@ -272,6 +340,9 @@ public class Driver {
         this.fileName = fileName;
     }
     
+    /**
+     * @param n the n to set
+     */
     public void setMaxNum(int n){
         maxNum = n;
     }
