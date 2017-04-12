@@ -4,10 +4,28 @@
  * and open the template in the editor.
  */
 package domainscraper;
-
-/**
- *
+/**Domainscarper is the main class of the domain scrap tool.
+ * This tool collects and sends command input to the Driver class.
+ * Has a timer feature to see how long the scrap run took.
+ * <p>
+ * Initialize tool and provides starting information
+ * <p>
+ * Public methods:
+ * <ol>
+ * <li>main() - Starts timer, collects command information, constructs tool, sends information to Driver
+  and begins run.</li>
+ * </ol>
+ * 
+ * The idea was found at - http://alvinalexander.com/blog/post/java/jget-something-like-wget 
+ * after failing to locate a usable cURL library for java.
+ * 
  * @author Cody Grogan
+ * Capstone Systems Project - 10215 CIS4595C 201701
+ * Team - Devel_Ravens
+ * @catches ArrayIndexOutOfBoundsException If command line input is incorrect
+ * @catches NumberFormatException If levels or max site is not an integer
+ * @catches Exception For all other errors that can occur 
+ * 
  */
 public class DomainScraper {
 
@@ -15,10 +33,15 @@ public class DomainScraper {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //Starts Timers
         final long startTime = System.currentTimeMillis();
-
+        
+        //Constructs new instance of timer
         Driver scrapper = new Driver();
-
+        
+        //Collects arguements from command line and sets them to the apporiate
+        //variables in the Driver class.
+        //Runs driver
         try {
             
             if (args.length == 7) {
@@ -37,18 +60,22 @@ public class DomainScraper {
             }
 
         } 
+        //If input does not match proper command format
         catch (ArrayIndexOutOfBoundsException e) {
             System.err.println("Error: No and/or malformed arguments.");
             scrapper.usageDump();
         } 
+        //If the user attempts to use a non-integer
         catch (NumberFormatException e) {
-            System.err.println("Error: Be sure that levels is a integer value.");
+            System.err.println("Error: Be sure that levels or max number of visits is an integer value.");
             scrapper.usageDump();
 
         }
+        //Any other non-mentioned exception
         catch(Exception e){
             System.err.println(e.getMessage());
         }
+        //Stops timer and prints total elapsed time of run to screen
         finally{
             final long endTime = System.currentTimeMillis();
             long millis = endTime - startTime;

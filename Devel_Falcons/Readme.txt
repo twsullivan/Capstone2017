@@ -1,5 +1,9 @@
-See build directory for latest build.
-
+Team Members:
+    Austin Bolstridge
+    Denny Loucks
+    Joshua McDonald
+    Tim Sullivan
+    
 Usage: java -jar DNSQueryTool.jar -i <domainNames> -o <queryResults> -e <dnsEnvironment> -t <queriesPerSecond> -n <"Name"> -q (optional)
     -h    Help - Displays this usage dump.
     -i    Input filename - The file containing the domain names.
@@ -8,3 +12,5 @@ Usage: java -jar DNSQueryTool.jar -i <domainNames> -o <queryResults> -e <dnsEnvi
     -t    Throttle value - Max queries per second.
     -n    Name - Name of person running queries.
     -q    Optional flag; If in command line then no output is displayed.
+
+There are no unimplemented or pending requirements or features.
