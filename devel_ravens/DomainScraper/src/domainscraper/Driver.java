@@ -222,7 +222,7 @@ public class Driver {
         System.out.println("Usage dump:");
         System.out.println("Please try the command again with the following format");
         System.out.println("java -jar DomainScraper.jar  <\"user name\"> <URL> <output filename> <listID> <\"List Description\"> <Levels of scrapping> <Max number of URLs visited>");
-        System.out.println("NOTE: Unless the output filename renamed it will amend to the same <filename>.JSON file specified in the argument.");
+        System.out.println("NOTE: If the output file name already exists, then any following run will replace the contents of that file.");
         System.exit(0);
     }
 
