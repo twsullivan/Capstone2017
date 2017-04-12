@@ -4,10 +4,34 @@
  * and open the template in the editor.
  */
 package domainscraper;
-
 /**
- *
+ * <p>
+ * 
+ * input. 
+ * <p>
+ * Public methods:
+ * <ol>
+ * <li>Constructors:</li>
+    * <li>Format() -  constructor</li>
+ * <li>Core Methods:</li>
+    * <li>runHReF()) - connects to HTML dump file and collects urls from code found in file</li>
+    * <li>checkLine(String input) - tokenizes line, calls checktoken on each part, adds urls to output</li>
+    * <li>checkToken(String input) - returns URL if the token includes one</li>
+    * <li>isURL(String token) - returns true if passed string matches url patterns</li>
+    * <li>runWeblink() - extracts domains from urls found previously</li>
+    * <li>endCheck(String line) - determines domain location in url</li>
+    * <li>showURLs() - prints to screen all the urls found</li>
+    * <li>showDomains() - prints to screen all the domains found</li>
+ * <li>Getters:</li>
+    * <li>getDomains() - returns the domains found</li>
+    * <li>getURLs() - returns the urls found</li>
+ * </ol>
+ * 
+ * 
  * @author Ryan Aguado
+ * Capstone Systems Project - 10215 CIS4595C 201701
+ * Team - Devel_Ravens
+ * 
  */
 
 import java.io.*;
@@ -22,19 +46,29 @@ public class Format{
     private String line = null;
     private int count = 0;
     
+    //************************************************************************************
+    //Constructors
+    //************************************************************************************
 
     public Format()
     {
     inputFileName = "HTMLDump.txt";    
     }
     
+    //************************************************************************************
+    //Core Methods
+    //************************************************************************************
+    
+    //connects to HTML dump file and collects urls from code found in file
     public void runHReF()
     {
         try{
+            //establishes connect ot dump file
             File currentFile = new File(inputFileName);
             FileReader fileReader = new FileReader(currentFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-        
+            
+            //while lines are found in HTML dump file, checks for urls
             while((line = bufferedReader.readLine()) != null){
                 checkLine(line);
                 count++;
@@ -46,7 +80,7 @@ public class Format{
             out.write("");
             out.close();
         }
-        
+        //If HTML dump file is not able to be found  
         catch(FileNotFoundException e){
             System.out.println("File was not found.");
         }
@@ -97,6 +131,7 @@ public class Format{
         return false;
     }
     
+    //extracts domains from urls found previously
     public void runWeblink()
     {  
         try
@@ -121,10 +156,11 @@ public class Format{
         }
         catch(java.lang.StringIndexOutOfBoundsException e)
         {
-            System.err.println("Domain extraction error");
+            System.err.println("Opps - Domain extraction error");
         }
     }
     
+    //determines domain location in url
     public String endCheck(String line)
     {
         boolean check = false;
@@ -150,6 +186,7 @@ public class Format{
         return line;
     }
     
+    //prints to screen all the urls found
     public void showURLs()
     {
         for(int i = 0; i < urls.size(); i++)
@@ -158,6 +195,7 @@ public class Format{
         }
     }
     
+    //prints to screen all the domains found
     public void showDomains()
     {
         for(int i = 0; i < domains.size(); i++)
@@ -165,12 +203,17 @@ public class Format{
             System.out.println(domains.get(i));
         }
     }
+    //************************************************************************************
+    //Getters
+    //************************************************************************************
     
+    //Returns domains found
     public ArrayList getDomains()
     {
         return domains;
     }
     
+    //Returns urls found
     public ArrayList getURLs()
     {
         return urls;
