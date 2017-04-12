@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Parses an Adblock text file array, returns a clean array of DNS's
+ * Parses an Adblock text file array, returns a clean array of domains.
  *
  * @author Zack McColgan
  */

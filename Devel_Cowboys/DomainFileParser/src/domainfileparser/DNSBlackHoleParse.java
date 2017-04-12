@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Parses an DNS BlackHole Project text file array, returns a 
+ * clean array of domains.
+ * 
  * @author pgabriel
  * @author tjk5
  */

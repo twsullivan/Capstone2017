@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Parses an Internet Log text file array, returns a clean array of domains.
+ * 
  * @author Nick Nawoschik
  */
 public class InternetLog {

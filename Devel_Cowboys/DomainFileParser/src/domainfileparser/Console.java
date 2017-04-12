@@ -14,7 +14,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 /**
- *
+ * This class processes the input, displays usage information, and calls
+ * for the output class.
+ * 
  * @author pgabriel
  */
 public class Console {
@@ -354,6 +356,7 @@ public class Console {
         System.out.println("\n");
     }
 
+    // Usage information 
     private void displayUsage(String message, boolean displayArgs)
     {
         if(message.length() > 0)

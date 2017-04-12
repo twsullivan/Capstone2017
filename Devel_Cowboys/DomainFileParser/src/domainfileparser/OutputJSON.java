@@ -6,7 +6,9 @@ import com.eclipsesource.json.*;
 import java.io.File;
 
 /**
- *
+ * Outputs the array and other related information passed to it into a
+ * JSON formatted file.
+ * 
  * @author pgabriel
  */
 public class OutputJSON {
