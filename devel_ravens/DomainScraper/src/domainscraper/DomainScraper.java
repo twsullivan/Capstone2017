@@ -16,8 +16,6 @@ package domainscraper;
   and begins run.</li>
  * </ol>
  * 
- * The idea was found at - http://alvinalexander.com/blog/post/java/jget-something-like-wget 
- * after failing to locate a usable cURL library for java.
  * 
  * @author Cody Grogan
  * Capstone Systems Project - 10215 CIS4595C 201701
