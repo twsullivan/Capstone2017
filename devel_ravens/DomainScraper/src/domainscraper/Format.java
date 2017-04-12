@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package domainscraper;
-/**
+/** Format is an attempt to extract both urls and domains from a web pages HTML code
  * <p>
- * 
+ * Connects to HTMLdump.txt and scans HTML code for urls. URLs found are extracted and stored.
+ * Domain names are then extracted from URLs and stored.
  * input. 
  * <p>
  * Public methods:
